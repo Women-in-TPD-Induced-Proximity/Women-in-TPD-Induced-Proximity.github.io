@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MedChem Community — Home</title>
+  <meta name="description" content="A community hub for medicinal chemists to connect, learn, and grow through events, mentorship, and resources." />
+  assets/css/styles.css
+</head>
+
+<body>
+  #mainSkip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      index.html
+        <span class="brand-mark">MC</span>
+        <span class="brand-text">
+          <strong>MedChem</strong><span class="muted">Community</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" data-nav>
+        index.htmlHome</a>
+        events.htmlEvents</a>
+        blog.htmlBlog</a>
+        tools.htmlTools</a>
+        get-involved.htmlGet Involved</a>
+        #joinJoin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Medicinal chemistry • networking • mentorship</p>
+          <h1>Connect, network, and learn with your local medchem community.</h1>
+          <p class="lead">
+            A simple hub for professionals, students, and collaborators—featuring events, mentorship,
+            and curated resources for modern medicinal chemistry.
+          </p>
+
+          <div class="hero-actions">
+            events.htmlSee upcoming events</a>
+            get-involved.htmlVolunteer / Mentor</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-num">In-person + virtual</div>
+              <div class="stat-label">Community meetups</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">Career growth</div>
+              <div class="stat-label">Mentorship & advice</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">Practical</div>
+              <div class="stat-label">Tools & learning</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <h2>Next meetup</h2>
+            <p class="muted">Auto-loaded from <code>assets/data/events.json</code></p>
+          </div>
+          <div class="event-preview" data-events-target="next"></div>
+          <div class="hero-card-bottom">
+            events.htmlAll events</a>
+            #joinJoin the list</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-glow" aria-hidden="true"></div>
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>What we do</h2>
+          <p class="muted">A few ways the community supports medicinal chemists and trainees.</p>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <h3>Networking</h3>
+            <p>Meet peers across industry and academia in a welcoming, low-pressure format.</p>
+            events.htmlExplore events →</a>
+          </article>
+
+          <article class="card">
+            <h3>Mentorship</h3>
+            <p>Connect mentors and mentees for guidance on skills, careers, and transitions.</p>
+            get-involved.html#mentorshipMentorship →</a>
+          </article>
+
+          <article class="card">
+            <h3>Resources</h3>
+            <p>Curated tools for medchem: reading lists, calculators, workflows, and learning.</p>
+            tools.htmlBrowse tools →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPCOMING EVENTS -->
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Upcoming events</h2>
+          <p class="muted">A quick look at what’s next. Add yours by editing <code>events.json</code>.</p>
+        </div>
+
+        <div class="events-grid" data-events-target="list"></div>
+
+        <div class="center">
+          events.htmlView full events page</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG TEASER -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Latest posts</h2>
+          <p class="muted">Short, practical notes for working medicinal chemists.</p>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <p class="badge">Methods</p>
+            <h3>Designing better controls for screening</h3>
+            <p>Common pitfalls and quick fixes that improve confidence in early SAR.</p>
+            blog.htmlRead more →</a>
+          </article>
+
+          <article class="card">
+            <p class="badge">Careers</p>
+            <h3>How to get the most out of a meetup</h3>
+            <p>Small habits that help you build authentic, lasting professional ties.</p>
+            blog.htmlRead more →</a>
+          </article>
+
+          <article class="card">
+            <p class="badge">Tools</p>
+            <h3>A lightweight medchem toolkit</h3>
+            <p>Handy calculators, references, and workflows you can use immediately.</p>
+            tools.htmlBrowse tools →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN -->
+    <section class="section cta" id="join">
+      <div class="container cta-inner">
+        <div>
+          <h2>Join the community</h2>
+          <p class="muted">Get updates about upcoming events, mentorship opportunities, and new resources.</p>
+        </div>
+
+        <!-- Simple “mailto” signup to keep this 100% static -->
+        you@example.com
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="your@email.com" required />
+          <button class="button primary" type="submit">Request to join</button>
+        </form>
+
+        <p class="tiny muted">
+          Tip: Replace <code>you@example.com</code> with your real inbox, or connect to a form service later.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand footer-brand">
+          <span class="brand-mark">MC</span>
+          <span class="brand-text">
+            <strong>MedChem</strong><span class="muted">Community</span>
+          </span>
+        </div>
+        <p class="muted">
+          A community-led hub for medicinal chemistry networking, mentorship, and practical learning.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Explore</h3>
+        <ul class="footer-links">
+          <li>events.htmlEvents</a></li>
+          <li>blog.htmlBlog</a></li>
+          <li>tools.htmlTools</a></li>
+          <li>get-involved.htmlGet involved</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Connect</h3>
+        <ul class="footer-links">
+          <li>#LinkedIn</a></li>
+          <li>#Email</a></li>
+          <li>#Code of Conduct</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="tiny muted">© <span id="year"></span> MedChem Community. Built for GitHub Pages.</p>
+    </div>
+  </footer>
+
+  assets/js/main.jsscript>
+  assets/js/render-events.jsscript>
+</body>
+</html>

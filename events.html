@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MedChem Community — Events</title>
+  <meta name="description" content="Upcoming meetups, symposia, and community gatherings." />
+  assets/css/styles.css
+</head>
+
+<body>
+  #mainSkip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      index.html
+        <span class="brand-mark">MC</span>
+        <span class="brand-text"><strong>MedChem</strong><span class="muted">Community</span></span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" data-nav>
+        index.htmlHome</a>
+        events.htmlEvents</a>
+        blog.htmlBlog</a>
+        tools.htmlTools</a>
+        get-involved.htmlGet Involved</a>
+        index.html#joinJoin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Events</h1>
+        <p class="lead muted">Meetups, panels, and community gatherings. Add new events in <code>assets/data/events.json</code>.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="toolbar">
+          <div class="field">
+            <label for="search" class="muted">Search</label>
+            <input id="search" type="search" placeholder="Search title, venue, city…" />
+          </div>
+          <div class="field">
+            <label for="type" class="muted">Type</label>
+            <select id="type">
+              <option value="">All</option>
+              <option value="Meetup">Meetup</option>
+              <option value="Panel">Panel</option>
+              <option value="Workshop">Workshop</option>
+              <option value="Symposium">Symposium</option>
+              <option value="Virtual">Virtual</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="events-grid" data-events-target="all"></div>
+        <p class="tiny muted">This page is fully static; filtering happens in the browser.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p class="tiny muted">© <span id="year"></span> MedChem Community.</p>
+    </div>
+  </footer>
+
+  assets/js/main.jsscript>
+  assets/js/render-events.jsscript>
+</body>
+</html>

@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Community Happy Hour + Lightning Talks",
+    "type": "Meetup",
+    "date": "2026-04-21",
+    "time": "5:30–8:00 PM",
+    "venue": "Local venue (update me)",
+    "city": "Cambridge, MA",
+    "details": "Low-pressure networking plus short 5-minute science/medchem stories.",
+    "registrationUrl": "#",
+    "featured": true
+  },
+  {
+    "title": "Panel: From Hit to Lead — What Actually Changes Decisions?",
+    "type": "Panel",
+    "date": "2026-05-15",
+    "time": "6:00–8:30 PM",
+    "venue": "Innovation space",
+    "city": "Boston, MA",
+    "details": "A candid discussion on data packages, reproducibility, and cross-functional tradeoffs.",
+    "registrationUrl": "#",
+    "featured": false
+  },
+  {
+    "title": "Virtual Journal Club: Degrader Design Trends",
+    "type": "Virtual",
+    "date": "2026-06-04",
+    "time": "12:00–1:00 PM",
+    "venue": "Online",
+    "city": "Virtual",
+    "details": "Bring one paper and one slide: what’s new, what’s real, what’s hype.",
+    "registrationUrl": "#",
+    "featured": false
+  }
+]
