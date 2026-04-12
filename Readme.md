@@ -1,9 +1,9 @@
-# MedChem Community (GitHub Pages template)
+# Women in Induced Proximity Community (GitHub Pages template)
 
 A lightweight, static HTML/CSS/JS site you can deploy instantly with GitHub Pages.
 
 ## Quick start
-1. Create a new repo (e.g., `medchem-community-site`)
+1. Create a new repo (e.g., `Women-in-Induced-Proximity-community-site`)
 2. Copy all files from this template into the repo root
 3. Commit + push
 
