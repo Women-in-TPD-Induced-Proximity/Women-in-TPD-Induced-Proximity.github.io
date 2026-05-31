@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Women in Induced Proximity Community — Core Team</title>
+  <meta name="description" content="Meet the people who build and run the Women in Induced Proximity Community." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 920px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .team-grid { grid-template-columns: 1fr; } }
+
+    .team-card {
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: box-shadow .18s, transform .18s;
+    }
+    .team-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+    .team-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: grid;
+      place-items: center;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .team-avatar.teal  { background: var(--teal); }
+    .team-avatar.gold  { background: var(--gold); color: #1a1a1a; }
+    .team-avatar.green { background: #1a6b2a; }
+
+    .team-name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin: 0;
+    }
+    .team-role {
+      font-family: var(--font-head);
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    .team-bio { font-size: .9rem; color: var(--muted); margin: 0; line-height: 1.6; }
+    .team-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+    .team-links a {
+      font-family: var(--font-head);
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+    }
+    .team-links a:hover { color: var(--navy); text-decoration: underline; }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">MC</span>
+        <span class="brand-text">
+          <strong>Women in Induced Proximity</strong><span class="muted">Community</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" data-nav>
+        <a href="mission.html">Mission</a>
+        <a href="core-team.html" class="active">Core Team</a>
+        <a href="index.html#join">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Core Team</h1>
+        <p class="lead">The scientists and organizers who keep this community running.</p>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Leadership</h2>
+          <p class="muted">Founding organizers and steering committee.</p>
+        </div>
+        <div class="team-grid">
+
+          <div class="team-card">
+            <div class="team-avatar">SA</div>
+            <div>
+              <p class="team-name">Sarah Adekunle, PhD</p>
+              <p class="team-role">Co-founder & Chair</p>
+            </div>
+            <p class="team-bio">Medicinal chemist at the intersection of targeted protein degradation and drug discovery. Passionate about building community and advancing women in the chemical sciences.</p>
+            <div class="team-links">
+              <a href="#">LinkedIn →</a>
+              <a href="#">Email →</a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar teal">MP</div>
+            <div>
+              <p class="team-name">Maria Petersen, PhD</p>
+              <p class="team-role">Co-founder & Program Lead</p>
+            </div>
+            <p class="team-bio">Structural biologist focused on E3 ligase biology. Leads mentorship programming and scientific content for the community's events and workshops.</p>
+            <div class="team-links">
+              <a href="#">LinkedIn →</a>
+              <a href="#">Email →</a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar gold">LR</div>
+            <div>
+              <p class="team-name">Layla Reyes</p>
+              <p class="team-role">Operations & Partnerships</p>
+            </div>
+            <p class="team-bio">Chemical biology PhD candidate coordinating event logistics, industry partnerships, and communications across the community's growing chapters.</p>
+            <div class="team-links">
+              <a href="#">LinkedIn →</a>
+              <a href="#">Email →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMITTEE -->
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Steering Committee</h2>
+          <p class="muted">Scientists and advocates who shape our programs and direction.</p>
+        </div>
+        <div class="team-grid">
+
+          <div class="team-card">
+            <div class="team-avatar green">TN</div>
+            <div>
+              <p class="team-name">Tomoko Nakamura, PhD</p>
+              <p class="team-role">Scientific Advisor</p>
+            </div>
+            <p class="team-bio">Senior research scientist specializing in PROTAC design. Advises on educational programming and helps connect members with the broader degrader community.</p>
+            <div class="team-links">
+              <a href="#">LinkedIn →</a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">CF</div>
+            <div>
+              <p class="team-name">Clara Fontaine</p>
+              <p class="team-role">Events & Outreach</p>
+            </div>
+            <p class="team-bio">Medicinal chemistry PhD student coordinating local chapter events and campus outreach, connecting early-career researchers with the wider community.</p>
+            <div class="team-links">
+              <a href="#">LinkedIn →</a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar teal">AV</div>
+            <div>
+              <p class="team-name">Ananya Verma, PhD</p>
+              <p class="team-role">Mentorship Coordinator</p>
+            </div>
+            <p class="team-bio">Computational chemist and experienced mentor who runs the community's mentorship matching program and coaches members through career transitions.</p>
+            <div class="team-links">
+              <a href="#">LinkedIn →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GET INVOLVED -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Want to contribute?</h2>
+        </div>
+        <div class="cards-3">
+          <article class="card">
+            <h3>Volunteer</h3>
+            <p>Help organize events, manage communications, or support the mentorship program. All experience levels welcome.</p>
+            <a href="index.html#join">Get in touch →</a>
+          </article>
+          <article class="card">
+            <h3>Mentor</h3>
+            <p>Share your expertise with the next generation of scientists. Mentors commit to as little as one conversation per quarter.</p>
+            <a href="index.html#join">Become a mentor →</a>
+          </article>
+          <article class="card">
+            <h3>Advise</h3>
+            <p>Have domain expertise or industry connections to offer? Join our advisory network and help shape the community's direction.</p>
+            <a href="index.html#join">Reach out →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN CTA -->
+    <section class="section cta" id="join">
+      <div class="container cta-inner">
+        <div>
+          <h2>Join the community</h2>
+          <p class="muted">Get updates about upcoming events, mentorship opportunities, and new resources.</p>
+        </div>
+        <form action="mailto:you@example.com" method="post" enctype="text/plain">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="your@email.com" required />
+          <button class="button primary" type="submit">Request to join</button>
+        </form>
+        <p class="tiny muted">
+          Tip: Replace <code>you@example.com</code> with your real inbox, or connect to a form service later.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand footer-brand">
+          <span class="brand-mark">MC</span>
+          <span class="brand-text">
+            <strong>Women in Induced Proximity</strong><span class="muted">Community</span>
+          </span>
+        </div>
+        <p class="muted">
+          A community-led hub for medicinal chemistry networking, mentorship, and practical learning.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="mission.html">Mission</a></li>
+          <li><a href="core-team.html">Core Team</a></li>
+          <li><a href="index.html#join">Join</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Connect</h3>
+        <ul class="footer-links">
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Email</a></li>
+          <li><a href="#">Code of Conduct</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="tiny muted">© <span id="year"></span> Women in Induced Proximity Community. Built for GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
