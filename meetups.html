@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Women in Induced Proximity Community — Meetups</title>
+  <meta name="description" content="Local and virtual meetups for the Women in Induced Proximity community." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .meetup-list { display: grid; gap: 14px; }
+
+    .meetup-row {
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 8px 20px;
+      align-items: center;
+      transition: box-shadow .18s, transform .18s;
+    }
+    .meetup-row:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    @media (max-width: 640px) {
+      .meetup-row { grid-template-columns: 1fr; }
+      .meetup-row-date { display: flex; gap: 6px; align-items: baseline; }
+    }
+
+    .meetup-row-date {
+      text-align: center;
+      border-right: 1px solid var(--line);
+      padding-right: 20px;
+    }
+    @media (max-width: 640px) {
+      .meetup-row-date { border-right: none; padding-right: 0; text-align: left; }
+    }
+
+    .mr-month {
+      font-family: var(--font-head);
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--muted);
+    }
+    .mr-day {
+      font-family: var(--font-head);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .mr-title {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 3px;
+    }
+    .mr-meta { font-size: .85rem; color: var(--muted); margin: 0; }
+    .mr-action { white-space: nowrap; }
+
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 920px) { .chapter-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .chapter-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">MC</span>
+        <span class="brand-text">
+          <strong>Women in Induced Proximity</strong><span class="muted">Community</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" data-nav>
+        <a href="mission.html">Mission</a>
+        <a href="core-team.html">Core Team</a>
+        <a href="index.html#join">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Meetups</h1>
+        <p class="lead">Casual, recurring gatherings — local and virtual — designed to connect women in the induced proximity space.</p>
+      </div>
+    </section>
+
+    <!-- UPCOMING -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Upcoming meetups</h2>
+          <p class="muted">All times listed in local chapter time zones.</p>
+        </div>
+
+        <div class="meetup-list">
+
+          <div class="meetup-row">
+            <div class="meetup-row-date">
+              <div class="mr-month">Jun</div>
+              <div class="mr-day">18</div>
+            </div>
+            <div>
+              <p class="mr-title">Boston Chapter — Summer Kickoff</p>
+              <p class="mr-meta">6:30 PM &nbsp;·&nbsp; Kendall Square Tap Room, Cambridge &nbsp;·&nbsp; In-person</p>
+            </div>
+            <div class="mr-action">
+              <a href="index.html#join" class="button small">RSVP</a>
+            </div>
+          </div>
+
+          <div class="meetup-row">
+            <div class="meetup-row-date">
+              <div class="mr-month">Jun</div>
+              <div class="mr-day">25</div>
+            </div>
+            <div>
+              <p class="mr-title">Global Virtual Meetup — Career Q&A</p>
+              <p class="mr-meta">12:00 PM ET &nbsp;·&nbsp; Zoom &nbsp;·&nbsp; Virtual</p>
+            </div>
+            <div class="mr-action">
+              <a href="index.html#join" class="button small">RSVP</a>
+            </div>
+          </div>
+
+          <div class="meetup-row">
+            <div class="meetup-row-date">
+              <div class="mr-month">Jul</div>
+              <div class="mr-day">9</div>
+            </div>
+            <div>
+              <p class="mr-title">SF Bay Area Chapter — Journal Club</p>
+              <p class="mr-meta">6:00 PM PT &nbsp;·&nbsp; South San Francisco &nbsp;·&nbsp; In-person</p>
+            </div>
+            <div class="mr-action">
+              <a href="index.html#join" class="button small">RSVP</a>
+            </div>
+          </div>
+
+          <div class="meetup-row">
+            <div class="meetup-row-date">
+              <div class="mr-month">Jul</div>
+              <div class="mr-day">22</div>
+            </div>
+            <div>
+              <p class="mr-title">NYC Chapter — Happy Hour + Networking</p>
+              <p class="mr-meta">6:00 PM ET &nbsp;·&nbsp; Midtown Manhattan &nbsp;·&nbsp; In-person</p>
+            </div>
+            <div class="mr-action">
+              <a href="index.html#join" class="button small">RSVP</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTERS -->
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Local chapters</h2>
+          <p class="muted">Chapters run independently with support from the core team.</p>
+        </div>
+
+        <div class="chapter-grid">
+          <article class="card">
+            <h3>Boston / Cambridge</h3>
+            <p>Meets monthly. Focus on career development and scientific deep-dives. Strong industry + academic mix.</p>
+            <a href="index.html#join">Join chapter →</a>
+          </article>
+          <article class="card">
+            <h3>San Francisco Bay Area</h3>
+            <p>Monthly journal clubs and quarterly social events. Active biotech community with connections across the Bay.</p>
+            <a href="index.html#join">Join chapter →</a>
+          </article>
+          <article class="card">
+            <h3>New York City</h3>
+            <p>Bi-monthly happy hours and occasional panel events. Growing presence in pharma and biotech.</p>
+            <a href="index.html#join">Join chapter →</a>
+          </article>
+          <article class="card">
+            <h3>London</h3>
+            <p>Quarterly in-person events and active Slack community. UK-based members welcome.</p>
+            <a href="index.html#join">Join chapter →</a>
+          </article>
+          <article class="card">
+            <h3>Global Virtual</h3>
+            <p>Monthly Zoom meetups open to all members worldwide. Themed discussions, guest speakers, and career Q&As.</p>
+            <a href="index.html#join">Join chapter →</a>
+          </article>
+          <article class="card">
+            <h3>Start a chapter</h3>
+            <p>Don't see your city? We'll help you get one going. Reach out to the core team to learn more.</p>
+            <a href="core-team.html">Contact us →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN CTA -->
+    <section class="section cta" id="join">
+      <div class="container cta-inner">
+        <div>
+          <h2>Join the community</h2>
+          <p class="muted">Get notified about upcoming meetups in your area or online.</p>
+        </div>
+        <form action="mailto:you@example.com" method="post" enctype="text/plain">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="your@email.com" required />
+          <button class="button primary" type="submit">Request to join</button>
+        </form>
+        <p class="tiny muted">
+          Tip: Replace <code>you@example.com</code> with your real inbox, or connect to a form service later.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand footer-brand">
+          <span class="brand-mark">MC</span>
+          <span class="brand-text">
+            <strong>Women in Induced Proximity</strong><span class="muted">Community</span>
+          </span>
+        </div>
+        <p class="muted">A community-led hub for medicinal chemistry networking, mentorship, and practical learning.</p>
+      </div>
+      <div>
+        <h3 class="footer-title">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="mission.html">Mission</a></li>
+          <li><a href="core-team.html">Core Team</a></li>
+          <li><a href="index.html#join">Join</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Connect</h3>
+        <ul class="footer-links">
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Email</a></li>
+          <li><a href="#">Code of Conduct</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="tiny muted">© <span id="year"></span> Women in Induced Proximity Community. Built for GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

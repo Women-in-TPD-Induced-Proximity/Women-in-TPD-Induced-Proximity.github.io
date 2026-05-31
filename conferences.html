@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Women in Induced Proximity Community — Conferences</title>
+  <meta name="description" content="Symposia and multi-day scientific gatherings for the induced proximity community." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .conf-card {
+      border-radius: var(--radius2);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px 28px;
+      align-items: start;
+      transition: box-shadow .18s, transform .18s;
+    }
+    .conf-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    @media (max-width: 640px) { .conf-card { grid-template-columns: 1fr; } }
+
+    .conf-list { display: grid; gap: 16px; }
+
+    .conf-date {
+      text-align: right;
+      min-width: 110px;
+    }
+    @media (max-width: 640px) { .conf-date { text-align: left; } }
+
+    .conf-month {
+      font-family: var(--font-head);
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--muted);
+    }
+    .conf-day {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .conf-year {
+      font-family: var(--font-head);
+      font-size: .82rem;
+      color: var(--muted);
+    }
+    .conf-title {
+      font-family: var(--font-head);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 6px;
+    }
+    .conf-meta {
+      font-size: .875rem;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+    .conf-desc { font-size: .9rem; margin: 0 0 14px; line-height: 1.65; }
+    .conf-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">MC</span>
+        <span class="brand-text">
+          <strong>Women in Induced Proximity</strong><span class="muted">Community</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" data-nav>
+        <a href="mission.html">Mission</a>
+        <a href="core-team.html">Core Team</a>
+        <a href="index.html#join">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Conferences</h1>
+        <p class="lead">Symposia and multi-day gatherings that bring the induced proximity community together for science and connection.</p>
+      </div>
+    </section>
+
+    <!-- UPCOMING -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Upcoming</h2>
+          <p class="muted">Mark your calendar.</p>
+        </div>
+
+        <div class="conf-list">
+
+          <div class="conf-card">
+            <div>
+              <p class="conf-title">WiIP Annual Symposium 2026</p>
+              <p class="conf-meta">Boston, MA &nbsp;·&nbsp; In-person + livestream &nbsp;·&nbsp; 2 days</p>
+              <p class="conf-desc">Our flagship annual gathering featuring keynote talks, a poster session, panel discussions on career development, and a mentorship speed-networking evening. Open to all career stages.</p>
+              <div class="conf-actions">
+                <a href="index.html#join" class="button primary">Register interest</a>
+                <a href="#" class="button secondary">Add to calendar</a>
+              </div>
+            </div>
+            <div class="conf-date">
+              <div class="conf-month">Oct</div>
+              <div class="conf-day">14</div>
+              <div class="conf-year">2026</div>
+            </div>
+          </div>
+
+          <div class="conf-card">
+            <div>
+              <p class="conf-title">Targeted Degradation Workshop</p>
+              <p class="conf-meta">San Francisco, CA &nbsp;·&nbsp; In-person &nbsp;·&nbsp; 1 day</p>
+              <p class="conf-desc">A focused single-day workshop on PROTAC design, molecular glues, and emerging modalities. Includes hands-on case studies and a roundtable with industry scientists.</p>
+              <div class="conf-actions">
+                <a href="index.html#join" class="button primary">Register interest</a>
+              </div>
+            </div>
+            <div class="conf-date">
+              <div class="conf-month">Aug</div>
+              <div class="conf-day">6</div>
+              <div class="conf-year">2026</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PAST -->
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Past conferences</h2>
+          <p class="muted">Events we've hosted and co-sponsored.</p>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <p class="badge">2025</p>
+            <h3>WiIP Annual Symposium 2025</h3>
+            <p>Cambridge, MA — Two days of talks, posters, and community building. Over 120 attendees across industry and academia.</p>
+            <a href="photo-gallery.html">See photos →</a>
+          </article>
+          <article class="card">
+            <p class="badge">2025</p>
+            <h3>E3 Ligase Biology Colloquium</h3>
+            <p>Virtual — A deep-dive half-day colloquium on E3 ligase substrate specificity and implications for degrader design.</p>
+            <a href="photo-gallery.html">See photos →</a>
+          </article>
+          <article class="card">
+            <p class="badge">2024</p>
+            <h3>Inaugural WiIP Symposium</h3>
+            <p>Boston, MA — Our founding event, bringing together 60 scientists for the first time to discuss careers, science, and community.</p>
+            <a href="photo-gallery.html">See photos →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN CTA -->
+    <section class="section cta" id="join">
+      <div class="container cta-inner">
+        <div>
+          <h2>Stay in the loop</h2>
+          <p class="muted">Get early access to conference registration and speaker announcements.</p>
+        </div>
+        <form action="mailto:you@example.com" method="post" enctype="text/plain">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="your@email.com" required />
+          <button class="button primary" type="submit">Request to join</button>
+        </form>
+        <p class="tiny muted">
+          Tip: Replace <code>you@example.com</code> with your real inbox, or connect to a form service later.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand footer-brand">
+          <span class="brand-mark">MC</span>
+          <span class="brand-text">
+            <strong>Women in Induced Proximity</strong><span class="muted">Community</span>
+          </span>
+        </div>
+        <p class="muted">A community-led hub for medicinal chemistry networking, mentorship, and practical learning.</p>
+      </div>
+      <div>
+        <h3 class="footer-title">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="mission.html">Mission</a></li>
+          <li><a href="core-team.html">Core Team</a></li>
+          <li><a href="index.html#join">Join</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Connect</h3>
+        <ul class="footer-links">
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Email</a></li>
+          <li><a href="#">Code of Conduct</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="tiny muted">© <span id="year"></span> Women in Induced Proximity Community. Built for GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
