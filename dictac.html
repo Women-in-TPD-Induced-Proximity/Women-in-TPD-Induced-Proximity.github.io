@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Women in Induced Proximity Community — DicTACtionary</title>
+  <meta name="description" content="The DicTACtionary: a living glossary of the TAC degrader family and induced proximity terminology in targeted protein degradation." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    /* search */
+    .dic-tools { margin-bottom: 26px; }
+    .dic-search {
+      width: 100%;
+      max-width: 460px;
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: .95rem;
+      outline: none;
+      box-shadow: var(--shadow-sm);
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .dic-search:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(0,77,128,.1);
+    }
+    .dic-count { font-size: .875rem; color: var(--muted); margin: 8px 2px 0; }
+
+    /* glossary grid */
+    .dic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 720px) { .dic-grid { grid-template-columns: 1fr; } }
+
+    .dic-term {
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      padding: 20px 22px;
+      transition: box-shadow .18s, transform .18s;
+    }
+    .dic-term:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+    .dic-name {
+      font-family: var(--font-head);
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .dic-tac { color: var(--teal); }
+    .dic-expand {
+      display: block;
+      font-family: var(--font-head);
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      color: var(--muted);
+      margin: 3px 0 10px;
+    }
+    .dic-def { margin: 0; font-size: .925rem; line-height: 1.6; }
+    .dic-def + .dic-def { margin-top: 8px; }
+
+    .dic-empty {
+      margin-top: 8px;
+      padding: 16px 18px;
+      border-radius: 8px;
+      background: var(--surface);
+      border: 1px dashed var(--line);
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">MC</span>
+        <span class="brand-text">
+          <strong>Women in Induced Proximity</strong><span class="muted">Community</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" data-nav>
+        <a href="mission.html">Mission</a>
+        <a href="core-team.html">Core Team</a>
+        <a href="index.html#join">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="container">
+        <h1>DicTACtionary</h1>
+        <p class="lead">A living glossary of induced proximity science — keeping track of the ever-growing family of TAC degraders and the terminology that surrounds them. Suggest additions any time.</p>
+      </div>
+    </section>
+
+    <!-- SEARCH + INTRO -->
+    <section class="section">
+      <div class="container">
+        <div class="dic-tools">
+          <label class="sr-only" for="dic-search">Search terms</label>
+          <input id="dic-search" class="dic-search" type="search" placeholder="Search a modality or term (e.g. PROTAC, ternary, lysosome)…" autocomplete="off" />
+          <p class="dic-count" id="dic-count"></p>
+        </div>
+
+        <!-- THE TAC FAMILY -->
+        <div class="section-head">
+          <h2>The TAC family &amp; degraders</h2>
+          <p class="muted">Modalities that harness induced proximity.</p>
+        </div>
+
+        <div class="dic-grid" data-dic-section>
+          <article class="dic-term" data-dic>
+            <p class="dic-name">PRO<span class="dic-tac">TAC</span></p>
+            <span class="dic-expand">PROteolysis-TArgeting Chimera</span>
+            <p class="dic-def">The archetypal degrader: a heterobifunctional molecule with one end bound to the target and the other recruiting an E3 ubiquitin ligase, tagging the target for destruction by the proteasome.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Molecular glue <span class="muted" style="font-weight:600;font-size:.85rem;">(MGD)</span></p>
+            <span class="dic-expand">Molecular Glue Degrader</span>
+            <p class="dic-def">A small, monovalent compound that reshapes a protein surface to create or stabilize a protein–protein interface — typically target-to-E3 — driving degradation without a classic two-warhead linker.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">LY<span class="dic-tac">TAC</span></p>
+            <span class="dic-expand">LYsosome-TArgeting Chimera</span>
+            <p class="dic-def">Ferries extracellular and membrane proteins to the lysosome by engaging lysosome-shuttling receptors (e.g. CI-M6PR, ASGPR), reaching targets that the proteasome cannot.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">AU<span class="dic-tac">TAC</span></p>
+            <span class="dic-expand">AUtophagy-TArgeting Chimera</span>
+            <p class="dic-def">A bifunctional degrader that routes targets — including whole organelles such as mitochondria — into the autophagy pathway via a guanine-derived degradation tag.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">AT<span class="dic-tac">TEC</span></p>
+            <span class="dic-expand">Autophagosome-TEthering Compound</span>
+            <p class="dic-def">A small molecule that tethers a target directly to LC3 on the autophagosome membrane, delivering it for autophagic clearance.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">AUTO<span class="dic-tac">TAC</span></p>
+            <span class="dic-expand">AUTophagy-TArgeting Chimera</span>
+            <p class="dic-def">A bifunctional compound that binds the autophagy receptor p62/SQSTM1 to shuttle targets into autophagy.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">RIBO<span class="dic-tac">TAC</span></p>
+            <span class="dic-expand">RIBOnuclease-TArgeting Chimera</span>
+            <p class="dic-def">Extends induced proximity to RNA: a small molecule that binds a structured RNA is linked to a recruiter of endogenous RNase L, enabling selective RNA degradation.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">DUB<span class="dic-tac">TAC</span></p>
+            <span class="dic-expand">DeUBiquitinase-TArgeting Chimera</span>
+            <p class="dic-def">The mirror image of a PROTAC — recruits a deubiquitinase to strip ubiquitin from a target and <em>stabilize</em> it, an example of targeted protein stabilization.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Phos<span class="dic-tac">TAC</span></p>
+            <span class="dic-expand">PHOSphatase-TArgeting Chimera</span>
+            <p class="dic-def">Induced proximity beyond degradation: recruits a phosphatase to a target to drive its dephosphorylation.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Ab<span class="dic-tac">TAC</span></p>
+            <span class="dic-expand">Antibody-based PROTAC</span>
+            <p class="dic-def">A bispecific antibody that recruits a membrane-bound E3 ligase (e.g. RNF43) to degrade cell-surface proteins.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Glue<span class="dic-tac">TAC</span></p>
+            <span class="dic-expand">Glue-based degrader for surface proteins</span>
+            <p class="dic-def">A nanobody–covalent-glue conjugate that captures a cell-surface target and routes it to the lysosome for degradation.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">TF-PRO<span class="dic-tac">TAC</span></p>
+            <span class="dic-expand">Transcription-Factor PROTAC</span>
+            <p class="dic-def">Couples a DNA oligonucleotide to an E3 ligand, degrading transcription factors by engaging their DNA-binding domains.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">PHO<span class="dic-tac">TAC</span> / photo-PROTAC</p>
+            <span class="dic-expand">PHOto-activatable degrader</span>
+            <p class="dic-def">A PROTAC whose degradation activity is switched on by a defined wavelength of light, giving spatiotemporal control over degradation.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">dTAG</p>
+            <span class="dic-expand">degradation TAG system</span>
+            <p class="dic-def">A chemical-genetics tool pairing an FKBP12<sup>F36V</sup> tag with a selective degrader, enabling acute, reversible depletion of any tagged protein of interest.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">HaloPROTAC</p>
+            <span class="dic-expand">HaloTag-directed degrader</span>
+            <p class="dic-def">Degrades HaloTag-fusion proteins, widely used as a target-validation and proof-of-concept tool.</p>
+          </article>
+        </div>
+
+        <!-- CONCEPTS -->
+        <div class="section-head" style="margin-top:40px;">
+          <h2>Induced-proximity concepts</h2>
+          <p class="muted">The vocabulary behind the modalities.</p>
+        </div>
+
+        <div class="dic-grid" data-dic-section>
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Induced proximity</p>
+            <p class="dic-def">The unifying idea: using a chemical or biologic to force two biomolecules together to drive a programmed outcome — degradation, stabilization, modification, or relocalization.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Targeted Protein Degradation <span class="muted" style="font-weight:600;font-size:.85rem;">(TPD)</span></p>
+            <p class="dic-def">A therapeutic strategy that <em>removes</em> a protein rather than merely inhibiting its activity, expanding the "druggable" proteome to scaffolding and undruggable targets.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Targeted Protein Stabilization <span class="muted" style="font-weight:600;font-size:.85rem;">(TPS)</span></p>
+            <p class="dic-def">The converse of TPD — deliberately increasing a protein's level or half-life, for example with a DUBTAC.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Ternary complex</p>
+            <p class="dic-def">The three-body assembly (target · degrader · effector, e.g. target–PROTAC–E3) that must form for a bifunctional molecule to act.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Cooperativity (α)</p>
+            <p class="dic-def">A measure of how much the ternary complex is stabilized (positive cooperativity) or destabilized (negative) relative to the two underlying binary interactions.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Hook effect</p>
+            <p class="dic-def">Loss of ternary-complex formation at high degrader concentration, as binary complexes outcompete the productive ternary one — producing a characteristic bell-shaped dose–response.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">E3 ubiquitin ligase</p>
+            <p class="dic-def">The enzyme that transfers ubiquitin onto a substrate. Degraders co-opt E3s such as CRBN, VHL, MDM2, and the IAPs to mark new targets.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">CRBN &amp; VHL</p>
+            <p class="dic-def">Cereblon and von Hippel–Lindau — the two most widely used E3 recruiters in degrader design, each with well-characterized small-molecule ligands.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Neo-substrate</p>
+            <p class="dic-def">A protein that is not a natural client of an E3 ligase but is recruited and degraded thanks to a molecular glue or PROTAC.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Event-driven pharmacology</p>
+            <p class="dic-def">Activity that depends on a transient event (such as ubiquitin transfer) rather than sustained target occupancy — the basis for catalytic, sub-stoichiometric action.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Catalytic / sub-stoichiometric</p>
+            <p class="dic-def">A single degrader molecule can drive many rounds of target degradation, in contrast to occupancy-driven inhibitors that act one-to-one.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Linkerology</p>
+            <p class="dic-def">The art of tuning the chemical tether that joins the two warheads of a bifunctional degrader; linker length and composition strongly shape ternary complex formation and potency.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">Degron</p>
+            <p class="dic-def">A sequence or chemical mark that directs a protein toward the degradation machinery.</p>
+          </article>
+
+          <article class="dic-term" data-dic>
+            <p class="dic-name">DC<sub>50</sub> / D<sub>max</sub></p>
+            <p class="dic-def">Core potency metrics for degraders — the concentration giving 50% degradation, and the maximum extent of degradation achieved.</p>
+          </article>
+        </div>
+
+        <p class="dic-empty" id="dic-empty" hidden>No terms match your search. Try a broader keyword — or suggest it for the DicTACtionary.</p>
+
+        <div class="notice">
+          <strong>Spotted a missing term?</strong>
+          <p class="muted">
+            The induced proximity field moves fast and this glossary grows with it. If a modality or term is missing, <a href="get-involved.html">let us know</a> and we'll add it.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand footer-brand">
+          <span class="brand-mark">MC</span>
+          <span class="brand-text">
+            <strong>Women in Induced Proximity</strong><span class="muted">Community</span>
+          </span>
+        </div>
+        <p class="muted">A community-led hub for medicinal chemistry networking, mentorship, and practical learning.</p>
+      </div>
+      <div>
+        <h3 class="footer-title">Explore</h3>
+        <ul class="footer-links">
+          <li><a href="mission.html">Mission</a></li>
+          <li><a href="core-team.html">Core Team</a></li>
+          <li><a href="dictac.html">DicTACtionary</a></li>
+          <li><a href="index.html#join">Join</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Connect</h3>
+        <ul class="footer-links">
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Email</a></li>
+          <li><a href="#">Code of Conduct</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="tiny muted">© <span id="year"></span> Women in Induced Proximity Community. Built for GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      var input = document.getElementById('dic-search');
+      if (!input) return;
+      var cards = Array.prototype.slice.call(document.querySelectorAll('[data-dic]'));
+      var sections = Array.prototype.slice.call(document.querySelectorAll('[data-dic-section]'));
+      var empty = document.getElementById('dic-empty');
+      var count = document.getElementById('dic-count');
+      var total = cards.length;
+
+      function update() {
+        var q = input.value.trim().toLowerCase();
+        var shown = 0;
+        cards.forEach(function (card) {
+          var match = !q || card.textContent.toLowerCase().indexOf(q) !== -1;
+          card.hidden = !match;
+          if (match) shown++;
+        });
+        // hide a whole section if none of its cards match
+        sections.forEach(function (sec) {
+          var visible = sec.querySelectorAll('[data-dic]:not([hidden])').length;
+          sec.hidden = visible === 0;
+        });
+        if (empty) empty.hidden = shown !== 0;
+        if (count) count.textContent = q
+          ? shown + ' of ' + total + ' terms'
+          : total + ' terms and counting';
+      }
+
+      input.addEventListener('input', update);
+      update();
+    })();
+  </script>
+</body>
+</html>
