@@ -9,5 +9,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Readme.md
+  - CLAUDE.md
   - vendor
   - .claude

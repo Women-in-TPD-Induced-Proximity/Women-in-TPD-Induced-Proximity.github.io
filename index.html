@@ -363,6 +363,9 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 #kubio .wiip-overlay{position:absolute;top:0;left:0;right:0;bottom:0;z-index:3;font-size:0;color:transparent;overflow:hidden;border-radius:inherit;}
 #kubio .wiip-overlay:focus-visible{outline:2px solid rgba(var(--kubio-color-3),1);outline-offset:-3px;}
 
+/* Remove uppercase transform from icon card headings so DicTACtionary capitalisation shows correctly */
+#kubio .wp-block.wp-block-kubio-heading__text.style-ifsDgQ3RDaG-text{text-transform:none;}
+
 /* Intro icon cards: lift gently on hover so they read as clickable */
 #kubio .wp-block-kubio-column__inner:has(> .wp-block-kubio-column__align > .wiip-overlay){cursor:pointer;border-radius:14px;transition:transform .2s ease;}
 #kubio .wp-block-kubio-column__container:hover .wp-block-kubio-column__inner:has(> .wp-block-kubio-column__align > .wiip-overlay){transform:translateY(-4px);}
