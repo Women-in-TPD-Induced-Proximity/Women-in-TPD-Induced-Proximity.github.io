@@ -1,0 +1,13 @@
+# Jekyll configuration for the hand-built pages.
+# index.html is the Kubio export: it has no front matter, so Jekyll copies it
+# verbatim and it keeps its own header/footer/styling untouched.
+title: Women in Induced Proximity Community
+description: A community-led hub for women in targeted protein degradation and induced proximity science.
+
+# Keep the build output clean.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Readme.md
+  - vendor
+  - .claude

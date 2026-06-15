@@ -1,112 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Women in Induced Proximity Community — DicTACtionary</title>
-  <meta name="description" content="The DicTACtionary: a living glossary of the TAC degrader family and induced proximity terminology in targeted protein degradation." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <style>
-    /* search */
-    .dic-tools { margin-bottom: 26px; }
-    .dic-search {
-      width: 100%;
-      max-width: 460px;
-      padding: 12px 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: var(--surface);
-      color: var(--text);
-      font-family: var(--font);
-      font-size: .95rem;
-      outline: none;
-      box-shadow: var(--shadow-sm);
-      transition: border-color .15s, box-shadow .15s;
-    }
-    .dic-search:focus {
-      border-color: var(--navy);
-      box-shadow: 0 0 0 3px rgba(0,77,128,.1);
-    }
-    .dic-count { font-size: .875rem; color: var(--muted); margin: 8px 2px 0; }
-
-    /* glossary grid */
-    .dic-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    @media (max-width: 720px) { .dic-grid { grid-template-columns: 1fr; } }
-
-    .dic-term {
-      border-radius: var(--radius);
-      background: var(--surface);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
-      padding: 20px 22px;
-      transition: box-shadow .18s, transform .18s;
-    }
-    .dic-term:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-
-    .dic-name {
-      font-family: var(--font-head);
-      font-size: 1.12rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin: 0;
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .dic-tac { color: var(--teal); }
-    .dic-expand {
-      display: block;
-      font-family: var(--font-head);
-      font-size: .82rem;
-      font-weight: 600;
-      letter-spacing: .02em;
-      color: var(--muted);
-      margin: 3px 0 10px;
-    }
-    .dic-def { margin: 0; font-size: .925rem; line-height: 1.6; }
-    .dic-def + .dic-def { margin-top: 8px; }
-
-    .dic-empty {
-      margin-top: 8px;
-      padding: 16px 18px;
-      border-radius: 8px;
-      background: var(--surface);
-      border: 1px dashed var(--line);
-      color: var(--muted);
-    }
-  </style>
-</head>
-
-<body>
-  <a href="#main" class="skip-link">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <span class="brand-mark">MC</span>
-        <span class="brand-text">
-          <strong>Women in Induced Proximity</strong><span class="muted">Community</span>
-        </span>
-      </a>
-
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="site-nav" data-nav>
-        <a href="mission.html">Mission</a>
-        <a href="core-team.html">Core Team</a>
-        <a href="index.html#join">Join</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="page">
+---
+layout: default
+title: "DicTACtionary"
+description: "The DicTACtionary: a living glossary of the TAC degrader family and induced proximity terminology in targeted protein degradation."
+---
+<main id="main" class="page">
     <section class="page-hero">
       <div class="container">
         <h1>DicTACtionary</h1>
@@ -311,42 +208,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="brand footer-brand">
-          <span class="brand-mark">MC</span>
-          <span class="brand-text">
-            <strong>Women in Induced Proximity</strong><span class="muted">Community</span>
-          </span>
-        </div>
-        <p class="muted">A community-led hub for medicinal chemistry networking, mentorship, and practical learning.</p>
-      </div>
-      <div>
-        <h3 class="footer-title">Explore</h3>
-        <ul class="footer-links">
-          <li><a href="mission.html">Mission</a></li>
-          <li><a href="core-team.html">Core Team</a></li>
-          <li><a href="dictac.html">DicTACtionary</a></li>
-          <li><a href="index.html#join">Join</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="footer-title">Connect</h3>
-        <ul class="footer-links">
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Email</a></li>
-          <li><a href="#">Code of Conduct</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p class="tiny muted">© <span id="year"></span> Women in Induced Proximity Community. Built for GitHub Pages.</p>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
-  <script>
+<script>
     (function () {
       var input = document.getElementById('dic-search');
       if (!input) return;
@@ -379,5 +241,3 @@
       update();
     })();
   </script>
-</body>
-</html>

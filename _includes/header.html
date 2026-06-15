@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/index.html" class="brand">
+      <span class="brand-mark">MC</span>
+      <span class="brand-text"><strong>Women in Induced Proximity</strong><span class="muted">Community</span></span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" data-nav>
+      <a href="/mission.html"{% if page.active == "mission" %} class="active"{% endif %}>Mission</a>
+      <a href="/core-team.html"{% if page.active == "core-team" %} class="active"{% endif %}>Core Team</a>
+      <a href="/index.html#join">Join</a>
+    </nav>
+  </div>
+</header>

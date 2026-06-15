@@ -1,131 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Women in Induced Proximity Community — Photo Gallery</title>
-  <meta name="description" content="Photos from WiIP conferences, meetups, and community events." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <style>
-    .gallery-filter {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-    .filter-btn {
-      padding: 7px 16px;
-      border-radius: 6px;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      color: var(--muted);
-      font-family: var(--font-head);
-      font-size: .875rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background .15s, color .15s, border-color .15s;
-    }
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--navy);
-      color: #fff;
-      border-color: var(--navy);
-    }
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    @media (max-width: 920px) { .photo-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px)  { .photo-grid { grid-template-columns: 1fr; } }
-
-    .photo-tile {
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
-      transition: box-shadow .18s, transform .18s;
-      cursor: pointer;
-    }
-    .photo-tile:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-
-    .photo-placeholder {
-      width: 100%;
-      aspect-ratio: 4/3;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-family: var(--font-head);
-    }
-    .photo-placeholder .ph-icon {
-      font-size: 2rem;
-      opacity: .4;
-    }
-    .photo-placeholder .ph-label {
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      opacity: .5;
-    }
-
-    /* Color per album */
-    .ph-annual    { background: linear-gradient(135deg, #e8f2f9 0%, #c5dff0 100%); color: var(--navy); }
-    .ph-workshop  { background: linear-gradient(135deg, #e6f7f0 0%, #b3e8d2 100%); color: #1a6b2a; }
-    .ph-meetup    { background: linear-gradient(135deg, #fff8e1 0%, #ffe082 100%); color: #7a5800; }
-    .ph-virtual   { background: linear-gradient(135deg, #f3e8ff 0%, #d4a8ff 100%); color: #5b21b6; }
-
-    .photo-caption {
-      padding: 12px 14px;
-    }
-    .photo-caption strong {
-      font-family: var(--font-head);
-      font-size: .9rem;
-      font-weight: 700;
-      color: var(--navy);
-      display: block;
-      margin-bottom: 2px;
-    }
-    .photo-caption span {
-      font-size: .8rem;
-      color: var(--muted);
-    }
-
-    .photo-tile.wide { grid-column: span 2; }
-    .photo-tile.wide .photo-placeholder { aspect-ratio: 8/3; }
-    @media (max-width: 920px) { .photo-tile.wide { grid-column: span 1; } .photo-tile.wide .photo-placeholder { aspect-ratio: 4/3; } }
-  </style>
-</head>
-
-<body>
-  <a href="#main" class="skip-link">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <span class="brand-mark">MC</span>
-        <span class="brand-text">
-          <strong>Women in Induced Proximity</strong><span class="muted">Community</span>
-        </span>
-      </a>
-
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="site-nav" data-nav>
-        <a href="mission.html">Mission</a>
-        <a href="core-team.html">Core Team</a>
-        <a href="index.html#join">Join</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="page">
+---
+layout: default
+title: "Photo Gallery"
+description: "Photos from WiIP conferences, meetups, and community events."
+---
+<main id="main" class="page">
     <section class="page-hero">
       <div class="container">
         <h1>Photo Gallery</h1>
@@ -300,41 +178,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="brand footer-brand">
-          <span class="brand-mark">MC</span>
-          <span class="brand-text">
-            <strong>Women in Induced Proximity</strong><span class="muted">Community</span>
-          </span>
-        </div>
-        <p class="muted">A community-led hub for medicinal chemistry networking, mentorship, and practical learning.</p>
-      </div>
-      <div>
-        <h3 class="footer-title">Explore</h3>
-        <ul class="footer-links">
-          <li><a href="mission.html">Mission</a></li>
-          <li><a href="core-team.html">Core Team</a></li>
-          <li><a href="index.html#join">Join</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="footer-title">Connect</h3>
-        <ul class="footer-links">
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Email</a></li>
-          <li><a href="#">Code of Conduct</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p class="tiny muted">© <span id="year"></span> Women in Induced Proximity Community. Built for GitHub Pages.</p>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
-  <script>
+<script>
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -342,5 +186,3 @@
       });
     });
   </script>
-</body>
-</html>
