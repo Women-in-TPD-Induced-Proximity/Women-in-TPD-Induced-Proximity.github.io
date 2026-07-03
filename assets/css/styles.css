@@ -862,6 +862,8 @@ code {
 }
 .dic-def { margin: 0; font-size: .925rem; line-height: 1.6; }
 .dic-def + .dic-def { margin-top: 8px; }
+.dic-ref { display: inline-block; margin-top: 6px; font-size: .8rem; color: var(--teal, #0077a8); text-decoration: none; margin-right: 8px; }
+.dic-ref:hover { text-decoration: underline; }
 
 .dic-empty {
   margin-top: 8px;
