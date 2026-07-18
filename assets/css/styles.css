@@ -967,6 +967,7 @@ code {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
+  align-items: start;
 }
 @media (max-width: 920px) { .photo-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px)  { .photo-grid { grid-template-columns: 1fr; } }
@@ -981,6 +982,19 @@ code {
   cursor: pointer;
 }
 .photo-tile:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+/* Real winner photos: show the full image (never crop). Landscape shots fill
+   the tile edge-to-edge; very tall portraits are capped so card heights stay
+   reasonable, with the tile surface matting the sides. */
+.photo-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  object-fit: contain;
+  background: var(--surface);
+}
+.photo-tile.wide .photo-img { max-height: none; }
 
 .photo-placeholder {
   width: 100%;
@@ -1029,3 +1043,165 @@ code {
 .photo-tile.wide { grid-column: span 2; }
 .photo-tile.wide .photo-placeholder { aspect-ratio: 8/3; }
 @media (max-width: 920px) { .photo-tile.wide { grid-column: span 1; } .photo-tile.wide .photo-placeholder { aspect-ratio: 4/3; } }
+
+/* ------------------------------------------------------------------ */
+/* Shared image viewer (lightbox) — enhances .photo-tile via           */
+/* assets/js/lightbox.js on photo-gallery.html and scholarship.html.   */
+/* ------------------------------------------------------------------ */
+
+/* Keyboard focus affordance for the now-clickable tiles */
+.photo-tile:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+/* Zoom hint badge on the image (tile made clickable by JS) */
+.js-lightbox .photo-tile { position: relative; }
+.js-lightbox .photo-tile .photo-img { transition: transform .25s ease; }
+.js-lightbox .photo-tile:hover .photo-img,
+.js-lightbox .photo-tile:focus-visible .photo-img { transform: scale(1.02); }
+.js-lightbox .photo-tile::after {
+  content: "\2922"; /* diagonal expand arrows */
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  color: #fff;
+  background: rgba(0, 53, 96, .72);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(.85);
+  transition: opacity .18s ease, transform .18s ease;
+  pointer-events: none;
+}
+.js-lightbox .photo-tile:hover::after,
+.js-lightbox .photo-tile:focus-visible::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Lock background scroll while the viewer is open */
+body.lightbox-open { overflow: hidden; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 48px);
+  background: rgba(0, 20, 40, .88);
+  backdrop-filter: blur(3px);
+  animation: lightbox-fade .18s ease;
+}
+.lightbox[hidden] { display: none; }
+@keyframes lightbox-fade { from { opacity: 0; } to { opacity: 1; } }
+
+.lightbox-figure {
+  margin: 0;
+  max-width: min(1100px, 92vw);
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.lightbox-img {
+  display: block;
+  max-width: 100%;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, .5);
+  background: #fff;
+}
+.lightbox-caption {
+  max-width: 62ch;
+  text-align: center;
+  color: #f2f4f7;
+  font-family: var(--font-head);
+  font-size: .95rem;
+  line-height: 1.4;
+}
+.lightbox-caption strong {
+  display: block;
+  font-weight: 700;
+  color: #fff;
+}
+.lightbox-caption span { color: #c7d2dc; font-size: .85rem; }
+.lightbox-caption[hidden] { display: none; }
+
+/* Controls */
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(255, 255, 255, .12);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background .15s ease, transform .15s ease;
+  line-height: 1;
+}
+.lightbox-close:hover,
+.lightbox-nav:hover { background: rgba(255, 255, 255, .28); }
+.lightbox-close:focus-visible,
+.lightbox-nav:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+.lightbox-close {
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  font-size: 1.7rem;
+}
+.lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  font-size: 2rem;
+}
+.lightbox-nav:hover { transform: translateY(-50%) scale(1.06); }
+.lightbox-prev { left: 16px; }
+.lightbox-next { right: 16px; }
+.lightbox-nav[hidden] { display: none; }
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #d6dee6;
+  font-size: .8rem;
+  letter-spacing: .04em;
+  background: rgba(0, 0, 0, .35);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.lightbox-counter[hidden] { display: none; }
+
+@media (max-width: 640px) {
+  .lightbox-nav { width: 42px; height: 42px; font-size: 1.6rem; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+  .lightbox-img { max-height: 72vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox { animation: none; }
+  .js-lightbox .photo-tile .photo-img,
+  .js-lightbox .photo-tile::after,
+  .lightbox-close,
+  .lightbox-nav { transition: none; }
+}

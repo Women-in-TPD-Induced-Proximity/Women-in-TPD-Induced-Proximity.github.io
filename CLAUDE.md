@@ -19,7 +19,10 @@ The site deliberately contains **two different front-end systems**. Know which o
 
 1. **`index.html` — the Kubio/WordPress export.** ~300 KB, ~40 inline `<style>` blocks,
    hundreds of `--kubio-color-*` vars, machine-generated `style-local-*` classes, its own
-   header/nav/footer, and external `i0.wp.com` images. It has **no Jekyll front matter**, so
+   header/nav/footer, and a pile of leftover `medchemboston.org`/`i0.wp.com` URLs — but those
+   are almost all **SEO metadata** (Yoast JSON-LD, `og:image`, preload `<link>`s), *not* visible
+   images. Only ~5 `<img>` tags actually render (see the Page inventory). It has **no Jekyll
+   front matter**, so
    Jekyll copies it **verbatim** and it keeps its own styling untouched.
    - Don't try to "clean up" or merge its CSS into the hand-built system.
    - When editing it, work **surgically** and **reuse existing base classes**
@@ -115,7 +118,11 @@ Screenshot with headless Chrome and inspect:
   --screenshot=/tmp/shot.png "http://localhost:8765/dictac.html"
 ```
 
-Then clean up: `rm -rf _site` (it's git-ignored anyway).
+Then clean up: `rm -rf _site` (it's git-ignored anyway). **Don't `rm -rf _site` while a
+`bundle exec jekyll serve` is running** — serve serves *from* that dir but only rebuilds it on a
+*source* change, so deleting it 404s the live `:4000` server (and its own error page) until the
+next edit. If a serve is already up, just screenshot `http://localhost:4000/<page>` directly
+instead of doing a separate build + static server.
 
 What to check after a build:
 - `jekyll build` exits cleanly (watch for **YAML front-matter exceptions**).
@@ -133,6 +140,10 @@ What to check after a build:
   rendering).
 - **`index.html` must stay front-matter-free** so Jekyll copies it verbatim. Adding front
   matter (or a global layout default) would wreck it.
+- **There are two `<head>`s — edit both.** The homepage doesn't use the layout, so anything
+  head-level (favicon, meta/OG tags, analytics, fonts) must be added to **both**
+  `_layouts/default.html` (all hand-built pages + `404.html`) **and** `index.html`'s own Kubio
+  `<head>`. The favicon `<link>`s live in both.
 - **Don't verify the built site over `file://`** — absolute `/assets` paths only resolve under
   an HTTP root.
 - **`partials.js` is gone.** It was a prior approach (client-side header/footer injection)
@@ -147,14 +158,53 @@ What to check after a build:
 - `index.html` — homepage (Kubio). Intro icon cards link to: Highlighted Publications →
   `publications.html`, **DicTACtionary** → `dictac.html`, Mentorship Program →
   `mentorship.html`. Whole cards are clickable via absolutely-positioned `.wiip-overlay`
-  anchors; the "List of Activities" cards use `.wiip-elevated` (dropshadow + click overlay).
+  anchors; the "List of Activities" cards (Conferences, Travel Scholarship, Photo Gallery)
+  use `.wiip-elevated` (dropshadow + click overlay) and point at **local** images
+  (`/assets/images/conference-stock.jpg`, `scholarship/raghd-obidat-2026.jpeg`,
+  `gallery/annual-2023.jpg`). A `#kubio .wiip-elevated figure img{aspect-ratio:3/2;object-fit:cover}`
+  rule in `<style id="wiip-cards">` normalises those three to a uniform 3:2 crop, so a
+  replacement image needn't be 3:2 — it's centre-cropped to fit.
+  **Only ~5 `<img>` render on the whole page:** the hero logo (`image.png`, root-relative), these
+  three card photos, and a never-shown SureCart cart-line template (`context.line_item.image.src`).
+  The intro icon cards are inline SVG.
+  - **SEO/social metadata is now WiTPD.** The Kubio export shipped with MedChemBoston's Yoast
+    JSON-LD, OG/`canonical`, RSS/oEmbed/wp-json feeds, and WP generator tags; those were rewritten
+    to WiTPD (or removed). No `i0.wp.com` URL remains anywhere. Keep the OG/canonical/JSON-LD
+    pointed at `https://women-in-tpd-induced-proximity.github.io/` if you touch the head.
+  - **But the export still loads ~29 CSS `<link>`s + ~62 `<script>`s from `medchemboston.org`**
+    (plus Google Fonts / `stats.wp.com`) — these are *functional* external deps, not metadata, and
+    were left untouched. The homepage genuinely depends on that host at runtime (a real fragility;
+    self-hosting them is a separate, larger job). Don't confuse these with the metadata above.
 - `dictac.html` — **DicTACtionary** glossary (TAC modalities + induced-proximity terms).
   Terms are static `<article data-dic>` inside `data-dic-section` groups; an inline script
   filters them by the `#dic-search` box. Content is readable without JS; only search needs it.
 - `publications.html`, `mentorship.html` — "coming soon" placeholders.
-- `mission.html`, `core-team.html`, `conferences.html`, `meetups.html`, `photo-gallery.html`,
+- `scholarship.html` — **Travel Scholarship** winners by year (2024–26) with photos, linked from
+  the homepage "Travel Scholarship" activity card. Reuses the gallery `.photo-grid`/`.photo-tile`
+  but with real `<img class="photo-img">` (the `.photo-img` rule = full image, no crop, portraits
+  capped at 460 px); photos live in `assets/images/scholarship/`. Photos are **click-to-expand** via
+  the shared `assets/js/lightbox.js` viewer (see JavaScript).
+- `photo-gallery.html` — community photo grid (`.photo-grid`/`.photo-tile`), photos in
+  `assets/images/gallery/`. Has an inline gallery-filter script **and** the shared
+  `assets/js/lightbox.js` **click-to-expand** viewer (see JavaScript).
+- `mission.html`, `core-team.html`, `conferences.html`,
   `blog.html`, `events.html`, `get-involved.html`, `tools.html` — content pages.
+- `meetups.html` — **orphaned**: the homepage card that linked it was repurposed to Travel
+  Scholarship, so nothing links to it now (it still builds).
 - `404.html` — uses the shared layout (full nav + footer).
+
+## Favicon / brand mark
+
+The favicon is the logo's **"O"**: a navy ring (`#131C55`) with an orange (`#EE7320`) quarter from
+12→3 o'clock on a white rounded tile, rebuilt as **vector** so it's crisp at 16 px. (Note the
+**logo palette differs from the site tokens** — `--navy #004d80` / `--gold #f5b800` — it's part of
+the homepage-vs-subpage seam.)
+
+- Source of truth: `assets/favicon.svg`. Rasters derive from it: `favicon.ico` (repo **root**,
+  16/32/48 — satisfies the browser's automatic `/favicon.ico` request) and
+  `assets/apple-touch-icon.png` (180², solid-white bg for iOS). Regenerate by rendering the SVG
+  headless to a transparent PNG, then `PIL Image.save(..., sizes=[...])` — no ImageMagick needed.
+- Wired into **both** `<head>`s (see the two-`<head>`s gotcha).
 
 ## JavaScript
 
@@ -164,9 +214,19 @@ What to check after a build:
   (relative) and renders the list. **Still requires JS** — this is the one remaining no-JS gap
   (the page *chrome* is server-rendered, but the event entries are not). Optional follow-up:
   move to `_data/events.yml` + a Liquid loop to render at build time.
+- `assets/js/lightbox.js` — **shared image viewer**, referenced from `photo-gallery.html` and
+  `scholarship.html` (deferred `<script>` after `</main>`). Progressive enhancement: it scans for
+  `.photo-tile` elements containing an `<img>`, makes each a keyboard-accessible button, and opens a
+  click-to-expand overlay (the `.lightbox-*` CSS) showing that tile's `.photo-caption`, with
+  prev/next across all photos on the page, a counter, Esc/←/→ keys, focus trap + restore, and
+  backdrop-click close. Photos stay fully visible without JS; the script adds a `js-lightbox` class
+  to `<html>` that gates the CSS hover/zoom affordances so they never show if JS didn't load. It's
+  **generic** — drops onto any page using the `.photo-tile` markup, no per-page config. (No hi-res
+  originals exist, so it shows the same image file uncropped/larger; it would honor an optional
+  `data-full` attr if hi-res versions are ever added.)
 - Inline page scripts: `dictac.html` (glossary search), `photo-gallery.html` (gallery filter).
 
-## Design system (`assets/css/styles.css`, ~1030 lines)
+## Design system (`assets/css/styles.css`, ~1210 lines)
 
 - Tokens (CSS vars): `--navy #004d80`, `--navy-dk`, `--teal`, `--gold #f5b800`, surfaces, text,
   shadows, radii. Fonts: **Urbanist** (headings) + **Open Sans** (body).
@@ -176,3 +236,6 @@ What to check after a build:
 - The lower portion of the file holds the per-page styles (`.conf-*`, `.dic-*`, gallery/filter,
   etc.) that were consolidated here from former inline `<style>` blocks — selectors are unique
   per page, so they're globally safe.
+- The very end holds the **shared `.lightbox-*` component** (the image viewer, `assets/js/lightbox.js`)
+  plus its `.js-lightbox .photo-tile` hover/zoom hints — not per-page, but keyed off the `.photo-tile`
+  markup that both `photo-gallery.html` and `scholarship.html` use.
