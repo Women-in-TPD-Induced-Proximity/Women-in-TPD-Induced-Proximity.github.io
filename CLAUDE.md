@@ -239,3 +239,51 @@ the homepage-vs-subpage seam.)
 - The very end holds the **shared `.lightbox-*` component** (the image viewer, `assets/js/lightbox.js`)
   plus its `.js-lightbox .photo-tile` hover/zoom hints — not per-page, but keyed off the `.photo-tile`
   markup that both `photo-gallery.html` and `scholarship.html` use.
+
+## Roadmap / next tasks
+
+### Self-host the homepage's external assets (next task)
+
+**Why.** `index.html` (the Kubio export) still pulls its CSS/JS at runtime from `medchemboston.org`
+— **~29 stylesheets + ~62 scripts** — plus **Google Fonts** and two `stats.wp.com` trackers. So the
+homepage's styling and behaviour depend on a third-party WordPress site staying up and unchanged; if
+that host moves its plugin paths or goes away, the homepage breaks. (Subpages are unaffected — they
+use `assets/css/styles.css`.) The SEO/social metadata was already de-MedChemBoston'd; **these
+resource links are the remaining tie** and were deliberately left alone because they're functional.
+Goal: mirror only what's needed under the repo, drop the rest, kill the trackers.
+
+**Load-bearing vs droppable** — established empirically (strip a copy, serve over HTTP, screenshot):
+- **Must self-host — CSS (~515 KB, measured, all HTTP 200):** Kubio `build/block-library/style.css`
+  (174 KB) + `build/third-party-blocks/style.css` (29 KB); iconvert-promoter
+  `page-builder/build/block-library/style.css` (227 KB) + `frontend/.../animate.min.css` (72 KB) +
+  `frontend/.../dist/style.min.css` (13 KB) + `lib/kubio/static/fancybox/jquery.fancybox.min.css`
+  (13 KB). Stripping **all** external CSS blows up the layout (giant unsized icons, collapsed hero) —
+  Kubio's grid + icon sizing live here, **not** in the 42 inline `<style>` blocks. Kubio's CSS has
+  **no** non-`data:` `url()` sub-assets, so there's no font/image cascade to chase.
+- **Must self-host — fonts:** the Google Fonts link requests **7 families** but only **Urbanist +
+  Open Sans** are actually used; self-host those two as WOFF2 via `@font-face`, drop the rest.
+- **Droppable (unused plugin cruft):** WooCommerce (6 CSS), SureCart (12 CSS / 3 JS), LatePoint,
+  contact-form-7, wp-live-chat-support, superb-blocks, the `bakery-and-pastry` + `the-coffee-shop`
+  theme CSS, Jetpack, Bluehost, astra-sites, wp-emoji, and both `stats.wp.com` trackers. A copy with
+  all of these removed rendered **pixel-identical** to production.
+  - ⚠️ **Caveat:** removing SureCart's CSS un-hides a dead "Review My Order / Checkout" cart drawer at
+    the page bottom (the `context.line_item.image.src` template). Fix by **deleting that dead cart
+    markup**, not by keeping SureCart CSS to hide it.
+- **JS is unverified.** The 62 scripts ≈ 35 `wp-includes` (jQuery 85 KB + migrate, hooks, i18n,
+  emoji…), 8 iconvert, 2 kubio, rest cruft. Rendering is CSS-driven, so most JS is likely droppable —
+  but audit by removing and exercising the actual interactions (mobile nav, any iconvert popup /
+  fancybox lightbox) before deciding. Likely minimal keep: jQuery (+migrate) if kubio/iconvert need
+  it, kubio frontend, iconvert.
+
+**Approach.**
+1. `curl` the keep-set into `assets/vendor/<plugin>/…` (keep enough path to stay legible).
+2. Rewrite the `medchemboston.org` / `stats.wp.com` / `fonts.googleapis.com` URLs in `index.html` to
+   root-absolute `/assets/vendor/…`; delete the droppable `<link>`/`<script>` tags, the dead SureCart
+   markup, and the `stats.wp.com` dns-prefetch. Same one-giant-line editing discipline as the
+   image/SEO swaps — a `perl` pass matching unique substrings, asserting match counts.
+3. Self-host Urbanist + Open Sans (WOFF2 + `@font-face`); drop the other 5 families.
+4. **Verify offline** (the whole point): serve with the network blocked / DevTools "Offline" and
+   confirm the homepage still matches the production screenshot. Anything that 404s is a missed dep.
+
+**Effort.** ~half a day. Low risk for CSS (keep-set is proven); more fiddle for JS (needs interaction
+testing) and fonts (subsetting).
