@@ -6,5 +6,5 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 .sass-cache/
-vendor/
+/vendor/          # Bundler's local gem dir (root only) — NOT assets/vendor/ (self-hosted CSS/fonts)
 .bundle/
