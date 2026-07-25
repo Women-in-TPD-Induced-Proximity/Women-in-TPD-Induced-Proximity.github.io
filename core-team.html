@@ -90,7 +90,7 @@ active: "core-team"
 
         <div class="ct-card">
           <div class="ct-photo-wrap">
-            <img src="/assets/images/team/fleur-ferguson.png" alt="Fleur Ferguson" class="ct-photo" />
+            <img src="/assets/images/team/fleur-ferguson.png" alt="Fleur Ferguson" class="ct-photo ct-photo--center" />
           </div>
           <p class="ct-name">Fleur Ferguson</p>
           <p class="ct-org">UC San Diego</p>
@@ -138,10 +138,18 @@ active: "core-team"
 
         <div class="ct-card">
           <div class="ct-photo-wrap">
-            <img src="/assets/images/team/natalia-karolak.jpg" alt="Natalia Karolak" class="ct-photo" />
+            <img src="/assets/images/team/natalia-karolak.jpg" alt="Natalia Karolak" class="ct-photo ct-photo--center" />
           </div>
           <p class="ct-name">Natalia Karolak</p>
           <p class="ct-org">CeTPD, University of Dundee</p>
+        </div>
+
+        <div class="ct-card">
+          <div class="ct-photo-wrap">
+            <img src="/assets/images/team/kathleen-seyb.jpg" alt="Kathleen Seyb" class="ct-photo" />
+          </div>
+          <p class="ct-name">Kathleen Seyb</p>
+          <p class="ct-org">Triana Biomedicines</p>
         </div>
 
       </div>
@@ -206,6 +214,9 @@ active: "core-team"
   object-fit: cover;
   object-position: center top; /* favour face */
   display: block;
+}
+.ct-photo--center {
+  object-position: center center; /* source photo has extra headroom above the face */
 }
 
 .ct-name {
