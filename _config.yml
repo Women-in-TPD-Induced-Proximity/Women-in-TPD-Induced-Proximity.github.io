@@ -1,6 +1,8 @@
 # Jekyll configuration for the hand-built pages.
-# index.html is the Kubio export: it has no front matter, so Jekyll copies it
-# verbatim and it keeps its own header/footer/styling untouched.
+# index.html is the Kubio export. It carries only `layout: null` front matter so
+# Jekyll will expand its {% include header.html %} (the shared nav); everything
+# else in it passes through untouched. Do NOT add a `defaults:` layout here —
+# that would wrap the export in a second <html>/<head> and wreck it.
 title: Women in Induced Proximity Community
 description: A community-led hub for women in targeted protein degradation and induced proximity science.
 
@@ -10,6 +12,7 @@ exclude:
   - Gemfile.lock
   - Readme.md
   - CLAUDE.md
+  - ISSUES.md
   - docs
   - vendor
   - .claude

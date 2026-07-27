@@ -1,0 +1,182 @@
+/* ============================================================
+   Site header — the shared top nav component.
+
+   Used by BOTH front-end systems (see CLAUDE.md "Two design
+   systems"): the hand-built pages via _layouts/default.html, and
+   the Kubio homepage (index.html), which links this file directly.
+   The markup for both comes from _includes/header.html.
+
+   This is why the header lives here and not in styles.css: the
+   homepage can load *this* safely, but not styles.css (whose
+   body/heading globals would clobber the Kubio export).
+
+   Requires tokens.css. Load order: tokens.css → site-header.css.
+
+   Deliberately uses plain class selectors, no #kubio scoping —
+   verified that the Kubio CSS has no bare `a`/`button`/`strong`
+   or `#kubio a` rules that would out-specify these.
+
+   Note: the .brand / .brand-mark / .brand-text lockup below is also
+   reused by the site footer, which restyles it via .footer-brand
+   overrides in styles.css (loaded after this file).
+   ============================================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--surface);
+  border-bottom: 2px solid var(--navy);
+  box-shadow: var(--shadow-sm);
+  /* Set explicitly so the header renders identically on the homepage,
+     where the surrounding Kubio page has a different body font. */
+  font-family: var(--font);
+}
+
+/* Scoped copy of the .container width formula. styles.css defines
+   .container globally for the hand-built pages, but the homepage
+   doesn't load styles.css and the header markup uses that class. */
+.site-header .container {
+  width: min(var(--max), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  gap: 16px;
+  min-width: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+  /* Allow the brand to shrink so it can never push the nav toggle
+     off-screen on narrow viewports. */
+  min-width: 0;
+  flex: 0 1 auto;
+}
+.brand-mark {
+  width: 38px; height: 38px;
+  flex: none;
+  display: grid; place-items: center;
+  border-radius: 7px;
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .85rem;
+  letter-spacing: -.3px;
+}
+.brand-text {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  min-width: 0;
+}
+.brand-text strong {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--navy);
+  /* Last-resort backstop: truncate rather than overflow the header. */
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.brand-text .muted { font-size: .875rem; white-space: nowrap; }
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.site-nav a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: var(--muted);
+  font-family: var(--font-head);
+  font-size: .95rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+.site-nav a:hover { background: var(--navy-lt); color: var(--navy); text-decoration: none; }
+.site-nav a.active { background: var(--navy-lt); color: var(--navy); }
+
+/* "Join" nav item gets gold pill treatment. Keyed off an explicit
+   class rather than [href="..."] — the href varies by page depth and
+   the old attribute selectors silently stopped matching. */
+.site-nav a.nav-cta {
+  margin-left: 8px;
+  background: var(--gold);
+  color: #1a1a1a;
+  font-weight: 700;
+  border-radius: 6px;
+}
+.site-nav a.nav-cta:hover { background: var(--gold-dk); text-decoration: none; }
+
+.nav-toggle {
+  display: none;
+  width: 40px; height: 40px;
+  flex: none;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  cursor: pointer;
+  padding: 10px;
+}
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  background: var(--navy);
+  margin: 5px 0;
+  border-radius: 2px;
+}
+
+/* Stack the brand lockup before it gets tight enough to truncate. */
+@media (max-width: 560px) {
+  .brand-text {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    line-height: 1.25;
+  }
+  .brand-text strong { font-size: .98rem; }
+  .brand-text .muted { font-size: .8rem; }
+}
+
+@media (max-width: 760px) {
+  .nav-toggle { display: block; }
+  .site-nav {
+    position: absolute;
+    right: 16px;
+    /* Anchored to the header box (.site-header is sticky, so it's the
+       positioned ancestor). Using 100% instead of a hardcoded offset
+       keeps the dropdown attached when the header grows — e.g. once
+       the brand lockup stacks at <=560px. */
+    top: calc(100% + 6px);
+    flex-direction: column;
+    align-items: stretch;
+    width: min(280px, calc(100% - 32px));
+    padding: 8px;
+    border-radius: var(--radius);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-md);
+    display: none;
+  }
+  .site-nav.open { display: flex; }
+  .site-nav a { width: 100%; }
+  .site-nav a.nav-cta {
+    margin-left: 0;
+    text-align: center;
+    margin-top: 4px;
+  }
+}

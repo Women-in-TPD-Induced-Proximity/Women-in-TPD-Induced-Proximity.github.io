@@ -20,6 +20,12 @@ requests to any external host. Done 2026-07-17. (Subpages were never affected �
 - **Fonts → `assets/vendor/fonts/`**:
   - **Urbanist** (headings) → 4 WOFF2 in `urbanist/` + a local `fonts.css` that replaces the Google
     Fonts `<link>`.
+    - ⚠️ **Fixed 2026-07-27:** that `<link>` to `fonts.css` was left wrapped in the export's
+      `<noscript>` block and had no ordinary counterpart, so **Urbanist never loaded for anyone
+      with JS enabled** — headings silently fell back to Helvetica/Arial. It's now a plain
+      stylesheet `<link>`. If you re-run this kind of asset surgery, check that replacements
+      land *outside* `<noscript>`; the export uses a `preload`+`onload` / `<noscript>` pair for
+      most stylesheets and it's easy to patch only the fallback half.
   - **Open Sans** (body) + **Oswald** → the theme's `.ttf`s (`OpenSans-VariableFont.ttf` 517 KB,
     `Oswald-VariableFont.ttf` 165 KB); the inline `@font-face` `url()`s were repointed to these.
   - Only Urbanist / Open Sans / Oswald actually render; the other 4 families the Google Fonts URL
@@ -84,5 +90,13 @@ only). **Keep future vendored front-end assets under `assets/vendor/`.**
 
 ## Optional future polish
 - The Open Sans variable `.ttf` is 517 KB — could be subset to WOFF2 to trim page weight.
-- The homepage's mobile horizontal overflow is **pre-existing** (unrelated to this work) and still
-  unaddressed.
+- ~~The homepage's mobile horizontal overflow is **pre-existing** (unrelated to this work) and still
+  unaddressed.~~ **Fixed 2026-07-27.** Cause: Kubio's `.h-x-container-inner` gutter uses negative
+  side margins (`-35px`/`-14px`/`-10px` by breakpoint) that the section padding stops absorbing
+  below ~360px, so button groups poked ~4px past the viewport. Fixed with
+  `#kubio .wp-block-kubio-buttongroup__outer{overflow-x:clip}` in `<style id="wiip-cards">`.
+  `clip` rather than `hidden` is deliberate — `hidden` would create a scroll container and break
+  `position:sticky` on the site header.
+- **Subpages still load Google Fonts** (`styles.css` opens with an `@import` to
+  `fonts.googleapis.com`). The self-hosting work covered only the homepage, so the site as a whole
+  still has a third-party font dependency — see `ISSUES.md`.

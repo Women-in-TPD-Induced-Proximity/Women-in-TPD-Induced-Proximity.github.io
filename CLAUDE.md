@@ -18,24 +18,57 @@ built with **Jekyll**.
 The site deliberately contains **two different front-end systems**. Know which one you're in:
 
 1. **`index.html` — the Kubio/WordPress export.** ~300 KB, ~40 inline `<style>` blocks,
-   hundreds of `--kubio-color-*` vars, machine-generated `style-local-*` classes, its own
-   header/nav/footer. Its CSS/JS/fonts are **self-hosted** under `assets/vendor/` so the page has
+   hundreds of `--kubio-color-*` vars, machine-generated `style-local-*` classes, and its own
+   hero/body markup. Its CSS/JS/fonts are **self-hosted** under `assets/vendor/` so the page has
    no runtime dependency on the WordPress site it was exported from (see **`docs/SELF-HOSTING.md`**).
-   It has **no Jekyll front matter**, so Jekyll copies it **verbatim** and it keeps its own styling
-   untouched.
    - Don't try to "clean up" or merge its CSS into the hand-built system.
    - When editing it, work **surgically** and **reuse existing base classes**
      (e.g. an icon's `style-v_xh_8AwkFU-*` base + an existing `style-local-NN`); reusing a
      local class on a second element is fine and adds no CSS.
    - Custom additions to index live in `<style id="wiip-cards">` in its `<head>` and use a
      `wiip-` class prefix.
+   - It has **minimal front matter** (`layout: null`) purely so Jekyll will run Liquid on it and
+     expand the shared header/footer includes. Everything else is copied through untouched — see the
+     front-matter gotcha below.
 
 2. **Every other page — hand-built.** Uses `assets/css/styles.css` + the Jekyll
    layout/includes below. This is where normal work happens.
 
-The two systems look different (different brand lockup, fonts, palette), so there is a visual
-seam between the homepage and the subpages. This is **known and accepted** — don't "fix" it
-without being asked.
+### The chrome (header + footer) is shared by both systems
+
+The top nav and the footer are **each one component, defined once**, used by the Kubio homepage
+and every hand-built page. (The original Kubio nav was just two centered buttons — no logo, not
+sticky — and the export had **no footer at all**.)
+
+- **Markup** → `_includes/header.html` / `_includes/footer.html`. `index.html` pulls both in with
+  `{% include %}`; the layout does the same for every other page.
+- **CSS** → `assets/css/site-header.css` + `assets/css/site-footer.css`, with the palette in
+  `assets/css/tokens.css`. All three are linked by `_layouts/default.html` **and** directly by
+  `index.html`'s Kubio `<head>`.
+- **JS** → the real `assets/js/main.js` on both (`index.html` loads it via a `<script defer>`
+  before `</body>`). It also stamps the footer's `#year`, which now works on the homepage too.
+
+**Why the chrome CSS is in its own files** and not part of `styles.css`: the homepage cannot load
+`styles.css` at all — its `body`/heading/`a` globals would clobber the Kubio export. So the chrome
+components and the design tokens live in files that are safe to load *standalone*.
+Load order everywhere: `tokens.css` → `site-header.css` → `site-footer.css` → `styles.css`.
+
+Both files use **plain class selectors, no `#kubio` scoping** — verified the Kubio CSS has no bare
+`a`/`button`/`strong` or `#kubio a` rules that would out-specify them. Nothing is duplicated; edit
+each component in one place.
+
+**Gotcha when adding to the shared chrome:** the homepage's base typography differs from the
+subpages' (Kubio uses ~18.64px/1.4; the hand-built pages use 16px/1.65), and WordPress ships an
+inline `:root :where(p){line-height:1.4}`. Anything sized or spaced **by inheritance** will
+therefore render differently on the two systems. `site-footer.css` pins `font-size`,
+`line-height`, and `font-family` on `.site-footer` for exactly this reason, and restates
+`line-height` on `.site-footer p` because an inherited value always loses to a rule that matches
+the element directly. If you add markup to the chrome, **diff the computed styles on both**, not
+just screenshots — see the verify loop below.
+
+The two systems still look different **between** the chrome (different brand lockup, fonts, and
+palette in the hero/body), so there's still a visual seam in the page middle. This is
+**known and accepted** — don't "fix" it without being asked.
 
 ## Jekyll architecture
 
@@ -125,9 +158,38 @@ instead of doing a separate build + static server.
 
 What to check after a build:
 - `jekyll build` exits cleanly (watch for **YAML front-matter exceptions**).
-- `_site/index.html` is unchanged in size (~303 KB) — confirms the Kubio export was copied
-  verbatim, not run through a layout.
-- Chrome is present in served HTML (no-JS): `grep -c 'class="site-header"' _site/<page>.html`.
+- The homepage was **not** run through a layout — `_site/index.html` should differ from the source
+  only by the expanded header include. Verify structurally rather than by file size:
+
+  ```bash
+  python3 - <<'EOF'
+  src=open('index.html').read().split('---\n',2)[2]
+  built=open('_site/index.html').read()
+  exp=src.replace('{% include header.html %}', open('_includes/header.html').read())
+  # only difference should be the {% if page.active %} branches inside the include
+  print('OK' if abs(len(exp)-len(built))<200 else 'UNEXPECTED DIFF', len(exp), len(built))
+  EOF
+  ```
+- Chrome is present in served HTML (no-JS): `grep -c 'class="site-header"' _site/<page>.html`
+  (and `site-footer`) — should be `1` on **every** page including `index.html`.
+
+**Verifying the shared chrome renders identically on both systems.** Screenshots are *not*
+sufficient here, for two reasons learned the hard way:
+
+- **Headless Chrome clamps its viewport to ~500px minimum.** `--window-size=390,x` gives you a
+  500px layout viewport cropped to a 390px image, so narrow-width "overflow" in a screenshot may
+  be a crop artifact. To test real narrow widths, load the page in a **same-origin iframe** of the
+  desired width and measure inside it.
+- **Inherited typography differs between the two systems**, so a component can look right and
+  still be subtly off.
+
+The reliable check is to diff *computed styles* between the two systems. Load `index.html` and a
+subpage in two same-origin iframes, walk `.site-header` / `.site-footer` with
+`querySelectorAll('*')` in parallel, and compare `getComputedStyle` for `fontSize`, `lineHeight`,
+`fontFamily`, margins/padding, plus each element's `getBoundingClientRect().height`. Zero
+differences = genuinely shared. The same harness pattern answers "what breaks `position:sticky`"
+(walk ancestors reporting `overflow`) and "which rule wins" (iterate `document.styleSheets` and
+test `el.matches(rule.selectorText)`).
 
 ## Gotchas / decisions (don't relearn these)
 
@@ -137,8 +199,13 @@ What to check after a build:
 - **`.nojekyll` was removed on purpose** — it was the switch that *disabled* Jekyll. Don't add
   it back unless you intend to turn Jekyll off (which would stop includes/layouts from
   rendering).
-- **`index.html` must stay front-matter-free** so Jekyll copies it verbatim. Adding front
-  matter (or a global layout default) would wreck it.
+- **`index.html` has `layout: null` front matter — keep it that way.** It exists only so Jekyll
+  runs Liquid and expands `{% include header.html %}`. Verified safe: the 280 KB export contains
+  **zero** `{{` / `{%` sequences, so Liquid has nothing else to interpret, and a build diff
+  confirms the output is byte-identical to the source apart from the include. Two things would
+  wreck it: giving it a **real layout** (it already has its own `<html>`/`<head>`/`<body>`), or
+  adding a **global layout default** in `_config.yml`. If you paste new vendor markup into it,
+  re-check for `{{`/`{%` first — those would now be evaluated.
 - **There are two `<head>`s — edit both.** The homepage doesn't use the layout, so anything
   head-level (favicon, meta/OG tags, analytics, fonts) must be added to **both**
   `_layouts/default.html` (all hand-built pages + `404.html`) **and** `index.html`'s own Kubio
@@ -154,7 +221,8 @@ What to check after a build:
 
 ## Page inventory
 
-- `index.html` — homepage (Kubio). Intro icon cards link to: Highlighted Publications →
+- `index.html` — homepage (Kubio). Top nav is the shared `site-header` component (see "Two
+  design systems"), not Kubio's own. Intro icon cards link to: Highlighted Publications →
   `publications.html`, **DicTACtionary** → `dictac.html`, Mentorship Program →
   `mentorship.html`. Whole cards are clickable via absolutely-positioned `.wiip-overlay`
   anchors; the "List of Activities" cards (Conferences, Travel Scholarship, Photo Gallery)
@@ -177,7 +245,10 @@ What to check after a build:
   capped at 460 px); photos live in `assets/images/scholarship/`. Photos are **click-to-expand** via
   the shared `assets/js/lightbox.js` viewer (see JavaScript).
 - `photo-gallery.html` — community photo grid (`.photo-grid`/`.photo-tile`), photos in
-  `assets/images/gallery/`. Has an inline gallery-filter script **and** the shared
+  `assets/images/gallery/`. Tiles are ordered **most-recent-first**; add new photos at the top
+  of `.photo-grid`, not appended at the bottom. Multiple photos from the same event share the
+  same caption/base filename with a `-2`, `-3`, … suffix (e.g. `aacr-orlando-2025.jpg` /
+  `aacr-orlando-2025-2.jpg`). Has an inline gallery-filter script **and** the shared
   `assets/js/lightbox.js` **click-to-expand** viewer (see JavaScript).
 - `mission.html`, `core-team.html`, `conferences.html`,
   `blog.html`, `events.html`, `get-involved.html`, `tools.html` — content pages.
@@ -201,7 +272,10 @@ the homepage-vs-subpage seam.)
 ## JavaScript
 
 - `assets/js/main.js` — mobile nav toggle (`[data-nav-toggle]` / `[data-nav]`) + year stamp
-  (`#year`). Loaded on every layout page.
+  (`#year`). Loaded on every layout page, **and** on `index.html` via its own `<script defer>`
+  tag (for the shared header's hamburger; the year-stamp half is a no-op there since Kubio's
+  footer has no `#year`). This is the only JS the homepage loads — the self-hosting work dropped
+  all 63 of the export's original scripts.
 - `assets/js/render-events.js` — **events.html only**; fetches `assets/data/events.json`
   (relative) and renders the list. **Still requires JS** — this is the one remaining no-JS gap
   (the page *chrome* is server-rendered, but the event entries are not). Optional follow-up:
@@ -218,12 +292,32 @@ the homepage-vs-subpage seam.)
   `data-full` attr if hi-res versions are ever added.)
 - Inline page scripts: `dictac.html` (glossary search), `photo-gallery.html` (gallery filter).
 
-## Design system (`assets/css/styles.css`, ~1210 lines)
+## Design system
 
-- Tokens (CSS vars): `--navy #004d80`, `--navy-dk`, `--teal`, `--gold #f5b800`, surfaces, text,
-  shadows, radii. Fonts: **Urbanist** (headings) + **Open Sans** (body).
+Three stylesheets, always loaded in this order — `tokens.css` → `site-header.css` → `styles.css`:
+
+- **`assets/css/tokens.css`** — the `:root` custom properties (palette, surfaces, text, shadows,
+  radii, font stacks). Single source of truth for the colours. Safe to load on the Kubio homepage:
+  it only declares variables and styles no elements.
+- **`assets/css/site-header.css`** — the shared top nav (see "The chrome … is shared by both
+  systems"). Also the home of the `.brand`/`.brand-mark`/`.brand-text` lockup, which the footer
+  reuses via `.footer-brand` overrides.
+- **`assets/css/site-footer.css`** — the shared footer. Redeclares the handful of `styles.css`
+  utilities its markup uses (`.container`, `.tiny`) scoped to `.site-footer`, so it works
+  standalone on the homepage.
+- **`assets/css/styles.css`** — everything else, hand-built pages only. **Never load this on
+  `index.html`** — its `body`/heading globals would clobber the Kubio export.
+
+Tokens: `--navy #004d80`, `--navy-dk`, `--teal`, `--gold #f5b800`, surfaces, text, shadows, radii.
+Fonts: **Urbanist** (headings) + **Open Sans** (body).
+
 - Components: `.page-hero`, `.section` / `.section.alt`, `.section-head`, `.cards-3`, `.card`,
   `.button.primary|secondary`, `.badge`, `.pill`, `.notice`, `.cta`, footer grid, mobile nav.
+- The "Join" nav pill is keyed off an explicit **`.nav-cta`** class, not `[href="…#join"]`.
+  The old attribute selectors silently stopped matching when the href gained a leading slash, so
+  the pill rendered as a plain link sitewide — don't reintroduce href-based styling.
+- `html, body` use **`min-height: 100%`**, not `height`. A fixed height caps the `<body>` box at
+  one viewport, which silently breaks `position: sticky` on the header.
 - Responsive breakpoints at 920 / 760 / 640 px.
 - The lower portion of the file holds the per-page styles (`.conf-*`, `.dic-*`, gallery/filter,
   etc.) that were consolidated here from former inline `<style>` blocks — selectors are unique

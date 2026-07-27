@@ -1,0 +1,100 @@
+/* ============================================================
+   Site footer — the shared bottom chrome.
+
+   Companion to site-header.css: used by BOTH front-end systems
+   (see CLAUDE.md "Two design systems"). The hand-built pages get it
+   from _layouts/default.html; the Kubio homepage links this file
+   directly. Markup for both comes from _includes/footer.html.
+
+   Requires tokens.css, and site-header.css for the .brand lockup
+   that .footer-brand restyles below.
+   Load order: tokens.css -> site-header.css -> site-footer.css.
+
+   Self-sufficient by design: the homepage cannot load styles.css, so
+   the few utility classes the footer markup uses (.container, .tiny)
+   are redeclared here, scoped to .site-footer. Values match their
+   styles.css counterparts — keep them in sync if those change.
+   ============================================================ */
+
+.site-footer {
+  border-top: 3px solid var(--navy);
+  background: var(--navy-dk);
+  padding: 36px 0 18px;
+  color: rgba(255,255,255,.75);
+  /* Set explicitly so the footer renders identically on the homepage, where the
+     surrounding Kubio page has a different body font (and a 1.4 line-height).
+     Both inherit down to the footer's <p>/<li>/<a>, so setting them here is
+     enough — Kubio's own typography rules are gated behind
+     `.with-kubio-global-style` / `[data-kubio]`, neither of which this markup has. */
+  font-family: var(--font);
+  line-height: 1.65;
+  /* Kubio's base font-size is ~18.64px vs the 16px the hand-built pages use.
+     Anything in the footer sized by inheritance (the brand lockup, the link
+     lists) would otherwise render noticeably larger on the homepage. */
+  font-size: 1rem;
+}
+
+/* styles.css gives all headings line-height 1.2; the homepage doesn't load it,
+   so the footer column titles would inherit ~1.4 there. */
+.site-footer .footer-title { line-height: 1.2; }
+
+/* The homepage ships an inline WordPress rule `:root :where(p){line-height:1.4}`.
+   An inherited value always loses to a rule that matches the element directly, so
+   the footer's line-height has to be restated for <p> at higher specificity
+   (0,1,1 beats the 0,1,0 of `:root :where(p)`). Without this the homepage footer
+   sets ~14px shorter than the subpage one. */
+.site-footer p { line-height: 1.65; }
+
+/* Scoped copies of styles.css utilities the footer markup relies on. */
+.site-footer .container {
+  width: min(var(--max), calc(100% - 32px));
+  margin: 0 auto;
+}
+.site-footer .tiny { font-size: .875rem; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 28px;
+  padding-bottom: 24px;
+}
+.footer-brand .brand-mark { background: rgba(255,255,255,.15); }
+.footer-brand .brand-text strong { color: #fff; }
+.footer-brand .muted { color: rgba(255,255,255,.6); }
+.footer-brand + p { color: rgba(255,255,255,.6); font-size: .9rem; margin: 0; }
+
+.footer-title {
+  margin: 0 0 10px;
+  font-family: var(--font-head);
+  font-size: .95rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.footer-links {
+  list-style: none;
+  padding: 0; margin: 0;
+  display: grid;
+  gap: 7px;
+}
+.footer-links a {
+  color: rgba(255,255,255,.62);
+  font-size: .9rem;
+  text-decoration: none;
+}
+.footer-links a:hover { color: var(--gold); text-decoration: none; }
+
+.footer-bottom {
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  margin-top: 4px;
+}
+.footer-bottom .tiny { color: rgba(255,255,255,.42); }
+
+@media (max-width: 920px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}

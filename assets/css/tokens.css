@@ -1,0 +1,46 @@
+/* ============================================================
+   Design tokens — the single source of truth for the palette.
+
+   Split out of styles.css so the homepage can share the header
+   component without pulling in the whole hand-built design system
+   (styles.css sets body/heading globals that would clobber the
+   Kubio export). Load order everywhere: tokens.css → site-header.css
+   → styles.css.
+
+   Safe to load on index.html: this file only declares custom
+   properties on :root and styles no elements, and none of these
+   names collide with Kubio's --kubio-color-* / --wp--* vars.
+   ============================================================ */
+
+:root {
+  /* palette */
+  --navy:     #004d80;
+  --navy-dk:  #003560;
+  --navy-lt:  #e8f2f9;
+  --teal:     #0e7490;
+  --gold:     #f5b800;
+  --gold-dk:  #c99a00;
+  --green:    #77cc00;
+
+  /* surfaces */
+  --bg:       #f6f5f1;
+  --surface:  #ffffff;
+  --surface2: #f0ede6;
+
+  /* text */
+  --text:     #1a1a1a;
+  --muted:    #5a5865;
+  --line:     #dedad2;
+
+  /* shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+  --shadow:    0 4px 16px rgba(0,0,0,.09);
+  --shadow-md: 0 8px 28px rgba(0,0,0,.12);
+
+  --radius:  10px;
+  --radius2: 14px;
+  --max:     1160px;
+
+  --font-head: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  --font:      "Open Sans", ui-sans-serif, system-ui, sans-serif;
+}
