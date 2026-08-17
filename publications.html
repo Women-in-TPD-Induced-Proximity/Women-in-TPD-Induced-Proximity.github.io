@@ -1,25 +1,1520 @@
 ---
 layout: default
 title: "Highlighted Publications"
-description: "Notable publications and preprints from women advancing targeted protein degradation and induced proximity science."
+description: "Curated highlights of notable publications in targeted protein degradation and induced proximity, spotlighting women scientists driving the field forward."
 ---
 <main id="main" class="page">
     <section class="page-hero">
       <div class="container">
         <h1>Highlighted Publications</h1>
-        <p class="lead">We spotlight notable publications and preprints from women advancing targeted protein degradation and induced proximity science.</p>
+        <p class="lead">Curated highlights from targeted protein degradation and induced proximity science. Every paper below is a <strong>Women in TPD Spotlight</strong> &mdash; recognising women driving advances across the field.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
+
+        <!-- SEARCH + CATEGORY FILTER -->
+        <div class="pub-tools">
+          <label class="sr-only" for="pub-search">Search publications</label>
+          <div class="pub-search-wrap">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="pub-search" class="pub-search" type="search" autocomplete="off"
+                   placeholder="Search a target, modality, author, or lab (e.g. CRBN, TCIP, Dundee)&hellip;" />
+          </div>
+
+          <div class="pub-filter" role="group" aria-label="Filter papers by category">
+          <button class="pub-filter-btn" type="button" data-cat="all" aria-pressed="true">All papers</button>
+          <button class="pub-filter-btn" type="button" data-cat="degraders" aria-pressed="false"><span class="pub-dot" aria-hidden="true"></span>Degraders</button>
+          <button class="pub-filter-btn" type="button" data-cat="induced-proximity" aria-pressed="false"><span class="pub-dot" aria-hidden="true"></span>Induced Proximity</button>
+          <button class="pub-filter-btn" type="button" data-cat="stabilizers" aria-pressed="false"><span class="pub-dot" aria-hidden="true"></span>Stabilizers</button>
+          <button class="pub-filter-btn" type="button" data-cat="novel-e3s" aria-pressed="false"><span class="pub-dot" aria-hidden="true"></span>Novel E3s</button>
+          <button class="pub-filter-btn" type="button" data-cat="structural" aria-pressed="false"><span class="pub-dot" aria-hidden="true"></span>Structural Biology</button>
+          <button class="pub-filter-btn" type="button" data-cat="clinical" aria-pressed="false"><span class="pub-dot" aria-hidden="true"></span>Clinical &amp; Translational</button>
+          </div>
+
+          <p class="pub-count" id="pub-count" role="status"></p>
+        </div>
+
+        <!-- PAPERS, NEWEST FIRST -->
+        <div class="pub-list">
+
+          <article class="pub-card" data-pub data-cat="clinical">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41573-026-01426-2" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Safety Considerations for CRBN-Based Degraders</h2>
+            <p class="pub-authors">Aishwarya Rengarajan, Lucilia Pereira Mouriès et al. <span class="pub-affil">&middot; HESI TPD Safety Committee</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Reviews Drug Discovery</span> &middot; <span>Aug 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Provides a comprehensive framework for evaluating and mitigating safety risks associated with CRBN-based degraders.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Community-driven recommendations and best practices for advancing CRBN degrader programs safely into clinical development.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Safety</li>
+              <li>CRBN</li>
+              <li>Risk Assessment</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://doi.org/10.1158/0008-5472.CAN-25-5172" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">KRASG12V Targeted Degradation Reveals New Resistance Mechanisms</h2>
+            <p class="pub-authors">Cristina Mayor-Ruiz &amp; Inés María García Pérez et al.</p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Cancer Research</span> &middot; <span>14 Aug 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Provides important insight into how tumors adapt to prolonged degrader treatment.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Targeted degradation of KRASG12V identified resistance mechanisms that emerge during chronic treatment.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>KRAS</li>
+              <li>Resistance</li>
+              <li>Oncology</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="stabilizers">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s44386-026-00059-0" target="_blank" rel="noopener">Review <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Molecular Glues: From Degradation to Functional Modulation</h2>
+            <p class="pub-authors">Laura Silvian et al. <span class="pub-affil">&middot; Biogen</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">npj Drug Discovery</span> &middot; <span>4 Aug 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Provides a comprehensive overview of how molecular glues can be used for both degradation and non-degrading functional modulation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Review covering degrading and non-degrading molecular glues and the expanding scope of glue-mediated biology.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Molecular Glue</li>
+              <li>Review</li>
+              <li>Functional Modulation</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="induced-proximity">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://aacrjournals.org/cancerdiscovery/article-abstract/doi/10.1158/2159-8290.CD-25-2314/787080/Systematic-Targeting-of-Protein-Complexes-with" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">COUPLrs: Covalent Protein Ligators</h2>
+            <p class="pub-authors">Diane Yang et al. <span class="pub-affil">&middot; Massachusetts General Hospital</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Cancer Discovery</span> &middot; <span>27 Jul 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Expands induced proximity into covalent space and opens opportunities for discovering new functional protein interactions.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">COUPLrs use two covalent warheads to create proximity between proteins through irreversible engagement.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>COUPLr</li>
+              <li>Covalent Ligators</li>
+              <li>New Modality</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.6c01590" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Development of a Clinical Androgen Receptor Bifunctional Degrader</h2>
+            <p class="pub-authors">Deborah Mortensen et al. <span class="pub-affil">&middot; Bristol Myers Squibb</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Journal of Medicinal Chemistry</span> &middot; <span>23 Jul 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Provides a blueprint for advancing bifunctional degraders from discovery through clinical development.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Describes the medicinal chemistry optimization and progression of a clinical-stage androgen receptor degrader.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>AR</li>
+              <li>Clinical Candidate</li>
+              <li>Medicinal Chemistry</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="induced-proximity">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.cell.com/cell/abstract/S0092-8674(26)00757-9" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">KAT-TCIPs Rewire BCL6 Transcriptional Programs</h2>
+            <p class="pub-authors">Meredith Nix et al. <span class="pub-affil">&middot; Stanford University</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Cell</span> &middot; <span>20 Jul 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates that induced proximity can reprogram transcriptional networks without requiring degradation, expanding therapeutic opportunities beyond traditional TPD.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Recruitment of CBP/EP300 to BCL6 drives transcriptional rewiring and cancer cell death.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>TCIP</li>
+              <li>BCL6</li>
+              <li>Epigenetics</li>
+              <li>Functional Reprogramming</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/acschembio.6c00377" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">D2B Discovery of CRBN-Based HaloPROTACs</h2>
+            <p class="pub-authors">Rebecca Stevens et al. <span class="pub-affil">&middot; GSK &amp; Promega</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">ACS Chemical Biology</span> &middot; <span>17 Jul 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Highlights the power of direct-to-biology workflows to accelerate degrader discovery and SAR exploration.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">D2B screening rapidly identified active CRBN-based HaloPROTAC degraders.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>HaloPROTAC</li>
+              <li>D2B</li>
+              <li>CRBN</li>
+              <li>Screening</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="novel-e3s">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.biorxiv.org/content/10.64898/2026.07.16.738859v1" target="_blank" rel="noopener">Preprint <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">BioPROTAC Screening Reveals Routes to c-Myc Degradation</h2>
+            <p class="pub-authors">Camilla Ascanelli et al. <span class="pub-affil">&middot; University of Cambridge</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">bioRxiv preprint</span> &middot; <span>16 Jul 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates that even highly challenging and short-lived targets such as c-Myc may be degradable when paired with the right ligase.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Systematic BioPROTAC screening identified productive E3 ligase combinations capable of degrading c-Myc.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>BioPROTAC</li>
+              <li>c-Myc</li>
+              <li>E3 Ligases</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41467-026-75333-w" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">MGPROTACs Enable Estrogen Receptor Degradation Through 14-3-3</h2>
+            <p class="pub-authors">Charlotte Crowe et al. <span class="pub-affil">&middot; CeTPD Dundee</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Communications</span> &middot; <span>15 Jul 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates how molecular glue stabilization can unlock entirely new degradation mechanisms and expand the target space of degraders.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Molecular glue stabilizers were combined with PROTAC design to induce degradation of estrogen receptor through its complex with 14-3-3.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>ER</li>
+              <li>Molecular Glue</li>
+              <li>Cooperativity</li>
+              <li>14-3-3</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="structural">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="structural">Structural Biology</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/acs.analchem.6c01970" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Native Mass Spectrometry for Characterizing PROTAC Ternary Complexes</h2>
+            <p class="pub-authors">Louise Sternicki, Charlotte Crowe, Lianne Wieske, Sally-Ann Poulsen et al.</p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Analytical Chemistry</span> &middot; <span>14 Jul 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Establishes native MS as a powerful analytical approach for studying increasingly complex induced-proximity systems.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Native mass spectrometry was applied to characterize PROTAC ternary complexes, including CRL2(VHL)-based assemblies.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Native MS</li>
+              <li>Ternary Complexes</li>
+              <li>VHL</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="induced-proximity">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.6c00756" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">BCL6-BRD4 TCIPs Expand Functional Reprogramming Strategies</h2>
+            <p class="pub-authors">Fang-Chi (Cheryl) Chang, Veronika Shoba et al. <span class="pub-affil">&middot; General Proximity</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Journal of Medicinal Chemistry</span> &middot; <span>9 Jul 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Shows the growing potential of TCIPs to modulate transcription factor biology through proximity-induced functional reprogramming.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Development and optimization of BCL6-BRD4 TCIPs capable of altering target-driven transcriptional programs.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>TCIP</li>
+              <li>BCL6</li>
+              <li>BRD4</li>
+              <li>Functional Reprogramming</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="structural">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="structural">Structural Biology</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.science.org/doi/10.1126/science.aef5391" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">CRBN Molecular Glue Degradation of KAT2A</h2>
+            <p class="pub-authors">Meng Wang et al. <span class="pub-affil">&middot; Dana-Farber Cancer Institute</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Science</span> &middot; <span>9 Jul 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Expands understanding of CRBN-mediated molecular glue mechanisms and demonstrates new structural solutions for target engagement.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Discovery of an unexpected ternary complex architecture enabling degradation of KAT2A without a classical G-loop interaction.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>KAT2A</li>
+              <li>CRBN</li>
+              <li>Molecular Glue</li>
+              <li>Ternary Complex</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="induced-proximity">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41589-026-02258-2" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">TICTACs Enable Targeted Immune Checkpoint Modulation</h2>
+            <p class="pub-authors">Mariko Morimoto et al. <span class="pub-affil">&middot; Carolyn Bertozzi Lab</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Chemical Biology</span> &middot; <span>8 Jul 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Introduces a new induced proximity modality for engineering immune-cell-specific protein degradation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">TICTACs use CD206 targeting on tumor-associated macrophages to selectively remove immune checkpoint receptors.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>TICTAC</li>
+              <li>TAM</li>
+              <li>Immunology</li>
+              <li>CD206</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/jacs.6c02914" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Dual-Mechanism CRBN/Rpn13 Degradation</h2>
+            <p class="pub-authors">Darci Trader et al. <span class="pub-affil">&middot; University of California Irvine</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Journal of the American Chemical Society</span> &middot; <span>1 Jul 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates that a single bifunctional molecule can engage multiple degradation pathways simultaneously.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">CRBN is targeted directly to the proteasome via a ByeTAC mechanism while Rpn13 is degraded through CRBN-mediated ubiquitination.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>ByeTAC</li>
+              <li>CRBN</li>
+              <li>Rpn13</li>
+              <li>Dual Mechanism</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="structural">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="structural">Structural Biology</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.biorxiv.org/content/10.64898/2026.06.26.734426v1" target="_blank" rel="noopener">Preprint <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Structural Basis of SERD-Mediated ERα Degradation</h2>
+            <p class="pub-authors">Caroline Schätz et al. <span class="pub-affil">&middot; AITHYRA &amp; FMI</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">bioRxiv preprint</span> &middot; <span>26 Jun 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Provides a deeper mechanistic understanding of how ER degraders drive therapeutic activity beyond receptor loss.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Reveals contributions of chromatin trapping, SUMOylation, transcriptional repression, and ER degradation to SERD activity.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>ERα</li>
+              <li>SERD</li>
+              <li>Chromatin Biology</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="structural">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="structural">Structural Biology</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41467-026-74105-w" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Cryo-EM Structure of a CRBN-Based IRAK4 Degrader</h2>
+            <p class="pub-authors">Xue Fei et al. <span class="pub-affil">&middot; Kymera Therapeutics</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Communications</span> &middot; <span>23 Jun 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Provides mechanistic insight into ternary complex formation for a clinically relevant degrader and helps reveal the structural principles underlying productive degradation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Cryo-EM characterization of the CRBN-IRAK4 degrader ternary complex reveals how structure drives degradation efficiency.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Cryo-EM</li>
+              <li>IRAK4</li>
+              <li>CRBN</li>
+              <li>Ternary Complex</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="stabilizers">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.75153" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">From Inhibitor to Stabilizer to Degrader: The AURKA Story</h2>
+            <p class="pub-authors">Chen Mozes et al. <span class="pub-affil">&middot; Northwestern University</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Advanced Science</span> &middot; <span>Jun 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Illustrates how small changes in chemistry can dramatically alter a molecule&#x27;s mode of action.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Conversion of kinase inhibitors into stabilizers and ultimately degraders through covalent warhead incorporation and linker optimization.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>AURKA</li>
+              <li>Stabilizer</li>
+              <li>Covalent Chemistry</li>
+              <li>Degrader Evolution</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.biorxiv.org/cgi/content/short/2026.06.12.731830v1" target="_blank" rel="noopener">Preprint <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">BacPROTACs for Bacterial Protein Degradation</h2>
+            <p class="pub-authors">Francesca Ester Morreale et al. <span class="pub-affil">&middot; Francis Crick Institute</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">bioRxiv preprint</span> &middot; <span>12 Jun 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Extends targeted protein degradation beyond human biology into infectious disease and bacterial systems.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">First report of a small-molecule bacterial proteolysis targeting chimera capable of degrading Mycobacterium tuberculosis proteins.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>BacPROTAC</li>
+              <li>Infectious Disease</li>
+              <li>Bacterial Degradation</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="clinical">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://chemrxiv.org/doi/full/10.26434/chemrxiv.15004114/v1" target="_blank" rel="noopener">Preprint <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Modeling Oral Bioavailability of Degraders</h2>
+            <p class="pub-authors">Heide Marika Düvel et al. <span class="pub-affil">&middot; Merck KGaA</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">ChemRxiv preprint</span> &middot; <span>1 Jun 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Predicting oral bioavailability remains one of the biggest challenges in degrader drug discovery.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Introduces modeling approaches to understand and predict oral exposure of beyond-Rule-of-Five molecules.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Oral PK</li>
+              <li>Modeling</li>
+              <li>Bioavailability</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="clinical">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41467-026-73681-1" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Degron Tags for In Vivo Studies</h2>
+            <p class="pub-authors">Rebecca Feltham et al. <span class="pub-affil">&middot; WEHI</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Communications</span> &middot; <span>29 May 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Provides practical guidance for selecting degron systems in biological and translational studies.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Systematic comparison of degron tags to guide experimental design and in vivo applications.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Degron Tags</li>
+              <li>In Vivo Biology</li>
+              <li>Research Tools</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders clinical">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+                <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.6c00592" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Degrader Antibody Conjugates (DACs) Deliver SMARCA2/4 Degraders</h2>
+            <p class="pub-authors">Summer Baker Dockrey et al. <span class="pub-affil">&middot; Genentech</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Journal of Medicinal Chemistry</span> &middot; <span>28 May 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Extends targeted degradation beyond small molecules by combining degrader payloads with antibody delivery.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">DACs targeting CD71 and Trop-2 delivered dual SMARCA2/4 degrader payloads with controlled release of a VHL degrader.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>DAC</li>
+              <li>SMARCA2</li>
+              <li>SMARCA4</li>
+              <li>Targeted Delivery</li>
+              <li>Drug Delivery</li>
+              <li>SMARCA2/4</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202518793" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Advancing Extracellular Targeted Protein Degradation</h2>
+            <p class="pub-authors">Yuan Zhao et al. <span class="pub-affil">&middot; University of Wisconsin-Madison &amp; Novo Nordisk</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Advanced Science</span> &middot; <span>May 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Expands degradation beyond intracellular targets and opens new therapeutic opportunities.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Development of extracellular targeted protein degradation strategies for proteins traditionally inaccessible to intracellular degraders.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Extracellular Degradation</li>
+              <li>Targeted Delivery</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="novel-e3s">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41589-025-02106-9" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">PCMT1 Generates Cyclic Imide Degrons on Native CRBN Targets</h2>
+            <p class="pub-authors">Wenqing Xu et al. <span class="pub-affil">&middot; Christina Woo Lab, Harvard</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Chemical Biology</span> &middot; <span>May 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Provides fundamental insight into the biology underlying native CRBN degrons and neosubstrate recognition.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Identification of PCMT1 as an enzyme responsible for generating cyclic imide degrons on endogenous CRBN substrates.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>CRBN</li>
+              <li>Cyclic Imide</li>
+              <li>Degrons</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="structural">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="structural">Structural Biology</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/acschembio.6c00098" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Collateral Degradation of Protein Complex Members</h2>
+            <p class="pub-authors">Lorraine Glennie &amp; Nicole Curnutt et al. <span class="pub-affil">&middot; University of Dundee &amp; Harvard</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">ACS Chemical Biology</span> &middot; <span>15 May 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Shows that degradation outcomes can extend beyond the intended target and depend strongly on protein-complex context.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Characterization of collateral degradation events affecting proteins associated with the primary target.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Collateral Degradation</li>
+              <li>Protein Complexes</li>
+              <li>Mechanism</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="novel-e3s">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41589-026-02224-y" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Dual-Ligase Molecular Glue Degradation of SMARCA2/4</h2>
+            <p class="pub-authors">Valentina Spiteri et al. <span class="pub-affil">&middot; CeTPD Dundee &amp; AITHYRA</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Chemical Biology</span> &middot; <span>12 May 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Challenges the paradigm of one glue-one ligase by demonstrating recruitment of multiple degradation effectors.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Monovalent molecular glues recruit both FBXO22 and DCAF16 to degrade SMARCA2/4.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>FBXO22</li>
+              <li>DCAF16</li>
+              <li>Molecular Glue</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41467-026-72635-x" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Selective EP300 Degradation in Hematologic Malignancies</h2>
+            <p class="pub-authors">Marwa Asem, Andrea Shergalis, Judith Ronau et al. <span class="pub-affil">&middot; AbbVie</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Communications</span> &middot; <span>6 May 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates the therapeutic potential of selective EP300 degradation across multiple blood cancers.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">CRBN-based EP300 degraders showed strong efficacy while maintaining selectivity.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>EP300</li>
+              <li>CRBN</li>
+              <li>Hematologic Malignancies</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="stabilizers">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://doi.org/10.1073/pnas.2602101123" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Non-Degrading Molecular Glues Strengthen Mutant CRAF–14-3-3 Interactions</h2>
+            <p class="pub-authors">Johanna Virta et al. <span class="pub-affil">&middot; Michelle Arkin Lab, UCSF</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Proceedings of the National Academy of Sciences</span> &middot; <span>5 May 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates that molecular glues can create therapeutic benefit by stabilizing protein interactions without inducing degradation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Development of non-degrading molecular glues that strengthen a weak interaction between mutant CRAF and 14-3-3.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Molecular Glue</li>
+              <li>CRAF</li>
+              <li>14-3-3</li>
+              <li>Stabilization</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="novel-e3s">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.biorxiv.org/content/10.64898/2026.04.21.719895v1" target="_blank" rel="noopener">Preprint <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">TEAD-FBXO22 Molecular Glue Degradation</h2>
+            <p class="pub-authors">Marta Carrara et al. <span class="pub-affil">&middot; Amphista</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">bioRxiv preprint</span> &middot; <span>23 Apr 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Further establishes FBXO22 as a robust and versatile ligase for targeted protein degradation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Discovery of a TEAD-FBXO22 molecular glue degrader that drives efficient target degradation.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>FBXO22</li>
+              <li>TEAD</li>
+              <li>Molecular Glue</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="novel-e3s">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/jacs.6c02580" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">FBXO31 Enters the Targeted Protein Degradation Toolbox</h2>
+            <p class="pub-authors">Chenlu Zhang et al. <span class="pub-affil">&middot; Northwestern University</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Journal of the American Chemical Society</span> &middot; <span>22 Apr 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Expands the repertoire of ligases available for targeted protein degradation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Modified degron-based recruiters enabled degradation of multiple targets through FBXO31 recruitment.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>FBXO31</li>
+              <li>Novel E3</li>
+              <li>Degron Recruiter</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="clinical">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/d41591-026-00020-8" target="_blank" rel="noopener">Report <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+                <a class="pub-link" href="https://www.nejm.org/doi/full/10.1056/NEJMoa2600752" target="_blank" rel="noopener">NEJM <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Clinical KRASG12D Degradation with Setidegrasib</h2>
+            <p class="pub-authors">Chinatsu Sakata-Sakurai et al. <span class="pub-affil">&middot; Astellas</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Medicine</span> &middot; <span>14 Apr 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">One of the most important clinical updates in targeted protein degradation and a major step toward tackling mutant KRAS-driven cancers.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Clinical and translational characterization of the KRAS G12D degrader Setidegrasib demonstrates promising activity in patients.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>KRAS</li>
+              <li>Clinical Development</li>
+              <li>Oncology</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="stabilizers">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41589-026-02187-0" target="_blank" rel="noopener">Perspective <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Molecular Glue Modulation Beyond Protein Degradation</h2>
+            <p class="pub-authors">Dominika Pieńkowska <span class="pub-affil">&middot; Nature Chemical Biology News &amp; Views</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Chemical Biology</span> &middot; <span>9 Apr 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Highlights the growing field of molecular glues that alter protein function through stabilization rather than degradation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Perspective article examining how molecular glues can modulate protein-protein interactions without triggering target degradation.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Molecular Glue</li>
+              <li>Protein Modulation</li>
+              <li>Perspective</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="clinical">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/acsmedchemlett.6c00043" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Chameleonicity, Efflux, and Oral Bioavailability of Degraders</h2>
+            <p class="pub-authors">Claire Le Manach, Susanne Winiwarter et al. <span class="pub-affil">&middot; AstraZeneca</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">ACS Medicinal Chemistry Letters</span> &middot; <span>9 Apr 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Better understanding of oral bioavailability is essential for expanding the reach of degrader therapeutics.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Investigates how chameleonicity and efflux influence oral exposure and provides guidance for degrader optimization.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Oral Bioavailability</li>
+              <li>DMPK</li>
+              <li>Property Optimization</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="clinical">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/acsmedchemlett.5c00768" target="_blank" rel="noopener">Review <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">CNS-Penetrant Degraders: Current Progress and Opportunities</h2>
+            <p class="pub-authors">Serena Francisco et al. <span class="pub-affil">&middot; University of Turin</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">ACS Medicinal Chemistry Letters</span> &middot; <span>9 Apr 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">CNS delivery remains a major challenge for degrader therapeutics and a critical area for future innovation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Comprehensive review of degraders that have demonstrated activity in the central nervous system.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>CNS</li>
+              <li>Brain Penetration</li>
+              <li>Review</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.cell.com/cell-chemical-biology/abstract/S2451-9456(26)00072-3" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">SORTACs: Lysosome Targeting Chimeras for Extracellular Proteins</h2>
+            <p class="pub-authors">Camilla Gustafsen et al. <span class="pub-affil">&middot; Draupnir Bio</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Cell Chemical Biology</span> &middot; <span>27 Mar 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Expands degradation approaches to extracellular targets traditionally inaccessible to intracellular degraders.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">SORTACs leverage sortilin-mediated lysosomal trafficking for extracellular target depletion.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>SORTAC</li>
+              <li>Lysosome</li>
+              <li>Extracellular Targets</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="novel-e3s">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S0092867426001169" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">The Human E3-ome Atlas</h2>
+            <p class="pub-authors">Rebecca Feltham et al. <span class="pub-affil">&middot; WEHI</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Cell</span> &middot; <span>20 Mar 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Provides one of the most comprehensive resources available for E3 ligase biology and degrader discovery.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Systematic curation and annotation of the human E3 ligase landscape.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>E3 Atlas</li>
+              <li>Ligase Biology</li>
+              <li>Resource</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="induced-proximity">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.biorxiv.org/content/10.64898/2026.03.16.712096v1" target="_blank" rel="noopener">Preprint <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Regulating β-Catenin Through CSNK1-Mediated Induced Proximity</h2>
+            <p class="pub-authors">Lucie Wolf, Juline Poirson et al. <span class="pub-affil">&middot; University of Toronto</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">bioRxiv preprint</span> &middot; <span>18 Mar 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates that kinases can act as functional effectors in proximity-based systems, expanding induced proximity beyond E3 ligases.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Recruitment of CSNK1 proteins enables regulation of β-catenin levels through induced proximity.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>β-Catenin</li>
+              <li>CSNK1</li>
+              <li>Kinase Recruitment</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="novel-e3s">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41557-025-02021-5" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">IDO1 Degradation Through KLHDC3 Recruitment</h2>
+            <p class="pub-authors">Elisabeth Hennes, Belen Lucas, Natalie Scholes et al. <span class="pub-affil">&middot; CeMM &amp; MPI</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Chemistry</span> &middot; <span>Mar 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates a new route to targeted degradation that exploits a native protein interaction rather than traditional bifunctional degrader design.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">A pseudo-natural product both inhibits IDO1 and promotes interaction with KLHDC3, driving degradation.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>KLHDC3</li>
+              <li>IDO1</li>
+              <li>Novel Ligase Biology</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/jmcmar/article/69/5/5259/5087727/Development-of-PROTACs-Targeting-the-Moonlighting" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">VHL-Based NAMPT Degraders: Lessons Learned</h2>
+            <p class="pub-authors">Tracey Pirali &amp; Ambra Grolla et al. <span class="pub-affil">&middot; University of Piemonte</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Journal of Medicinal Chemistry</span> &middot; <span>12 Mar 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Provides medicinal chemistry insights for improving VHL degrader performance.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Removal of a triazole motif significantly improved properties of NAMPT degraders.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>NAMPT</li>
+              <li>VHL</li>
+              <li>Medicinal Chemistry</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="structural novel-e3s">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="structural">Structural Biology</span>
+                <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41586-025-09994-w" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Allosteric Regulation of CRBN Through a Novel Binding Site</h2>
+            <p class="pub-authors">Vanessa Dipon et al. <span class="pub-affil">&middot; Christina Woo Lab, Harvard</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature</span> &middot; <span>12 Mar 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Reveals a new mechanism for modulating CRBN activity and substrate specificity.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Identification of an allosteric CRBN binder that alters CRBN conformation and degradation behavior.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>CRBN</li>
+              <li>Allosteric Regulation</li>
+              <li>Ligase Biology</li>
+              <li>Allosteric Site</li>
+              <li>Structural Biology</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.5c03123" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">BCL6 Bifunctional Degrader for Hematologic Malignancies</h2>
+            <p class="pub-authors">Deborah Mortensen et al. <span class="pub-affil">&middot; Bristol Myers Squibb</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Journal of Medicinal Chemistry</span> &middot; <span>26 Feb 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates selective degradation of BCL6 while avoiding unwanted CRBN neosubstrate degradation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Development of a potent BCL6 bifunctional degrader with strong efficacy in hematologic cancer models.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>BCL6</li>
+              <li>Hematology</li>
+              <li>CRBN</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="clinical">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/aptsfn/article/9/2/370/5086979/SCaN-A-Screening-and-Characterization-Platform-for" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Formulation Strategies for Bifunctional Compounds</h2>
+            <p class="pub-authors">Christine S. Brugger-Muli et al. <span class="pub-affil">&middot; NCI</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">ACS Pharmacology &amp; Translational Science</span> &middot; <span>13 Feb 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Solubility and formulation remain major barriers for many degrader programs.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Development of screening and characterization approaches to identify formulations suitable for bifunctional compounds.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Formulation</li>
+              <li>Solubility</li>
+              <li>Drug Development</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.5c02086" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Cyclin K Degradation Through CDK12 Molecular Glue Chemistry</h2>
+            <p class="pub-authors">Anna Iermolaieva et al. <span class="pub-affil">&middot; Moffitt Cancer Center</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Journal of Medicinal Chemistry</span> &middot; <span>12 Feb 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Enhances understanding of DDB1-dependent molecular glue mechanisms.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">SAR studies identified determinants of Cyclin K degradation by CDK12-directed molecular glues.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Cyclin K</li>
+              <li>DDB1</li>
+              <li>Molecular Glue</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.5c02543" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Click, Screen, Degrade: Accelerating Degrader Discovery</h2>
+            <p class="pub-authors">Kerstin Hiesinger et al. <span class="pub-affil">&middot; Goethe University</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Journal of Medicinal Chemistry</span> &middot; <span>12 Feb 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Faster discovery workflows are essential for exploring larger degrader chemical spaces.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Combines click chemistry and D2B approaches to rapidly triage candidate degraders.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>D2B</li>
+              <li>High-Throughput Chemistry</li>
+              <li>Screening</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="stabilizers">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/jacs.5c12622" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Native CRAF–14-3-3 Interaction Stabilization Through Molecular Glue Design</h2>
+            <p class="pub-authors">Markella Konstantinidou et al. <span class="pub-affil">&middot; Michelle Arkin Lab, UCSF</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Journal of the American Chemical Society</span> &middot; <span>11 Feb 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Shows how molecular glues can reinforce native protein interactions as an alternative to degradation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Rationally designed molecular glues stabilized the endogenous interaction between CRAF and 14-3-3 proteins.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Molecular Glue</li>
+              <li>CRAF</li>
+              <li>Protein Stabilization</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="induced-proximity">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41589-026-02141-0" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">PINCHs: Polymerization-Induced Chimeras</h2>
+            <p class="pub-authors">Ella Livnah et al. <span class="pub-affil">&middot; Weizmann Institute</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Chemical Biology</span> &middot; <span>5 Feb 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Introduces a new modality for target inactivation through induced oligomerization rather than degradation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">PINCHs force proteins such as BCL6 and Keap1 into inactive higher-order assemblies.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>PINCH</li>
+              <li>Protein Polymerization</li>
+              <li>New Modality</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="novel-e3s">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.biorxiv.org/content/10.64898/2026.01.28.702440v1" target="_blank" rel="noopener">Preprint <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Identification of FBXO31 for Targeted Protein Degradation</h2>
+            <p class="pub-authors">Chenlu Zhang et al. <span class="pub-affil">&middot; Northwestern University</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">bioRxiv preprint</span> &middot; <span>29 Jan 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates a creative strategy for expanding degrader biology through native degron engineering.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Rational modification of a native degron sequence generated a recruiter capable of engaging FBXO31.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>FBXO31</li>
+              <li>Degron Engineering</li>
+              <li>E3 Discovery</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="stabilizers">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/10.1021/jacs.5c14840" target="_blank" rel="noopener">Review <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Lessons from Allosteric Starting Points for PROTAC Discovery</h2>
+            <p class="pub-authors">Aileen Frost &amp; Suzanne O&#x27;Connor et al. <span class="pub-affil">&middot; CeTPD Dundee</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Journal of the American Chemical Society</span> &middot; <span>28 Jan 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Highlights the opportunity to leverage allosteric binders as alternatives to traditional orthosteric starting points.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Review of degrader design strategies originating from allosteric ligands and their unique advantages.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Allosteric Ligands</li>
+              <li>PROTAC Design</li>
+              <li>Review</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="novel-e3s degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s42004-025-01871-x" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">TEAD Degradation Through IAP Family Ligases</h2>
+            <p class="pub-authors">Nishma Gupta, Nicole Trainor, Nicola Chessum et al. <span class="pub-affil">&middot; WEHI &amp; BI</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Communications Chemistry</span> &middot; <span>19 Jan 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates that alternative ligases beyond CRBN and VHL can support efficient targeted degradation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">TEAD degraders utilizing members of the IAP family achieved selective target degradation.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>TEAD</li>
+              <li>IAP</li>
+              <li>Alternative E3</li>
+              <li>IAP Ligases</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="structural">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="structural">Structural Biology</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.biorxiv.org/content/10.64898/2026.01.05.697692v2" target="_blank" rel="noopener">Preprint <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Mapping the CRBN Glue-able Interactome</h2>
+            <p class="pub-authors">Rubina Kazi et al. <span class="pub-affil">&middot; Goethe University Frankfurt</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">bioRxiv preprint</span> &middot; <span>6 Jan 2026</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Reveals the breadth and context dependence of CRBN-mediated protein interactions across cell types.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Affinity pulldowns and mass spectrometry were used to define the CRBN glue-able interactome.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>CRBN</li>
+              <li>Interactome</li>
+              <li>Molecular Glues</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://pubs.acs.org/doi/full/10.1021/acs.jmedchem.5c02920" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">GPCR Degradation Through CRBN Recruitment</h2>
+            <p class="pub-authors">Natalia Ortiz Zacarias et al. <span class="pub-affil">&middot; Leiden University</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Journal of Medicinal Chemistry</span> &middot; <span>25 Dec 2025</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates degradation of one of the most challenging target classes in drug discovery.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">A CRBN-based degrader induced lysosomal degradation of a GPCR.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>GPCR</li>
+              <li>CRBN</li>
+              <li>Lysosomal Degradation</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="structural">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="structural">Structural Biology</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.biorxiv.org/content/10.64898/2025.12.19.695617v1" target="_blank" rel="noopener">Preprint <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Open and Closed Conformations of CRBN</h2>
+            <p class="pub-authors">Suzanne O&#x27;Connor, Zoe Rutter et al. <span class="pub-affil">&middot; CeTPD Dundee &amp; Biogen</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">bioRxiv preprint</span> &middot; <span>22 Dec 2025</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Provides a framework for understanding how ligand binding influences CRBN conformational states and degradation activity.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Combines biophysics, mutagenesis, and SAR to characterize open and closed forms of CRBN.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>CRBN</li>
+              <li>Conformational Dynamics</li>
+              <li>SAR</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="stabilizers">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://portlandpress.com/essaysbiochem/article/69/04/379/237042/Clues-for-glues-from-serendipity-to-nature-s" target="_blank" rel="noopener">Review <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Molecular Glue Modulation from Serendipity Toward Rational Design</h2>
+            <p class="pub-authors">Zuzanna Kozicka <span class="pub-affil">&middot; EPFL</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Essays in Biochemistry</span> &middot; <span>22 Dec 2025</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Provides a framework for moving molecular glue discovery from empirical observations toward intentional design.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Review of mechanisms and emerging strategies for rational molecular glue discovery across stabilizing and degrading applications.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Molecular Glue</li>
+              <li>Rational Design</li>
+              <li>Review</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="induced-proximity">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.biorxiv.org/content/10.64898/2025.12.12.694031v1" target="_blank" rel="noopener">Preprint <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">BCL6 Covalent Ligands Recruit BRD9 for Functional Reprogramming</h2>
+            <p class="pub-authors">Zoe Duong et al. <span class="pub-affil">&middot; UC Berkeley</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">bioRxiv preprint</span> &middot; <span>14 Dec 2025</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Illustrates how covalent chemistry can unexpectedly create new proximity-driven biology and transcriptional outcomes.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Covalent BCL6 ligands recruit BRD9 and generate TCIP-like modulation of chromatin-associated targets.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>BCL6</li>
+              <li>BRD9</li>
+              <li>TCIP-like</li>
+              <li>Covalent Chemistry</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="clinical">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41570-025-00784-6" target="_blank" rel="noopener">Perspective <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">PROTAC Development: Lessons from the Past Decade</h2>
+            <p class="pub-authors">Esther Lee et al. <span class="pub-affil">&middot; AstraZeneca</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Reviews Chemistry</span> &middot; <span>12 Dec 2025</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Provides a practical overview of how the field has successfully translated degraders into the clinic.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Reviews major milestones, successes, and remaining challenges in PROTAC drug discovery and development.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Clinical Translation</li>
+              <li>PROTACs</li>
+              <li>Review</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="structural">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="structural">Structural Biology</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.nature.com/articles/s41467-025-66382-8" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">VHL-Mediated Degradation of IRE1 Reveals a 2:2:2 Ternary Complex</h2>
+            <p class="pub-authors">Jin Du, Elisia Villemure et al. <span class="pub-affil">&middot; Genentech</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Nature Communications</span> &middot; <span>11 Dec 2025</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates that transmembrane ER proteins can be efficiently degraded and reveals unique higher-order ternary complex architecture.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Structural studies show a dimerization-driven 2:2:2 ternary complex underlying IRE1 degradation.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>IRE1</li>
+              <li>VHL</li>
+              <li>Structural Biology</li>
+              <li>Transmembrane Proteins</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="clinical">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2025.1664889/full" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Unexpected Toxicity in a Heterobifunctional Degrader</h2>
+            <p class="pub-authors">Lise Loberg et al. <span class="pub-affil">&middot; AbbVie</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Frontiers in Pharmacology</span> &middot; <span>10 Dec 2025</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Safety is one of the most important factors determining whether degraders successfully reach patients.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Mechanistic investigation of unexpected toxicity associated with a heterobifunctional degrader provides valuable insights for future degrader design and risk assessment.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Safety</li>
+              <li>Toxicology</li>
+              <li>Translation</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="induced-proximity">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.sciencedirect.com/science/article/pii/S2451945625003538?dgcid=coauthor" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">OGT-Mediated Targeted O-GlcNAcylation</h2>
+            <p class="pub-authors">Alison M. et al. <span class="pub-affil">&middot; Christina Woo Lab, Harvard</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Cell Chemical Biology</span> &middot; <span>8 Dec 2025</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Expands induced proximity into glycosylation biology and targeted post-translational modification control.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">OGT recruitment is used to selectively modify protein targets through O-GlcNAcylation.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>OGT</li>
+              <li>PTM Engineering</li>
+              <li>O-GlcNAc</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="degraders">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="degraders">Degraders</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.science.org/doi/10.1126/sciadv.adu2292" target="_blank" rel="noopener">Paper <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">nanoPROTACs Enable Nanoparticle-Mediated Degrader Delivery</h2>
+            <p class="pub-authors">Kristen Vogt et al. <span class="pub-affil">&middot; MSKCC</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">Science Advances</span> &middot; <span>5 Dec 2025</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates how nanoparticle delivery can enhance degrader delivery and drug loading.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">nanoPROTACs were used to increase delivery and exposure of targeted protein degraders.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>nanoPROTAC</li>
+              <li>Delivery</li>
+              <li>Nanoparticles</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="structural">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="structural">Structural Biology</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.biorxiv.org/content/10.64898/2025.12.04.692288v1" target="_blank" rel="noopener">Preprint <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Native MS for Studying PROTAC and CRL Ligase Assemblies</h2>
+            <p class="pub-authors">Sally-Ann Poulsen et al. <span class="pub-affil">&middot; Griffith University</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">bioRxiv preprint</span> &middot; <span>4 Dec 2025</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Expands the biophysical toolkit available for understanding degrader mechanism and ternary complex formation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Demonstrates use of native MS to characterize PROTAC-induced and CRL-associated protein complexes.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>Native MS</li>
+              <li>CRL Complexes</li>
+              <li>Biophysics</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="novel-e3s">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.biorxiv.org/content/10.1101/2025.11.03.686228v1" target="_blank" rel="noopener">Preprint <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">MAGEA11-Recruiting Degraders</h2>
+            <p class="pub-authors">Isabella Jacobsen et al. <span class="pub-affil">&middot; University of Minnesota</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">bioRxiv preprint</span> &middot; <span>3 Nov 2025</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Highlights the potential value of tissue-restricted ligases for achieving selective target degradation.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Development of degraders utilizing MAGEA11, an E3 ligase with restricted expression across cell types.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>MAGEA11</li>
+              <li>Novel E3</li>
+              <li>Selectivity</li>
+            </ul>
+          </article>
+
+          <article class="pub-card" data-pub data-cat="induced-proximity">
+            <header class="pub-head">
+              <div class="pub-chips">
+                <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
+              </div>
+              <div class="pub-links">
+                <a class="pub-link" href="https://www.biorxiv.org/content/10.1101/2024.07.16.603666v1" target="_blank" rel="noopener">Preprint <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+              </div>
+            </header>
+            <h2 class="pub-title">Covalent COUPLrs and Mapping Covalent Interactions</h2>
+            <p class="pub-authors">Diane Yang et al. <span class="pub-affil">&middot; Massachusetts General Hospital</span></p>
+            <p class="pub-source"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pub-journal">bioRxiv preprint</span> &middot; <span>18 Jul 2024</span></p>
+            <div class="pub-notes">
+              <div><span class="pub-note-k">Why it matters</span><p class="pub-note-v">Demonstrates how covalent induced proximity systems can both create and systematically identify new protein interactions.</p></div>
+              <div><span class="pub-note-k">Advance</span><p class="pub-note-v">Combines dual covalent warheads with deconvolution methods to characterize proximity-induced protein interactions.</p></div>
+            </div>
+            <ul class="pub-tags">
+              <li>COUPLr</li>
+              <li>Covalent Chemistry</li>
+              <li>Interactome Mapping</li>
+            </ul>
+          </article>
+
+        </div>
+
+        <p class="pub-empty" id="pub-empty" hidden>No papers match that filter. Try a broader keyword or reset the category.</p>
+
         <div class="notice">
-          <strong>Coming soon.</strong>
+          <strong>Know a paper we should feature?</strong>
           <p class="muted">
-            We're curating a running list of standout papers, preprints, and reviews. Want to nominate a publication to feature here?
-            <a href="get-involved.html">Get in touch</a> and we'll add it.
+            This list grows with the field. To nominate a publication or preprint &mdash; especially one led by women in
+            induced proximity &mdash; <a href="get-involved.html">get in touch</a> and we&rsquo;ll add it.
           </p>
         </div>
       </div>
     </section>
   </main>
+
+<script>
+    (function () {
+      var search  = document.getElementById('pub-search');
+      var count   = document.getElementById('pub-count');
+      var empty   = document.getElementById('pub-empty');
+      var cards   = Array.prototype.slice.call(document.querySelectorAll('[data-pub]'));
+      var buttons = Array.prototype.slice.call(document.querySelectorAll('.pub-filter-btn'));
+      var total   = cards.length;
+      var cat     = 'all';
+
+      function update() {
+        var q = search.value.trim().toLowerCase();
+        var shown = 0;
+        cards.forEach(function (card) {
+          var inCat = cat === 'all' ||
+            card.getAttribute('data-cat').split(' ').indexOf(cat) !== -1;
+          var match = inCat && (!q || card.textContent.toLowerCase().indexOf(q) !== -1);
+          card.hidden = !match;
+          if (match) shown++;
+        });
+        empty.hidden = shown !== 0;
+        count.textContent = (shown === total)
+          ? total + ' papers, newest first'
+          : shown + ' of ' + total + ' papers';
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          cat = btn.getAttribute('data-cat');
+          buttons.forEach(function (b) {
+            b.setAttribute('aria-pressed', String(b === btn));
+          });
+          update();
+        });
+      });
+
+      search.addEventListener('input', update);
+      update();
+    })();
+  </script>
