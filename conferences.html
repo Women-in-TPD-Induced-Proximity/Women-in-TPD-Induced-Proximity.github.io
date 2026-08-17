@@ -19,9 +19,24 @@ description: "Symposia and multi-day scientific gatherings for the induced proxi
           <p class="muted">Mark your calendar.</p>
         </div>
 
+        <div class="sort-bar sort-bar--end">
+          <label class="sort-label" for="conf-sort">Sort</label>
+          <span class="sort-field">
+            <select id="conf-sort" class="sort-select" data-sort-target=".conf-list">
+              <option value="date:asc">Soonest first</option>
+              <option value="date:desc">Furthest out first</option>
+              <option value="name:asc">Name (A&ndash;Z)</option>
+            </select>
+            <svg class="sort-caret" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+        </div>
+
+        <!-- Authored soonest-first, which is what the default sort reproduces.
+             data-sort-date is the first day of the meeting; the EMBO entry has
+             no date yet, and an empty key always sorts last (see sort.js). -->
         <div class="conf-list">
 
-          <div class="conf-card">
+          <div class="conf-card" data-sort-date="2026-07-21" data-sort-name="AACR Drug Discovery and Development (D3)">
             <div>
               <p class="conf-title">AACR Drug Discovery and Development (D3)</p>
               <p class="conf-meta">Sheraton Boston Hotel, Boston, MA</p>
@@ -36,67 +51,7 @@ description: "Symposia and multi-day scientific gatherings for the induced proxi
             </div>
           </div>
 
-          <div class="conf-card">
-            <div>
-              <p class="conf-title">EMBO: Ubiquitin and Ubiquitin-like Proteins in Health and Disease</p>
-              <p class="conf-meta">Puglia, Italy</p>
-              <div class="conf-actions">
-                <a href="https://www.embo.org/events/" class="button primary" target="_blank" rel="noopener">Conference website →</a>
-              </div>
-            </div>
-            <div class="conf-date">
-              <div class="conf-month">2026</div>
-              <div class="conf-day">TBA</div>
-              <div class="conf-year">&nbsp;</div>
-            </div>
-          </div>
-
-          <div class="conf-card">
-            <div>
-              <p class="conf-title">RSC-BMCS/SCI Targeted Protein Degradation</p>
-              <p class="conf-meta">The Fielder Centre, Hatfield, UK</p>
-              <div class="conf-actions">
-                <a href="https://www.rscbmcs.org/events/protdeg26/" class="button primary" target="_blank" rel="noopener">Conference website →</a>
-              </div>
-            </div>
-            <div class="conf-date">
-              <div class="conf-month">Oct</div>
-              <div class="conf-day">21–22</div>
-              <div class="conf-year">2026</div>
-            </div>
-          </div>
-
-          <div class="conf-card">
-            <div>
-              <p class="conf-title">TPD &amp; Induced Proximity Summit</p>
-              <p class="conf-meta">Boston, MA</p>
-              <div class="conf-actions">
-                <a href="https://proteindegradation.com/" class="button primary" target="_blank" rel="noopener">Conference website →</a>
-              </div>
-            </div>
-            <div class="conf-date">
-              <div class="conf-month">Oct</div>
-              <div class="conf-day">26–29</div>
-              <div class="conf-year">2026</div>
-            </div>
-          </div>
-
-          <div class="conf-card">
-            <div>
-              <p class="conf-title">SMART Symposium on Targeted Protein Degradation</p>
-              <p class="conf-meta">Cloud Park International Conference Center, Shenzhen, China</p>
-              <div class="conf-actions">
-                <a href="https://symposia.smart.org.cn/sym/event/FutureEvents/20250909001.html" class="button primary" target="_blank" rel="noopener">Conference website →</a>
-              </div>
-            </div>
-            <div class="conf-date">
-              <div class="conf-month">Nov</div>
-              <div class="conf-day">10–13</div>
-              <div class="conf-year">2026</div>
-            </div>
-          </div>
-
-          <div class="conf-card">
+          <div class="conf-card" data-sort-date="2026-09-28" data-sort-name="Discovery on Target">
             <div>
               <p class="conf-title">Discovery on Target</p>
               <p class="conf-meta">Boston, MA</p>
@@ -111,7 +66,52 @@ description: "Symposia and multi-day scientific gatherings for the induced proxi
             </div>
           </div>
 
-          <div class="conf-card">
+          <div class="conf-card" data-sort-date="2026-10-21" data-sort-name="RSC-BMCS/SCI Targeted Protein Degradation">
+            <div>
+              <p class="conf-title">RSC-BMCS/SCI Targeted Protein Degradation</p>
+              <p class="conf-meta">The Fielder Centre, Hatfield, UK</p>
+              <div class="conf-actions">
+                <a href="https://www.rscbmcs.org/events/protdeg26/" class="button primary" target="_blank" rel="noopener">Conference website →</a>
+              </div>
+            </div>
+            <div class="conf-date">
+              <div class="conf-month">Oct</div>
+              <div class="conf-day">21–22</div>
+              <div class="conf-year">2026</div>
+            </div>
+          </div>
+
+          <div class="conf-card" data-sort-date="2026-10-26" data-sort-name="TPD &amp; Induced Proximity Summit">
+            <div>
+              <p class="conf-title">TPD &amp; Induced Proximity Summit</p>
+              <p class="conf-meta">Boston, MA</p>
+              <div class="conf-actions">
+                <a href="https://proteindegradation.com/" class="button primary" target="_blank" rel="noopener">Conference website →</a>
+              </div>
+            </div>
+            <div class="conf-date">
+              <div class="conf-month">Oct</div>
+              <div class="conf-day">26–29</div>
+              <div class="conf-year">2026</div>
+            </div>
+          </div>
+
+          <div class="conf-card" data-sort-date="2026-11-10" data-sort-name="SMART Symposium on Targeted Protein Degradation">
+            <div>
+              <p class="conf-title">SMART Symposium on Targeted Protein Degradation</p>
+              <p class="conf-meta">Cloud Park International Conference Center, Shenzhen, China</p>
+              <div class="conf-actions">
+                <a href="https://symposia.smart.org.cn/sym/event/FutureEvents/20250909001.html" class="button primary" target="_blank" rel="noopener">Conference website →</a>
+              </div>
+            </div>
+            <div class="conf-date">
+              <div class="conf-month">Nov</div>
+              <div class="conf-day">10–13</div>
+              <div class="conf-year">2026</div>
+            </div>
+          </div>
+
+          <div class="conf-card" data-sort-date="2027-02-08" data-sort-name="Keystone: Induced Proximity and Targeted Protein Degradation">
             <div>
               <p class="conf-title">Keystone: Induced Proximity and Targeted Protein Degradation</p>
               <p class="conf-meta">Banff, Canada</p>
@@ -123,6 +123,21 @@ description: "Symposia and multi-day scientific gatherings for the induced proxi
               <div class="conf-month">Feb</div>
               <div class="conf-day">8–11</div>
               <div class="conf-year">2027</div>
+            </div>
+          </div>
+
+          <div class="conf-card" data-sort-date="" data-sort-name="EMBO: Ubiquitin and Ubiquitin-like Proteins in Health and Disease">
+            <div>
+              <p class="conf-title">EMBO: Ubiquitin and Ubiquitin-like Proteins in Health and Disease</p>
+              <p class="conf-meta">Puglia, Italy</p>
+              <div class="conf-actions">
+                <a href="https://www.embo.org/events/" class="button primary" target="_blank" rel="noopener">Conference website →</a>
+              </div>
+            </div>
+            <div class="conf-date">
+              <div class="conf-month">2026</div>
+              <div class="conf-day">TBA</div>
+              <div class="conf-year">&nbsp;</div>
             </div>
           </div>
 
@@ -150,3 +165,5 @@ description: "Symposia and multi-day scientific gatherings for the induced proxi
       </div>
     </section>
   </main>
+
+<script src="/assets/js/sort.js" defer></script>

@@ -10,7 +10,7 @@
   // Signal to CSS that tiles are now interactive (enables hover/zoom hints).
   document.documentElement.classList.add("js-lightbox");
 
-  // Collect the photo set once, in document order, for prev/next navigation.
+  // Collect each tile's photo data once.
   const items = tiles.map((tile) => {
     const img = tile.querySelector("img");
     const caption = tile.querySelector(".photo-caption");
@@ -55,17 +55,32 @@
   let current = -1;
   let lastFocused = null;
 
+  // Prev/next walks the photos in the order they are currently on the page,
+  // which assets/js/sort.js can change — so the sequence is rebuilt whenever
+  // the overlay opens rather than frozen at load.
+  const byTile = new Map(items.map((item) => [item.tile, item]));
+  let sequence = items.slice();
+
+  function resequence() {
+    sequence = Array.from(document.querySelectorAll(".photo-tile"))
+      .map((tile) => byTile.get(tile))
+      .filter(Boolean);
+  }
+
   function render(i) {
-    const item = items[i];
+    const item = sequence[i];
     imgEl.src = item.src;
     imgEl.alt = item.alt;
     captionEl.innerHTML = item.captionHTML;
     captionEl.hidden = !item.captionHTML;
-    counterEl.textContent = `${i + 1} / ${items.length}`;
+    counterEl.textContent = `${i + 1} / ${sequence.length}`;
     overlay.setAttribute("aria-label", item.alt || "Image viewer");
   }
 
-  function open(i) {
+  function open(tile) {
+    resequence();
+    const i = sequence.indexOf(byTile.get(tile));
+    if (i < 0) return;
     current = i;
     lastFocused = document.activeElement;
     render(i);
@@ -84,8 +99,8 @@
   }
 
   function step(delta) {
-    if (!multiple) return;
-    current = (current + delta + items.length) % items.length;
+    if (sequence.length < 2) return;
+    current = (current + delta + sequence.length) % sequence.length;
     render(current);
   }
 
@@ -121,7 +136,7 @@
   }
 
   // Make each tile behave like a button that opens the viewer.
-  items.forEach((item, i) => {
+  items.forEach((item) => {
     const tile = item.tile;
     tile.setAttribute("role", "button");
     tile.setAttribute("tabindex", "0");
@@ -131,12 +146,12 @@
     tile.addEventListener("click", (e) => {
       // Let real links inside a tile behave normally.
       if (e.target.closest("a")) return;
-      open(i);
+      open(tile);
     });
     tile.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        open(i);
+        open(tile);
       }
     });
   });

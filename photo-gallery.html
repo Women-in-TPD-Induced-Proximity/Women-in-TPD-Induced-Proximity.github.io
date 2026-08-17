@@ -15,14 +15,31 @@ description: "Photos from WiIP conferences, meetups, and community events."
     <section class="section">
       <div class="container">
 
-        <!-- Single tab: Meetups -->
-        <div class="gallery-filter">
-          <button class="filter-btn active">Meetups</button>
+        <div class="gallery-tools">
+          <!-- Single tab: Meetups -->
+          <div class="gallery-filter">
+            <button class="filter-btn active">Meetups</button>
+          </div>
+
+          <div class="sort-bar">
+            <label class="sort-label" for="gallery-sort">Sort</label>
+            <span class="sort-field">
+              <select id="gallery-sort" class="sort-select" data-sort-target=".photo-grid">
+                <option value="year:desc">Newest first</option>
+                <option value="year:asc">Oldest first</option>
+                <option value="event:asc">Event (A&ndash;Z)</option>
+              </select>
+              <svg class="sort-caret" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </div>
         </div>
 
+        <!-- Authored most-recent-first (add new photos at the top). Only the
+             year is known per photo, so a stable sort keeps same-year photos
+             in the order they're written here. -->
         <div class="photo-grid">
 
-          <div class="photo-tile">
+          <div class="photo-tile" data-sort-year="2026" data-sort-event="AACR">
             <img src="/assets/images/gallery/aacr-sandiego-2026.jpg"
                  alt="AACR, San Diego, 2026"
                  class="photo-img" loading="lazy" />
@@ -32,7 +49,7 @@ description: "Photos from WiIP conferences, meetups, and community events."
             </div>
           </div>
 
-          <div class="photo-tile">
+          <div class="photo-tile" data-sort-year="2025" data-sort-event="AACR">
             <img src="/assets/images/gallery/aacr-orlando-2025-2.jpg"
                  alt="AACR, Orlando, FL, 2025"
                  class="photo-img" loading="lazy" />
@@ -42,7 +59,7 @@ description: "Photos from WiIP conferences, meetups, and community events."
             </div>
           </div>
 
-          <div class="photo-tile">
+          <div class="photo-tile" data-sort-year="2025" data-sort-event="AACR">
             <img src="/assets/images/gallery/aacr-orlando-2025.jpg"
                  alt="AACR, Orlando, FL, 2025"
                  class="photo-img" loading="lazy" />
@@ -52,7 +69,7 @@ description: "Photos from WiIP conferences, meetups, and community events."
             </div>
           </div>
 
-          <div class="photo-tile">
+          <div class="photo-tile" data-sort-year="2025" data-sort-event="Induced Proximity Keystone Conference">
             <img src="/assets/images/gallery/keystone-2025.jpg"
                  alt="Induced Proximity Keystone Conference, Santa Fe, New Mexico, 2025"
                  class="photo-img" loading="lazy" />
@@ -62,7 +79,7 @@ description: "Photos from WiIP conferences, meetups, and community events."
             </div>
           </div>
 
-          <div class="photo-tile">
+          <div class="photo-tile" data-sort-year="2025" data-sort-event="Chemistry Conference">
             <img src="/assets/images/gallery/france-2025.jpg"
                  alt="Chemistry Conference in France, 2025"
                  class="photo-img" loading="lazy" />
@@ -72,7 +89,7 @@ description: "Photos from WiIP conferences, meetups, and community events."
             </div>
           </div>
 
-          <div class="photo-tile">
+          <div class="photo-tile" data-sort-year="2025" data-sort-event="Discovery on Target">
             <img src="/assets/images/gallery/dot-jj-2025.jpg"
                  alt="Discovery on Target, J&amp;J Innovation Center, Boston, 2025"
                  class="photo-img" loading="lazy" />
@@ -82,7 +99,7 @@ description: "Photos from WiIP conferences, meetups, and community events."
             </div>
           </div>
 
-          <div class="photo-tile">
+          <div class="photo-tile" data-sort-year="2025" data-sort-event="3rd Annual Women in TPD &amp; Induced Proximity">
             <img src="/assets/images/gallery/annual-2025.jpg"
                  alt="3rd Annual Women in TPD &amp; Induced Proximity, Boston, 2025"
                  class="photo-img" loading="lazy" />
@@ -92,7 +109,7 @@ description: "Photos from WiIP conferences, meetups, and community events."
             </div>
           </div>
 
-          <div class="photo-tile">
+          <div class="photo-tile" data-sort-year="2024" data-sort-event="TPD Conference at CeTPD">
             <img src="/assets/images/gallery/dundee-2024.jpg"
                  alt="TPD conference at CeTPD, Dundee, Scotland, 2024"
                  class="photo-img" loading="lazy" />
@@ -102,7 +119,7 @@ description: "Photos from WiIP conferences, meetups, and community events."
             </div>
           </div>
 
-          <div class="photo-tile">
+          <div class="photo-tile" data-sort-year="2024" data-sort-event="2nd Annual Women in TPD &amp; Induced Proximity">
             <img src="/assets/images/gallery/annual-2024.jpg"
                  alt="2nd Annual Women in TPD &amp; Induced Proximity, Boston, 2024"
                  class="photo-img" loading="lazy" />
@@ -112,7 +129,7 @@ description: "Photos from WiIP conferences, meetups, and community events."
             </div>
           </div>
 
-          <div class="photo-tile">
+          <div class="photo-tile" data-sort-year="2023" data-sort-event="1st Annual Women in TPD &amp; Induced Proximity">
             <img src="/assets/images/gallery/annual-2023.jpg"
                  alt="1st Annual Women in TPD &amp; Induced Proximity, Boston, 2023"
                  class="photo-img" loading="lazy" />
@@ -164,6 +181,7 @@ description: "Photos from WiIP conferences, meetups, and community events."
     </section>
   </main>
 
+<script src="/assets/js/sort.js" defer></script>
 <script src="/assets/js/lightbox.js" defer></script>
 
 <style>

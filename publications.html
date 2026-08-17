@@ -33,13 +33,28 @@ description: "Curated highlights of notable publications in targeted protein deg
           <button class="pub-filter-btn" type="button" data-cat="clinical" aria-pressed="false"><span class="pub-dot" aria-hidden="true"></span>Clinical &amp; Translational</button>
           </div>
 
-          <p class="pub-count" id="pub-count" role="status"></p>
+          <div class="pub-meta">
+            <p class="pub-count" id="pub-count" role="status"></p>
+            <div class="sort-bar">
+              <label class="sort-label" for="pub-sort">Sort</label>
+              <span class="sort-field">
+                <select id="pub-sort" class="sort-select" data-sort-target=".pub-list">
+                  <option value="date:desc">Newest first</option>
+                  <option value="date:asc">Oldest first</option>
+                  <option value="author:asc">Lead author (A&ndash;Z)</option>
+                  <option value="journal:asc">Journal (A&ndash;Z)</option>
+                  <option value="title:asc">Title (A&ndash;Z)</option>
+                </select>
+                <svg class="sort-caret" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </div>
+          </div>
         </div>
 
-        <!-- PAPERS, NEWEST FIRST -->
+        <!-- PAPERS — authored newest first; the sort control can reorder them -->
         <div class="pub-list">
 
-          <article class="pub-card" data-pub data-cat="clinical">
+          <article class="pub-card" data-sort-date="2026-08-15" data-sort-title="Safety Considerations for CRBN-Based Degraders" data-sort-journal="Nature Reviews Drug Discovery" data-sort-author="Rengarajan" data-pub data-cat="clinical">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
@@ -62,7 +77,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2026-08-14" data-sort-title="KRASG12V Targeted Degradation Reveals New Resistance Mechanisms" data-sort-journal="Cancer Research" data-sort-author="Mayor-Ruiz" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -85,7 +100,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="stabilizers">
+          <article class="pub-card" data-sort-date="2026-08-04" data-sort-title="Molecular Glues: From Degradation to Functional Modulation" data-sort-journal="npj Drug Discovery" data-sort-author="Silvian" data-pub data-cat="stabilizers">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
@@ -108,7 +123,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="induced-proximity">
+          <article class="pub-card" data-sort-date="2026-07-27" data-sort-title="COUPLrs: Covalent Protein Ligators" data-sort-journal="Cancer Discovery" data-sort-author="Yang" data-pub data-cat="induced-proximity">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
@@ -131,7 +146,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2026-07-23" data-sort-title="Development of a Clinical Androgen Receptor Bifunctional Degrader" data-sort-journal="Journal of Medicinal Chemistry" data-sort-author="Mortensen" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -154,7 +169,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="induced-proximity">
+          <article class="pub-card" data-sort-date="2026-07-20" data-sort-title="KAT-TCIPs Rewire BCL6 Transcriptional Programs" data-sort-journal="Cell" data-sort-author="Nix" data-pub data-cat="induced-proximity">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
@@ -178,7 +193,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2026-07-17" data-sort-title="D2B Discovery of CRBN-Based HaloPROTACs" data-sort-journal="ACS Chemical Biology" data-sort-author="Stevens" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -202,7 +217,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="novel-e3s">
+          <article class="pub-card" data-sort-date="2026-07-16" data-sort-title="BioPROTAC Screening Reveals Routes to c-Myc Degradation" data-sort-journal="bioRxiv preprint" data-sort-author="Ascanelli" data-pub data-cat="novel-e3s">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
@@ -225,7 +240,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2026-07-15" data-sort-title="MGPROTACs Enable Estrogen Receptor Degradation Through 14-3-3" data-sort-journal="Nature Communications" data-sort-author="Crowe" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -249,7 +264,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="structural">
+          <article class="pub-card" data-sort-date="2026-07-14" data-sort-title="Native Mass Spectrometry for Characterizing PROTAC Ternary Complexes" data-sort-journal="Analytical Chemistry" data-sort-author="Sternicki" data-pub data-cat="structural">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="structural">Structural Biology</span>
@@ -272,7 +287,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="induced-proximity">
+          <article class="pub-card" data-sort-date="2026-07-09" data-sort-title="BCL6-BRD4 TCIPs Expand Functional Reprogramming Strategies" data-sort-journal="Journal of Medicinal Chemistry" data-sort-author="Chang" data-pub data-cat="induced-proximity">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
@@ -296,7 +311,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="structural">
+          <article class="pub-card" data-sort-date="2026-07-09" data-sort-title="CRBN Molecular Glue Degradation of KAT2A" data-sort-journal="Science" data-sort-author="Wang" data-pub data-cat="structural">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="structural">Structural Biology</span>
@@ -320,7 +335,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="induced-proximity">
+          <article class="pub-card" data-sort-date="2026-07-08" data-sort-title="TICTACs Enable Targeted Immune Checkpoint Modulation" data-sort-journal="Nature Chemical Biology" data-sort-author="Morimoto" data-pub data-cat="induced-proximity">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
@@ -344,7 +359,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2026-07-01" data-sort-title="Dual-Mechanism CRBN/Rpn13 Degradation" data-sort-journal="Journal of the American Chemical Society" data-sort-author="Trader" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -368,7 +383,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="structural">
+          <article class="pub-card" data-sort-date="2026-06-26" data-sort-title="Structural Basis of SERD-Mediated ERα Degradation" data-sort-journal="bioRxiv preprint" data-sort-author="Schätz" data-pub data-cat="structural">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="structural">Structural Biology</span>
@@ -391,7 +406,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="structural">
+          <article class="pub-card" data-sort-date="2026-06-23" data-sort-title="Cryo-EM Structure of a CRBN-Based IRAK4 Degrader" data-sort-journal="Nature Communications" data-sort-author="Fei" data-pub data-cat="structural">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="structural">Structural Biology</span>
@@ -415,7 +430,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="stabilizers">
+          <article class="pub-card" data-sort-date="2026-06-15" data-sort-title="From Inhibitor to Stabilizer to Degrader: The AURKA Story" data-sort-journal="Advanced Science" data-sort-author="Mozes" data-pub data-cat="stabilizers">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
@@ -439,7 +454,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2026-06-12" data-sort-title="BacPROTACs for Bacterial Protein Degradation" data-sort-journal="bioRxiv preprint" data-sort-author="Morreale" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -462,7 +477,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="clinical">
+          <article class="pub-card" data-sort-date="2026-06-01" data-sort-title="Modeling Oral Bioavailability of Degraders" data-sort-journal="ChemRxiv preprint" data-sort-author="Düvel" data-pub data-cat="clinical">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
@@ -485,7 +500,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="clinical">
+          <article class="pub-card" data-sort-date="2026-05-29" data-sort-title="Degron Tags for In Vivo Studies" data-sort-journal="Nature Communications" data-sort-author="Feltham" data-pub data-cat="clinical">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
@@ -508,7 +523,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders clinical">
+          <article class="pub-card" data-sort-date="2026-05-28" data-sort-title="Degrader Antibody Conjugates (DACs) Deliver SMARCA2/4 Degraders" data-sort-journal="Journal of Medicinal Chemistry" data-sort-author="Dockrey" data-pub data-cat="degraders clinical">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -535,7 +550,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2026-05-15" data-sort-title="Advancing Extracellular Targeted Protein Degradation" data-sort-journal="Advanced Science" data-sort-author="Zhao" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -557,7 +572,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="novel-e3s">
+          <article class="pub-card" data-sort-date="2026-05-15" data-sort-title="PCMT1 Generates Cyclic Imide Degrons on Native CRBN Targets" data-sort-journal="Nature Chemical Biology" data-sort-author="Xu" data-pub data-cat="novel-e3s">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
@@ -580,7 +595,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="structural">
+          <article class="pub-card" data-sort-date="2026-05-15" data-sort-title="Collateral Degradation of Protein Complex Members" data-sort-journal="ACS Chemical Biology" data-sort-author="Glennie" data-pub data-cat="structural">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="structural">Structural Biology</span>
@@ -603,7 +618,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="novel-e3s">
+          <article class="pub-card" data-sort-date="2026-05-12" data-sort-title="Dual-Ligase Molecular Glue Degradation of SMARCA2/4" data-sort-journal="Nature Chemical Biology" data-sort-author="Spiteri" data-pub data-cat="novel-e3s">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
@@ -626,7 +641,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2026-05-06" data-sort-title="Selective EP300 Degradation in Hematologic Malignancies" data-sort-journal="Nature Communications" data-sort-author="Asem" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -649,7 +664,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="stabilizers">
+          <article class="pub-card" data-sort-date="2026-05-05" data-sort-title="Non-Degrading Molecular Glues Strengthen Mutant CRAF–14-3-3 Interactions" data-sort-journal="Proceedings of the National Academy of Sciences" data-sort-author="Virta" data-pub data-cat="stabilizers">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
@@ -673,7 +688,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="novel-e3s">
+          <article class="pub-card" data-sort-date="2026-04-23" data-sort-title="TEAD-FBXO22 Molecular Glue Degradation" data-sort-journal="bioRxiv preprint" data-sort-author="Carrara" data-pub data-cat="novel-e3s">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
@@ -696,7 +711,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="novel-e3s">
+          <article class="pub-card" data-sort-date="2026-04-22" data-sort-title="FBXO31 Enters the Targeted Protein Degradation Toolbox" data-sort-journal="Journal of the American Chemical Society" data-sort-author="Zhang" data-pub data-cat="novel-e3s">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
@@ -719,7 +734,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="clinical">
+          <article class="pub-card" data-sort-date="2026-04-14" data-sort-title="Clinical KRASG12D Degradation with Setidegrasib" data-sort-journal="Nature Medicine" data-sort-author="Sakata-Sakurai" data-pub data-cat="clinical">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
@@ -743,7 +758,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="stabilizers">
+          <article class="pub-card" data-sort-date="2026-04-09" data-sort-title="Molecular Glue Modulation Beyond Protein Degradation" data-sort-journal="Nature Chemical Biology" data-sort-author="Pieńkowska" data-pub data-cat="stabilizers">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
@@ -766,7 +781,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="clinical">
+          <article class="pub-card" data-sort-date="2026-04-09" data-sort-title="Chameleonicity, Efflux, and Oral Bioavailability of Degraders" data-sort-journal="ACS Medicinal Chemistry Letters" data-sort-author="Le Manach" data-pub data-cat="clinical">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
@@ -789,7 +804,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="clinical">
+          <article class="pub-card" data-sort-date="2026-04-09" data-sort-title="CNS-Penetrant Degraders: Current Progress and Opportunities" data-sort-journal="ACS Medicinal Chemistry Letters" data-sort-author="Francisco" data-pub data-cat="clinical">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
@@ -812,7 +827,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2026-03-27" data-sort-title="SORTACs: Lysosome Targeting Chimeras for Extracellular Proteins" data-sort-journal="Cell Chemical Biology" data-sort-author="Gustafsen" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -835,7 +850,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="novel-e3s">
+          <article class="pub-card" data-sort-date="2026-03-20" data-sort-title="The Human E3-ome Atlas" data-sort-journal="Cell" data-sort-author="Feltham" data-pub data-cat="novel-e3s">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
@@ -858,7 +873,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="induced-proximity">
+          <article class="pub-card" data-sort-date="2026-03-18" data-sort-title="Regulating β-Catenin Through CSNK1-Mediated Induced Proximity" data-sort-journal="bioRxiv preprint" data-sort-author="Wolf" data-pub data-cat="induced-proximity">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
@@ -881,7 +896,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="novel-e3s">
+          <article class="pub-card" data-sort-date="2026-03-15" data-sort-title="IDO1 Degradation Through KLHDC3 Recruitment" data-sort-journal="Nature Chemistry" data-sort-author="Hennes" data-pub data-cat="novel-e3s">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
@@ -904,7 +919,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2026-03-12" data-sort-title="VHL-Based NAMPT Degraders: Lessons Learned" data-sort-journal="Journal of Medicinal Chemistry" data-sort-author="Pirali" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -927,7 +942,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="structural novel-e3s">
+          <article class="pub-card" data-sort-date="2026-03-12" data-sort-title="Allosteric Regulation of CRBN Through a Novel Binding Site" data-sort-journal="Nature" data-sort-author="Dipon" data-pub data-cat="structural novel-e3s">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="structural">Structural Biology</span>
@@ -953,7 +968,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2026-02-26" data-sort-title="BCL6 Bifunctional Degrader for Hematologic Malignancies" data-sort-journal="Journal of Medicinal Chemistry" data-sort-author="Mortensen" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -976,7 +991,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="clinical">
+          <article class="pub-card" data-sort-date="2026-02-13" data-sort-title="Formulation Strategies for Bifunctional Compounds" data-sort-journal="ACS Pharmacology &amp; Translational Science" data-sort-author="Brugger-Muli" data-pub data-cat="clinical">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
@@ -999,7 +1014,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2026-02-12" data-sort-title="Cyclin K Degradation Through CDK12 Molecular Glue Chemistry" data-sort-journal="Journal of Medicinal Chemistry" data-sort-author="Iermolaieva" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -1022,7 +1037,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2026-02-12" data-sort-title="Click, Screen, Degrade: Accelerating Degrader Discovery" data-sort-journal="Journal of Medicinal Chemistry" data-sort-author="Hiesinger" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -1045,7 +1060,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="stabilizers">
+          <article class="pub-card" data-sort-date="2026-02-11" data-sort-title="Native CRAF–14-3-3 Interaction Stabilization Through Molecular Glue Design" data-sort-journal="Journal of the American Chemical Society" data-sort-author="Konstantinidou" data-pub data-cat="stabilizers">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
@@ -1068,7 +1083,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="induced-proximity">
+          <article class="pub-card" data-sort-date="2026-02-05" data-sort-title="PINCHs: Polymerization-Induced Chimeras" data-sort-journal="Nature Chemical Biology" data-sort-author="Livnah" data-pub data-cat="induced-proximity">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
@@ -1091,7 +1106,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="novel-e3s">
+          <article class="pub-card" data-sort-date="2026-01-29" data-sort-title="Identification of FBXO31 for Targeted Protein Degradation" data-sort-journal="bioRxiv preprint" data-sort-author="Zhang" data-pub data-cat="novel-e3s">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
@@ -1114,7 +1129,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="stabilizers">
+          <article class="pub-card" data-sort-date="2026-01-28" data-sort-title="Lessons from Allosteric Starting Points for PROTAC Discovery" data-sort-journal="Journal of the American Chemical Society" data-sort-author="Frost" data-pub data-cat="stabilizers">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
@@ -1137,7 +1152,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="novel-e3s degraders">
+          <article class="pub-card" data-sort-date="2026-01-19" data-sort-title="TEAD Degradation Through IAP Family Ligases" data-sort-journal="Communications Chemistry" data-sort-author="Gupta" data-pub data-cat="novel-e3s degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
@@ -1162,7 +1177,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="structural">
+          <article class="pub-card" data-sort-date="2026-01-06" data-sort-title="Mapping the CRBN Glue-able Interactome" data-sort-journal="bioRxiv preprint" data-sort-author="Kazi" data-pub data-cat="structural">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="structural">Structural Biology</span>
@@ -1185,7 +1200,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2025-12-25" data-sort-title="GPCR Degradation Through CRBN Recruitment" data-sort-journal="Journal of Medicinal Chemistry" data-sort-author="Zacarias" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -1208,7 +1223,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="structural">
+          <article class="pub-card" data-sort-date="2025-12-22" data-sort-title="Open and Closed Conformations of CRBN" data-sort-journal="bioRxiv preprint" data-sort-author="O&#x27;Connor" data-pub data-cat="structural">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="structural">Structural Biology</span>
@@ -1231,7 +1246,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="stabilizers">
+          <article class="pub-card" data-sort-date="2025-12-22" data-sort-title="Molecular Glue Modulation from Serendipity Toward Rational Design" data-sort-journal="Essays in Biochemistry" data-sort-author="Kozicka" data-pub data-cat="stabilizers">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="stabilizers">Stabilizers</span>
@@ -1254,7 +1269,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="induced-proximity">
+          <article class="pub-card" data-sort-date="2025-12-14" data-sort-title="BCL6 Covalent Ligands Recruit BRD9 for Functional Reprogramming" data-sort-journal="bioRxiv preprint" data-sort-author="Duong" data-pub data-cat="induced-proximity">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
@@ -1278,7 +1293,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="clinical">
+          <article class="pub-card" data-sort-date="2025-12-12" data-sort-title="PROTAC Development: Lessons from the Past Decade" data-sort-journal="Nature Reviews Chemistry" data-sort-author="Lee" data-pub data-cat="clinical">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
@@ -1301,7 +1316,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="structural">
+          <article class="pub-card" data-sort-date="2025-12-11" data-sort-title="VHL-Mediated Degradation of IRE1 Reveals a 2:2:2 Ternary Complex" data-sort-journal="Nature Communications" data-sort-author="Du" data-pub data-cat="structural">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="structural">Structural Biology</span>
@@ -1325,7 +1340,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="clinical">
+          <article class="pub-card" data-sort-date="2025-12-10" data-sort-title="Unexpected Toxicity in a Heterobifunctional Degrader" data-sort-journal="Frontiers in Pharmacology" data-sort-author="Loberg" data-pub data-cat="clinical">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="clinical">Clinical &amp; Translational</span>
@@ -1348,7 +1363,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="induced-proximity">
+          <article class="pub-card" data-sort-date="2025-12-08" data-sort-title="OGT-Mediated Targeted O-GlcNAcylation" data-sort-journal="Cell Chemical Biology" data-sort-author="Alison" data-pub data-cat="induced-proximity">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
@@ -1371,7 +1386,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="degraders">
+          <article class="pub-card" data-sort-date="2025-12-05" data-sort-title="nanoPROTACs Enable Nanoparticle-Mediated Degrader Delivery" data-sort-journal="Science Advances" data-sort-author="Vogt" data-pub data-cat="degraders">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="degraders">Degraders</span>
@@ -1394,7 +1409,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="structural">
+          <article class="pub-card" data-sort-date="2025-12-04" data-sort-title="Native MS for Studying PROTAC and CRL Ligase Assemblies" data-sort-journal="bioRxiv preprint" data-sort-author="Poulsen" data-pub data-cat="structural">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="structural">Structural Biology</span>
@@ -1417,7 +1432,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="novel-e3s">
+          <article class="pub-card" data-sort-date="2025-11-03" data-sort-title="MAGEA11-Recruiting Degraders" data-sort-journal="bioRxiv preprint" data-sort-author="Jacobsen" data-pub data-cat="novel-e3s">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="novel-e3s">Novel E3s</span>
@@ -1440,7 +1455,7 @@ description: "Curated highlights of notable publications in targeted protein deg
             </ul>
           </article>
 
-          <article class="pub-card" data-pub data-cat="induced-proximity">
+          <article class="pub-card" data-sort-date="2024-07-18" data-sort-title="Covalent COUPLrs and Mapping Covalent Interactions" data-sort-journal="bioRxiv preprint" data-sort-author="Yang" data-pub data-cat="induced-proximity">
             <header class="pub-head">
               <div class="pub-chips">
                 <span class="pub-chip" data-chip="induced-proximity">Induced Proximity</span>
@@ -1499,8 +1514,9 @@ description: "Curated highlights of notable publications in targeted protein deg
           if (match) shown++;
         });
         empty.hidden = shown !== 0;
+        // The order is no longer fixed — the sort control says what it is.
         count.textContent = (shown === total)
-          ? total + ' papers, newest first'
+          ? total + ' papers'
           : shown + ' of ' + total + ' papers';
       }
 
@@ -1518,3 +1534,5 @@ description: "Curated highlights of notable publications in targeted protein deg
       update();
     })();
   </script>
+
+<script src="/assets/js/sort.js" defer></script>

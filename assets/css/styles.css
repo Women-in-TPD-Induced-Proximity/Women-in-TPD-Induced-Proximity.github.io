@@ -1243,3 +1243,108 @@ body.lightbox-open { overflow: hidden; }
   .lightbox-close,
   .lightbox-nav { transition: none; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════ */
+/* Shared sort control — enhances any list via assets/js/sort.js.      */
+/* Used by publications, conferences, photo-gallery, core-team,        */
+/* scholarship and dictac. Hidden until the script runs, so a no-JS    */
+/* visitor never meets a dead control (the authored markup order is    */
+/* already the sensible default everywhere).                           */
+/* ═══════════════════════════════════════════════════════════════════ */
+.sort-bar { display: none; }
+.js-sort .sort-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+.sort-bar--end { justify-content: flex-end; }
+
+.sort-label {
+  font-family: var(--font-head);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.sort-field {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.sort-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 9px 38px 9px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-head);
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: border-color .15s, box-shadow .15s;
+}
+.sort-select:hover { border-color: var(--navy); }
+.sort-select:focus-visible {
+  outline: none;
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(0, 77, 128, .14);
+}
+.sort-caret {
+  position: absolute;
+  right: 14px;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+/* Where the bar shares a row with an existing heading or status line. */
+.section-head .sort-bar { align-self: center; margin-bottom: 0; }
+
+/* publications — count on the left, sort on the right */
+.pub-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.pub-meta .pub-count { margin-top: 0; }
+.pub-meta .sort-bar { margin-bottom: 0; }
+
+/* dictac — same pattern under the search box */
+.dic-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.dic-meta .dic-count { margin-top: 0; }
+.dic-meta .sort-bar { margin-bottom: 0; }
+
+/* photo-gallery — sort sits beside the filter tabs */
+.gallery-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.gallery-tools .gallery-filter { margin-bottom: 0; }
+.gallery-tools .sort-bar { margin-bottom: 0; }
+
+/* Narrow screens: give the bar its own row (so it wraps below the count or
+   filter tabs) but leave the select at its natural width. */
+@media (max-width: 560px) {
+  .js-sort .sort-bar { width: 100%; justify-content: flex-start; }
+}

@@ -289,8 +289,28 @@ the homepage-vs-subpage seam.)
   to `<html>` that gates the CSS hover/zoom affordances so they never show if JS didn't load. It's
   **generic** — drops onto any page using the `.photo-tile` markup, no per-page config. (No hi-res
   originals exist, so it shows the same image file uncropped/larger; it would honor an optional
-  `data-full` attr if hi-res versions are ever added.)
+  `data-full` attr if hi-res versions are ever added.) Prev/next walks the photos in their
+  **current DOM order**, re-read each time the overlay opens, so it stays in step with `sort.js`.
+- `assets/js/sort.js` — **shared list sorter**, referenced from `publications.html`,
+  `conferences.html`, `photo-gallery.html`, `core-team.html`, `scholarship.html` and `dictac.html`
+  (deferred `<script>` after `</main>`). Progressive enhancement, same shape as the lightbox: it
+  adds `js-sort` to `<html>` to reveal the control, which is `display:none` otherwise — so a no-JS
+  visitor never meets a dead `<select>` and just gets the authored order. **Generic, no per-page
+  config**; the whole contract is markup:
+  - `<select class="sort-select" data-sort-target="<css selector>">` — the selector may match
+    **several** containers (dictac passes `[data-dic-section]`), each sorted independently so the
+    section grouping survives.
+  - each `<option value>` is `"<key>:asc"` / `"<key>:desc"`, or `"default"` for the authored order.
+  - each item carries `data-sort-<key>`; the container's direct element children are the items.
+  - Sorts are **stable** — ties keep the authored order — and an item with a blank/missing key
+    sorts last in *both* directions (that's the TBA conference).
+  - **Keep dates as `YYYY-MM-DD`** so plain string comparison is correct; month-only publication
+    dates are stored as day 15, which reproduces where the curator placed them.
+  - Because the default option matches the authored order on every page, the initial `apply()` is
+    a no-op — **if you add a row, give it sort keys consistent with where you put it**, or the
+    page will silently reshuffle on load.
 - Inline page scripts: `dictac.html` (glossary search), `photo-gallery.html` (gallery filter).
+  These set `hidden` on filtered-out items; sorting only *moves* nodes, so the two compose.
 
 ## Design system
 
@@ -322,6 +342,11 @@ Fonts: **Urbanist** (headings) + **Open Sans** (body).
 - The lower portion of the file holds the per-page styles (`.conf-*`, `.dic-*`, gallery/filter,
   etc.) that were consolidated here from former inline `<style>` blocks — selectors are unique
   per page, so they're globally safe.
-- The very end holds the **shared `.lightbox-*` component** (the image viewer, `assets/js/lightbox.js`)
-  plus its `.js-lightbox .photo-tile` hover/zoom hints — not per-page, but keyed off the `.photo-tile`
-  markup that both `photo-gallery.html` and `scholarship.html` use.
+- The very end holds two **shared components**, not per-page styles:
+  - the **`.lightbox-*` component** (the image viewer, `assets/js/lightbox.js`) plus its
+    `.js-lightbox .photo-tile` hover/zoom hints, keyed off the `.photo-tile` markup that both
+    `photo-gallery.html` and `scholarship.html` use;
+  - the **`.sort-bar` / `.sort-select` control** (`assets/js/sort.js`), gated on `.js-sort`. It
+    ships with the per-page rows that host it — `.pub-meta`, `.dic-meta`, `.gallery-tools` — each
+    a `space-between` flex row pairing the sort control with that page's count or filter tabs;
+    core-team and conferences drop it straight into `.section-head` / its own `.sort-bar--end` row.
