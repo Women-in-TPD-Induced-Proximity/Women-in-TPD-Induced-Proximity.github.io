@@ -34,110 +34,23 @@ description: "Photos from WiIP conferences, meetups, and community events."
           </div>
         </div>
 
-        <!-- Authored most-recent-first (add new photos at the top). Only the
-             year is known per photo, so a stable sort keeps same-year photos
-             in the order they're written here. -->
+        <!-- Photos live in _data/gallery.yml, most-recent-first (add new ones at
+             the TOP of that file). Only the year is known per photo, so a stable
+             sort keeps same-year photos in the order they're written there. -->
         <div class="photo-grid">
+{%- for p in site.data.gallery %}
+{%- capture alt %}{{ p.event }}, {{ p.location }}, {{ p.year }}{% endcapture %}
 
-          <div class="photo-tile" data-sort-year="2026" data-sort-event="AACR">
-            <img src="/assets/images/gallery/aacr-sandiego-2026.jpg"
-                 alt="AACR, San Diego, 2026"
+          <div class="photo-tile" data-sort-year="{{ p.year }}" data-sort-event="{{ p.event | escape }}">
+            <img src="/assets/images/gallery/{{ p.photo }}"
+                 alt="{{ p.alt | default: alt | escape }}"
                  class="photo-img" loading="lazy" />
             <div class="photo-caption">
-              <strong>AACR</strong>
-              <span>San Diego &nbsp;·&nbsp; 2026</span>
+              <strong>{{ p.event | escape }}</strong>
+              <span>{{ p.location | escape }} &nbsp;·&nbsp; {{ p.year }}</span>
             </div>
           </div>
-
-          <div class="photo-tile" data-sort-year="2025" data-sort-event="AACR">
-            <img src="/assets/images/gallery/aacr-orlando-2025-2.jpg"
-                 alt="AACR, Orlando, FL, 2025"
-                 class="photo-img" loading="lazy" />
-            <div class="photo-caption">
-              <strong>AACR</strong>
-              <span>Orlando, FL &nbsp;·&nbsp; 2025</span>
-            </div>
-          </div>
-
-          <div class="photo-tile" data-sort-year="2025" data-sort-event="AACR">
-            <img src="/assets/images/gallery/aacr-orlando-2025.jpg"
-                 alt="AACR, Orlando, FL, 2025"
-                 class="photo-img" loading="lazy" />
-            <div class="photo-caption">
-              <strong>AACR</strong>
-              <span>Orlando, FL &nbsp;·&nbsp; 2025</span>
-            </div>
-          </div>
-
-          <div class="photo-tile" data-sort-year="2025" data-sort-event="Induced Proximity Keystone Conference">
-            <img src="/assets/images/gallery/keystone-2025.jpg"
-                 alt="Induced Proximity Keystone Conference, Santa Fe, New Mexico, 2025"
-                 class="photo-img" loading="lazy" />
-            <div class="photo-caption">
-              <strong>Induced Proximity Keystone Conference</strong>
-              <span>Santa Fe, New Mexico &nbsp;·&nbsp; 2025</span>
-            </div>
-          </div>
-
-          <div class="photo-tile" data-sort-year="2025" data-sort-event="Chemistry Conference">
-            <img src="/assets/images/gallery/france-2025.jpg"
-                 alt="Chemistry Conference in France, 2025"
-                 class="photo-img" loading="lazy" />
-            <div class="photo-caption">
-              <strong>Chemistry Conference</strong>
-              <span>France &nbsp;·&nbsp; 2025</span>
-            </div>
-          </div>
-
-          <div class="photo-tile" data-sort-year="2025" data-sort-event="Discovery on Target">
-            <img src="/assets/images/gallery/dot-jj-2025.jpg"
-                 alt="Discovery on Target, J&amp;J Innovation Center, Boston, 2025"
-                 class="photo-img" loading="lazy" />
-            <div class="photo-caption">
-              <strong>Discovery on Target</strong>
-              <span>J&amp;J Innovation Center, Boston &nbsp;·&nbsp; 2025</span>
-            </div>
-          </div>
-
-          <div class="photo-tile" data-sort-year="2025" data-sort-event="3rd Annual Women in TPD &amp; Induced Proximity">
-            <img src="/assets/images/gallery/annual-2025.jpg"
-                 alt="3rd Annual Women in TPD &amp; Induced Proximity, Boston, 2025"
-                 class="photo-img" loading="lazy" />
-            <div class="photo-caption">
-              <strong>3rd Annual Women in TPD &amp; Induced Proximity</strong>
-              <span>Boston (Kymera) &nbsp;·&nbsp; 2025</span>
-            </div>
-          </div>
-
-          <div class="photo-tile" data-sort-year="2024" data-sort-event="TPD Conference at CeTPD">
-            <img src="/assets/images/gallery/dundee-2024.jpg"
-                 alt="TPD conference at CeTPD, Dundee, Scotland, 2024"
-                 class="photo-img" loading="lazy" />
-            <div class="photo-caption">
-              <strong>TPD Conference at CeTPD</strong>
-              <span>Dundee, Scotland &nbsp;·&nbsp; 2024</span>
-            </div>
-          </div>
-
-          <div class="photo-tile" data-sort-year="2024" data-sort-event="2nd Annual Women in TPD &amp; Induced Proximity">
-            <img src="/assets/images/gallery/annual-2024.jpg"
-                 alt="2nd Annual Women in TPD &amp; Induced Proximity, Boston, 2024"
-                 class="photo-img" loading="lazy" />
-            <div class="photo-caption">
-              <strong>2nd Annual Women in TPD &amp; Induced Proximity</strong>
-              <span>Boston (Foghorn) &nbsp;·&nbsp; 2024</span>
-            </div>
-          </div>
-
-          <div class="photo-tile" data-sort-year="2023" data-sort-event="1st Annual Women in TPD &amp; Induced Proximity">
-            <img src="/assets/images/gallery/annual-2023.jpg"
-                 alt="1st Annual Women in TPD &amp; Induced Proximity, Boston, 2023"
-                 class="photo-img" loading="lazy" />
-            <div class="photo-caption">
-              <strong>1st Annual Women in TPD &amp; Induced Proximity</strong>
-              <span>Boston (Foghorn) &nbsp;·&nbsp; 2023</span>
-            </div>
-          </div>
+{%- endfor %}
 
         </div>
       </div>

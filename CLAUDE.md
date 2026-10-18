@@ -12,6 +12,9 @@ built with **Jekyll**.
 - This is a **user/org Pages site → served at the domain root**
   (`https://women-in-tpd-induced-proximity.github.io/`), so there is **no `baseurl`**.
   Root-absolute paths like `/assets/...` are correct.
+- There is a **planned migration** to add admin logins and a web editing UI — Cloudflare Access +
+  a Worker writing back to `_data/*.yml`, with the public site staying on Jekyll/Pages. See
+  **`docs/ARCHITECTURE-PLAN.md`**. Nothing in it changes how the site builds today.
 
 ## Two design systems (important)
 
@@ -73,6 +76,7 @@ palette in the hero/body), so there's still a visual seam in the page middle. Th
 ## Jekyll architecture
 
 - `_config.yml` — minimal, GitHub-Pages-safe (no plugins).
+- `_data/*.yml` — **all collection content** (see "Content lives in `_data/`" below).
 - `_layouts/default.html` — the page skeleton: `<head>` (title/description/`styles.css`),
   skip-link, `{% include header.html %}`, `{{ content }}`, `{% include footer.html %}`,
   then `main.js`.
@@ -82,6 +86,46 @@ palette in the hero/body), so there's still a visual seam in the page middle. Th
     also works on `404.html` (which GitHub serves from arbitrary URLs).
   - The footer year is stamped at build time with `{{ site.time | date: "%Y" }}` **and**
     refreshed client-side by `main.js`.
+
+### Content lives in `_data/` — pages are templates
+
+Every repeating collection on the site is **structured data in `_data/*.yml`**, rendered by a
+Liquid `{% for %}` loop in the page. No page contains hand-written content rows any more.
+
+| File | Rendered by | Items |
+|---|---|---|
+| `publications.yml` + `pub_categories.yml` | `publications.html` | 61 papers, 6 categories |
+| `glossary.yml` | `dictac.html` | 136 terms in 2 sections |
+| `team.yml` | `core-team.html` | 15 members |
+| `gallery.yml` | `photo-gallery.html` | 10 photos |
+| `scholarship.yml` | `scholarship.html` | 3 cohorts (winners + photos) |
+| `conferences.yml` | `conferences.html` | 7 meetings |
+| `events.yml` | `events.html` | 3 events |
+
+**Each file's header comment is the schema** — read it before adding a row. The conventions that
+matter across all of them:
+
+- **Every field is escaped on output** (`{{ x | escape }}`), so plain text is always safe to type.
+  The documented exceptions are `glossary.yml`'s `expansion` / `definition` / `name_html`, which
+  are rendered raw so scientific terms can use `<sub>` and `<em>`.
+- **Derived, not stored.** Several attributes that used to be hand-maintained are now computed, so
+  they can't drift: `data-sort-*` keys, the gallery's `<img alt>`, the conference date block
+  (from `start`/`end`), `<img>` `src` paths (filenames only in YAML), and the glossary's
+  "Reference 1/2/3" numbering. If you find yourself wanting to store one of these, check the
+  header comment first — it probably already derives.
+- **Authored order is what a no-JS visitor sees**, and `sort.js`'s default option must reproduce
+  it (see the JavaScript section). `gallery.yml` is most-recent-**first**; `scholarship.yml` and
+  `conferences.yml` are oldest/soonest-first.
+- **Optional presentation flags** exist where the design genuinely varies per item, and are
+  documented in each header: `team.yml`'s `framing`, `scholarship.yml`'s `wide`,
+  `gallery.yml`'s `alt` override, `glossary.yml`'s `highlight` / `abbr` / `name_html`.
+
+**When changing a template, prove the render is unchanged.** These pages were converted by
+extracting the existing markup, so the bar is a *byte-identical DOM*, not "looks right". Snapshot
+`_site/<page>.html` before your change, rebuild, then compare canonicalised DOMs (walk both with
+`lxml`, normalising whitespace in text/tail and attribute values, and diff the node lists).
+That check caught two per-item modifier classes (`ct-photo--center`, `photo-tile wide`) that a
+screenshot comparison would have missed.
 
 ### Subpages are content fragments
 
@@ -104,12 +148,14 @@ a page.
 ### Adding a new page
 
 1. Create `name.html` with the front matter above + a `<main id="main" class="page">`.
-2. Page-specific **CSS** → add to `assets/css/styles.css` (use a unique class prefix; that's
+2. If the page shows a **repeating list of anything**, put the content in `_data/<name>.yml` with
+   a header comment documenting each field, and loop over it — don't hand-write the rows.
+3. Page-specific **CSS** → add to `assets/css/styles.css` (use a unique class prefix; that's
    how the existing per-page styles live there with zero collisions).
-3. Page-specific **JS** → an inline `<script>` after `</main>`, or a file in `assets/js/`
+4. Page-specific **JS** → an inline `<script>` after `</main>`, or a file in `assets/js/`
    referenced from the fragment.
-4. If it should be discoverable, add it to the **Explore** list in `_includes/footer.html`.
-5. Keep the **top nav minimal** (Mission · Core Team · Join) — don't bloat it.
+5. If it should be discoverable, add it to the **Explore** list in `_includes/footer.html`.
+6. Keep the **top nav minimal** (Mission · Core Team · Join) — don't bloat it.
 
 ## Build + verify loop
 
@@ -236,22 +282,34 @@ test `el.matches(rule.selectorText)`).
   page's CSS/JS/fonts are self-hosted under `assets/vendor/` and its SEO/social metadata is WiTPD
   (OG / `canonical` / JSON-LD point at the site root) — see **`docs/SELF-HOSTING.md`**.
 - `dictac.html` — **DicTACtionary** glossary (TAC modalities + induced-proximity terms).
-  Terms are static `<article data-dic>` inside `data-dic-section` groups; an inline script
-  filters them by the `#dic-search` box. Content is readable without JS; only search needs it.
-- `publications.html`, `mentorship.html` — "coming soon" placeholders.
-- `scholarship.html` — **Travel Scholarship** winners by year (2024–26) with photos, linked from
+  Terms come from `_data/glossary.yml`, rendered as `<article data-dic>` inside two
+  `data-dic-section` groups (one per section, which is what lets `sort.js` sort A–Z *within* a
+  section instead of merging them); an inline script filters them by the `#dic-search` box.
+  Content is readable without JS; only search needs it.
+- `publications.html` — **Highlighted Publications**, rendered from `_data/publications.yml`
+  (61 papers) and `_data/pub_categories.yml` (the 6 chips, which also build the filter buttons).
+  Inline script does search + category filtering; `sort.js` does the ordering.
+- `mentorship.html` — "coming soon" placeholder.
+- `scholarship.html` — **Travel Scholarship** winners by year (2024–26) with photos, from
+  `_data/scholarship.yml` (each cohort holds its own `winners` and `photos`), linked from
   the homepage "Travel Scholarship" activity card. Reuses the gallery `.photo-grid`/`.photo-tile`
   but with real `<img class="photo-img">` (the `.photo-img` rule = full image, no crop, portraits
   capped at 460 px); photos live in `assets/images/scholarship/`. Photos are **click-to-expand** via
   the shared `assets/js/lightbox.js` viewer (see JavaScript).
-- `photo-gallery.html` — community photo grid (`.photo-grid`/`.photo-tile`), photos in
-  `assets/images/gallery/`. Tiles are ordered **most-recent-first**; add new photos at the top
-  of `.photo-grid`, not appended at the bottom. Multiple photos from the same event share the
-  same caption/base filename with a `-2`, `-3`, … suffix (e.g. `aacr-orlando-2025.jpg` /
-  `aacr-orlando-2025-2.jpg`). Has an inline gallery-filter script **and** the shared
-  `assets/js/lightbox.js` **click-to-expand** viewer (see JavaScript).
-- `mission.html`, `core-team.html`, `conferences.html`,
-  `blog.html`, `events.html`, `get-involved.html`, `tools.html` — content pages.
+- `photo-gallery.html` — community photo grid (`.photo-grid`/`.photo-tile`) from
+  `_data/gallery.yml`; image files in `assets/images/gallery/`. Tiles are ordered
+  **most-recent-first**; add new photos at the top **of the YAML**, not the bottom. Multiple
+  photos from the same event share the same caption/base filename with a `-2`, `-3`, … suffix
+  (e.g. `aacr-orlando-2025.jpg` / `aacr-orlando-2025-2.jpg`). Has a single inert "Meetups"
+  filter tab **and** the shared `assets/js/lightbox.js` **click-to-expand** viewer.
+- `core-team.html` — 15 members from `_data/team.yml`; photos in `assets/images/team/`.
+- `conferences.html` — 7 meetings from `_data/conferences.yml`. The month/day/year date block is
+  **derived** from `start`/`end`, including cross-month ranges ("Sep–Oct" / "28–1"); a meeting
+  with no announced date carries an explicit `display` and an empty sort key, so it sorts last.
+- `events.html` — events from `_data/events.yml`, rendered **at build time**. The Type dropdown is
+  built from the `type` values actually in use, and an inline script filters the rendered cards by
+  toggling `hidden`. (Was previously fetched client-side; see the JavaScript section.)
+- `mission.html`, `blog.html`, `get-involved.html`, `tools.html` — content pages.
 - `meetups.html` — **orphaned**: the homepage card that linked it was repurposed to Travel
   Scholarship, so nothing links to it now (it still builds).
 - `404.html` — uses the shared layout (full nav + footer).
@@ -276,10 +334,13 @@ the homepage-vs-subpage seam.)
   tag (for the shared header's hamburger; the year-stamp half is a no-op there since Kubio's
   footer has no `#year`). This is the only JS the homepage loads — the self-hosting work dropped
   all 63 of the export's original scripts.
-- `assets/js/render-events.js` — **events.html only**; fetches `assets/data/events.json`
-  (relative) and renders the list. **Still requires JS** — this is the one remaining no-JS gap
-  (the page *chrome* is server-rendered, but the event entries are not). Optional follow-up:
-  move to `_data/events.yml` + a Liquid loop to render at build time.
+- **`render-events.js` is gone**, along with `assets/data/events.json`. It fetched the events
+  client-side, so `events.html` rendered an empty shell without JS — the site's last no-JS gap,
+  now closed by `_data/events.yml` + a Liquid loop. It was also quietly broken: its card template
+  built anchors as `` `${ev.registrationUrl}Register</a>` `` with **no opening `<a>` tag**, so the
+  buttons rendered as literal text ("#Register", "get-involved.htmlHost / Sponsor"). The Liquid
+  version emits real `.button` anchors. Its unused `data-events-target="next"`/`"list"`
+  homepage-preview branches went with it — nothing referenced them.
 - `assets/js/lightbox.js` — **shared image viewer**, referenced from `photo-gallery.html` and
   `scholarship.html` (deferred `<script>` after `</main>`). Progressive enhancement: it scans for
   `.photo-tile` elements containing an `<img>`, makes each a keyboard-accessible button, and opens a
@@ -305,12 +366,15 @@ the homepage-vs-subpage seam.)
   - Sorts are **stable** — ties keep the authored order — and an item with a blank/missing key
     sorts last in *both* directions (that's the TBA conference).
   - **Keep dates as `YYYY-MM-DD`** so plain string comparison is correct; month-only publication
-    dates are stored as day 15, which reproduces where the curator placed them.
+    dates are stored as day 15, which reproduces where the curator placed them (`date_precision`
+    controls how they *display*, so the sort key and the label stay independent).
   - Because the default option matches the authored order on every page, the initial `apply()` is
-    a no-op — **if you add a row, give it sort keys consistent with where you put it**, or the
-    page will silently reshuffle on load.
-- Inline page scripts: `dictac.html` (glossary search), `photo-gallery.html` (gallery filter).
-  These set `hidden` on filtered-out items; sorting only *moves* nodes, so the two compose.
+    a no-op — so **a new row must sit in the YAML where its sort key says it belongs**, or the
+    page will silently reshuffle on load. The keys themselves are now emitted by the template
+    from `_data`, so they can no longer disagree with the content next to them.
+- Inline page scripts: `dictac.html` (glossary search), `publications.html` (search + category
+  filter), `events.html` (search + type filter). These set `hidden` on filtered-out items;
+  sorting only *moves* nodes, so the two compose.
 
 ## Design system
 

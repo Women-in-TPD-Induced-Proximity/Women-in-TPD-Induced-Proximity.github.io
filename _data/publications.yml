@@ -1,0 +1,1132 @@
+# Highlighted publications. Rendered by publications.html.
+#
+# date            YYYY-MM-DD. Also the sort key, so it must stay sortable as a
+#                 plain string. For month-precision entries use day 15 — that
+#                 reproduces where the curator originally placed them.
+# date_precision  `month` -> displayed "Aug 2026";  `day` -> "14 Aug 2026".
+#                 Stored explicitly rather than inferred from day==15, because
+#                 two real papers genuinely published on the 15th.
+# lead_author     Surname only; the "Lead author (A-Z)" sort key.
+# authors         Full author line as displayed.
+# affiliation     Optional; rendered after a middot.
+# categories      One or more slugs from pub_categories.yml. First one leads.
+# links           label + href; label is the visible text ("Paper", "Preprint").
+# Newest first — the authored order is what a no-JS visitor sees.
+- date: '2026-08-15'
+  date_precision: month
+  title: Safety Considerations for CRBN-Based Degraders
+  journal: Nature Reviews Drug Discovery
+  lead_author: Rengarajan
+  authors: Aishwarya Rengarajan, Lucilia Pereira Mouriès et al.
+  affiliation: HESI TPD Safety Committee
+  categories:
+  - clinical
+  links:
+  - label: Paper
+    href: https://www.nature.com/articles/s41573-026-01426-2
+  why: Provides a comprehensive framework for evaluating and mitigating safety risks associated with CRBN-based degraders.
+  advance: Community-driven recommendations and best practices for advancing CRBN degrader programs safely into clinical development.
+  tags:
+  - Safety
+  - CRBN
+  - Risk Assessment
+- date: '2026-08-14'
+  date_precision: day
+  title: KRASG12V Targeted Degradation Reveals New Resistance Mechanisms
+  journal: Cancer Research
+  lead_author: Mayor-Ruiz
+  authors: Cristina Mayor-Ruiz & Inés María García Pérez et al.
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://doi.org/10.1158/0008-5472.CAN-25-5172
+  why: Provides important insight into how tumors adapt to prolonged degrader treatment.
+  advance: Targeted degradation of KRASG12V identified resistance mechanisms that emerge during chronic treatment.
+  tags:
+  - KRAS
+  - Resistance
+  - Oncology
+- date: '2026-08-04'
+  date_precision: day
+  title: 'Molecular Glues: From Degradation to Functional Modulation'
+  journal: npj Drug Discovery
+  lead_author: Silvian
+  authors: Laura Silvian et al.
+  affiliation: Biogen
+  categories:
+  - stabilizers
+  links:
+  - label: Review
+    href: https://www.nature.com/articles/s44386-026-00059-0
+  why: Provides a comprehensive overview of how molecular glues can be used for both degradation and non-degrading functional modulation.
+  advance: Review covering degrading and non-degrading molecular glues and the expanding scope of glue-mediated biology.
+  tags:
+  - Molecular Glue
+  - Review
+  - Functional Modulation
+- date: '2026-07-27'
+  date_precision: day
+  title: 'COUPLrs: Covalent Protein Ligators'
+  journal: Cancer Discovery
+  lead_author: Yang
+  authors: Diane Yang et al.
+  affiliation: Massachusetts General Hospital
+  categories:
+  - induced-proximity
+  links:
+  - label: Paper
+    href: https://aacrjournals.org/cancerdiscovery/article-abstract/doi/10.1158/2159-8290.CD-25-2314/787080/Systematic-Targeting-of-Protein-Complexes-with
+  why: Expands induced proximity into covalent space and opens opportunities for discovering new functional protein interactions.
+  advance: COUPLrs use two covalent warheads to create proximity between proteins through irreversible engagement.
+  tags:
+  - COUPLr
+  - Covalent Ligators
+  - New Modality
+- date: '2026-07-23'
+  date_precision: day
+  title: Development of a Clinical Androgen Receptor Bifunctional Degrader
+  journal: Journal of Medicinal Chemistry
+  lead_author: Mortensen
+  authors: Deborah Mortensen et al.
+  affiliation: Bristol Myers Squibb
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/10.1021/acs.jmedchem.6c01590
+  why: Provides a blueprint for advancing bifunctional degraders from discovery through clinical development.
+  advance: Describes the medicinal chemistry optimization and progression of a clinical-stage androgen receptor degrader.
+  tags:
+  - AR
+  - Clinical Candidate
+  - Medicinal Chemistry
+- date: '2026-07-20'
+  date_precision: day
+  title: KAT-TCIPs Rewire BCL6 Transcriptional Programs
+  journal: Cell
+  lead_author: Nix
+  authors: Meredith Nix et al.
+  affiliation: Stanford University
+  categories:
+  - induced-proximity
+  links:
+  - label: Paper
+    href: https://www.cell.com/cell/abstract/S0092-8674(26)00757-9
+  why: Demonstrates that induced proximity can reprogram transcriptional networks without requiring degradation, expanding therapeutic opportunities beyond traditional TPD.
+  advance: Recruitment of CBP/EP300 to BCL6 drives transcriptional rewiring and cancer cell death.
+  tags:
+  - TCIP
+  - BCL6
+  - Epigenetics
+  - Functional Reprogramming
+- date: '2026-07-17'
+  date_precision: day
+  title: D2B Discovery of CRBN-Based HaloPROTACs
+  journal: ACS Chemical Biology
+  lead_author: Stevens
+  authors: Rebecca Stevens et al.
+  affiliation: GSK & Promega
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/10.1021/acschembio.6c00377
+  why: Highlights the power of direct-to-biology workflows to accelerate degrader discovery and SAR exploration.
+  advance: D2B screening rapidly identified active CRBN-based HaloPROTAC degraders.
+  tags:
+  - HaloPROTAC
+  - D2B
+  - CRBN
+  - Screening
+- date: '2026-07-16'
+  date_precision: day
+  title: BioPROTAC Screening Reveals Routes to c-Myc Degradation
+  journal: bioRxiv preprint
+  lead_author: Ascanelli
+  authors: Camilla Ascanelli et al.
+  affiliation: University of Cambridge
+  categories:
+  - novel-e3s
+  links:
+  - label: Preprint
+    href: https://www.biorxiv.org/content/10.64898/2026.07.16.738859v1
+  why: Demonstrates that even highly challenging and short-lived targets such as c-Myc may be degradable when paired with the right ligase.
+  advance: Systematic BioPROTAC screening identified productive E3 ligase combinations capable of degrading c-Myc.
+  tags:
+  - BioPROTAC
+  - c-Myc
+  - E3 Ligases
+- date: '2026-07-15'
+  date_precision: day
+  title: MGPROTACs Enable Estrogen Receptor Degradation Through 14-3-3
+  journal: Nature Communications
+  lead_author: Crowe
+  authors: Charlotte Crowe et al.
+  affiliation: CeTPD Dundee
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://www.nature.com/articles/s41467-026-75333-w
+  why: Demonstrates how molecular glue stabilization can unlock entirely new degradation mechanisms and expand the target space of degraders.
+  advance: Molecular glue stabilizers were combined with PROTAC design to induce degradation of estrogen receptor through its complex with 14-3-3.
+  tags:
+  - ER
+  - Molecular Glue
+  - Cooperativity
+  - 14-3-3
+- date: '2026-07-14'
+  date_precision: day
+  title: Native Mass Spectrometry for Characterizing PROTAC Ternary Complexes
+  journal: Analytical Chemistry
+  lead_author: Sternicki
+  authors: Louise Sternicki, Charlotte Crowe, Lianne Wieske, Sally-Ann Poulsen et al.
+  categories:
+  - structural
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/10.1021/acs.analchem.6c01970
+  why: Establishes native MS as a powerful analytical approach for studying increasingly complex induced-proximity systems.
+  advance: Native mass spectrometry was applied to characterize PROTAC ternary complexes, including CRL2(VHL)-based assemblies.
+  tags:
+  - Native MS
+  - Ternary Complexes
+  - VHL
+- date: '2026-07-09'
+  date_precision: day
+  title: BCL6-BRD4 TCIPs Expand Functional Reprogramming Strategies
+  journal: Journal of Medicinal Chemistry
+  lead_author: Chang
+  authors: Fang-Chi (Cheryl) Chang, Veronika Shoba et al.
+  affiliation: General Proximity
+  categories:
+  - induced-proximity
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/10.1021/acs.jmedchem.6c00756
+  why: Shows the growing potential of TCIPs to modulate transcription factor biology through proximity-induced functional reprogramming.
+  advance: Development and optimization of BCL6-BRD4 TCIPs capable of altering target-driven transcriptional programs.
+  tags:
+  - TCIP
+  - BCL6
+  - BRD4
+  - Functional Reprogramming
+- date: '2026-07-09'
+  date_precision: day
+  title: CRBN Molecular Glue Degradation of KAT2A
+  journal: Science
+  lead_author: Wang
+  authors: Meng Wang et al.
+  affiliation: Dana-Farber Cancer Institute
+  categories:
+  - structural
+  links:
+  - label: Paper
+    href: https://www.science.org/doi/10.1126/science.aef5391
+  why: Expands understanding of CRBN-mediated molecular glue mechanisms and demonstrates new structural solutions for target engagement.
+  advance: Discovery of an unexpected ternary complex architecture enabling degradation of KAT2A without a classical G-loop interaction.
+  tags:
+  - KAT2A
+  - CRBN
+  - Molecular Glue
+  - Ternary Complex
+- date: '2026-07-08'
+  date_precision: day
+  title: TICTACs Enable Targeted Immune Checkpoint Modulation
+  journal: Nature Chemical Biology
+  lead_author: Morimoto
+  authors: Mariko Morimoto et al.
+  affiliation: Carolyn Bertozzi Lab
+  categories:
+  - induced-proximity
+  links:
+  - label: Paper
+    href: https://www.nature.com/articles/s41589-026-02258-2
+  why: Introduces a new induced proximity modality for engineering immune-cell-specific protein degradation.
+  advance: TICTACs use CD206 targeting on tumor-associated macrophages to selectively remove immune checkpoint receptors.
+  tags:
+  - TICTAC
+  - TAM
+  - Immunology
+  - CD206
+- date: '2026-07-01'
+  date_precision: day
+  title: Dual-Mechanism CRBN/Rpn13 Degradation
+  journal: Journal of the American Chemical Society
+  lead_author: Trader
+  authors: Darci Trader et al.
+  affiliation: University of California Irvine
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/10.1021/jacs.6c02914
+  why: Demonstrates that a single bifunctional molecule can engage multiple degradation pathways simultaneously.
+  advance: CRBN is targeted directly to the proteasome via a ByeTAC mechanism while Rpn13 is degraded through CRBN-mediated ubiquitination.
+  tags:
+  - ByeTAC
+  - CRBN
+  - Rpn13
+  - Dual Mechanism
+- date: '2026-06-26'
+  date_precision: day
+  title: Structural Basis of SERD-Mediated ERα Degradation
+  journal: bioRxiv preprint
+  lead_author: Schätz
+  authors: Caroline Schätz et al.
+  affiliation: AITHYRA & FMI
+  categories:
+  - structural
+  links:
+  - label: Preprint
+    href: https://www.biorxiv.org/content/10.64898/2026.06.26.734426v1
+  why: Provides a deeper mechanistic understanding of how ER degraders drive therapeutic activity beyond receptor loss.
+  advance: Reveals contributions of chromatin trapping, SUMOylation, transcriptional repression, and ER degradation to SERD activity.
+  tags:
+  - ERα
+  - SERD
+  - Chromatin Biology
+- date: '2026-06-23'
+  date_precision: day
+  title: Cryo-EM Structure of a CRBN-Based IRAK4 Degrader
+  journal: Nature Communications
+  lead_author: Fei
+  authors: Xue Fei et al.
+  affiliation: Kymera Therapeutics
+  categories:
+  - structural
+  links:
+  - label: Paper
+    href: https://www.nature.com/articles/s41467-026-74105-w
+  why: Provides mechanistic insight into ternary complex formation for a clinically relevant degrader and helps reveal the structural principles underlying productive degradation.
+  advance: Cryo-EM characterization of the CRBN-IRAK4 degrader ternary complex reveals how structure drives degradation efficiency.
+  tags:
+  - Cryo-EM
+  - IRAK4
+  - CRBN
+  - Ternary Complex
+- date: '2026-06-15'
+  date_precision: month
+  title: 'From Inhibitor to Stabilizer to Degrader: The AURKA Story'
+  journal: Advanced Science
+  lead_author: Mozes
+  authors: Chen Mozes et al.
+  affiliation: Northwestern University
+  categories:
+  - stabilizers
+  links:
+  - label: Paper
+    href: https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.75153
+  why: Illustrates how small changes in chemistry can dramatically alter a molecule's mode of action.
+  advance: Conversion of kinase inhibitors into stabilizers and ultimately degraders through covalent warhead incorporation and linker optimization.
+  tags:
+  - AURKA
+  - Stabilizer
+  - Covalent Chemistry
+  - Degrader Evolution
+- date: '2026-06-12'
+  date_precision: day
+  title: BacPROTACs for Bacterial Protein Degradation
+  journal: bioRxiv preprint
+  lead_author: Morreale
+  authors: Francesca Ester Morreale et al.
+  affiliation: Francis Crick Institute
+  categories:
+  - degraders
+  links:
+  - label: Preprint
+    href: https://www.biorxiv.org/cgi/content/short/2026.06.12.731830v1
+  why: Extends targeted protein degradation beyond human biology into infectious disease and bacterial systems.
+  advance: First report of a small-molecule bacterial proteolysis targeting chimera capable of degrading Mycobacterium tuberculosis proteins.
+  tags:
+  - BacPROTAC
+  - Infectious Disease
+  - Bacterial Degradation
+- date: '2026-06-01'
+  date_precision: day
+  title: Modeling Oral Bioavailability of Degraders
+  journal: ChemRxiv preprint
+  lead_author: Düvel
+  authors: Heide Marika Düvel et al.
+  affiliation: Merck KGaA
+  categories:
+  - clinical
+  links:
+  - label: Preprint
+    href: https://chemrxiv.org/doi/full/10.26434/chemrxiv.15004114/v1
+  why: Predicting oral bioavailability remains one of the biggest challenges in degrader drug discovery.
+  advance: Introduces modeling approaches to understand and predict oral exposure of beyond-Rule-of-Five molecules.
+  tags:
+  - Oral PK
+  - Modeling
+  - Bioavailability
+- date: '2026-05-29'
+  date_precision: day
+  title: Degron Tags for In Vivo Studies
+  journal: Nature Communications
+  lead_author: Feltham
+  authors: Rebecca Feltham et al.
+  affiliation: WEHI
+  categories:
+  - clinical
+  links:
+  - label: Paper
+    href: https://www.nature.com/articles/s41467-026-73681-1
+  why: Provides practical guidance for selecting degron systems in biological and translational studies.
+  advance: Systematic comparison of degron tags to guide experimental design and in vivo applications.
+  tags:
+  - Degron Tags
+  - In Vivo Biology
+  - Research Tools
+- date: '2026-05-28'
+  date_precision: day
+  title: Degrader Antibody Conjugates (DACs) Deliver SMARCA2/4 Degraders
+  journal: Journal of Medicinal Chemistry
+  lead_author: Dockrey
+  authors: Summer Baker Dockrey et al.
+  affiliation: Genentech
+  categories:
+  - degraders
+  - clinical
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/10.1021/acs.jmedchem.6c00592
+  why: Extends targeted degradation beyond small molecules by combining degrader payloads with antibody delivery.
+  advance: DACs targeting CD71 and Trop-2 delivered dual SMARCA2/4 degrader payloads with controlled release of a VHL degrader.
+  tags:
+  - DAC
+  - SMARCA2
+  - SMARCA4
+  - Targeted Delivery
+  - Drug Delivery
+  - SMARCA2/4
+- date: '2026-05-15'
+  date_precision: month
+  title: Advancing Extracellular Targeted Protein Degradation
+  journal: Advanced Science
+  lead_author: Zhao
+  authors: Yuan Zhao et al.
+  affiliation: University of Wisconsin-Madison & Novo Nordisk
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202518793
+  why: Expands degradation beyond intracellular targets and opens new therapeutic opportunities.
+  advance: Development of extracellular targeted protein degradation strategies for proteins traditionally inaccessible to intracellular degraders.
+  tags:
+  - Extracellular Degradation
+  - Targeted Delivery
+- date: '2026-05-15'
+  date_precision: month
+  title: PCMT1 Generates Cyclic Imide Degrons on Native CRBN Targets
+  journal: Nature Chemical Biology
+  lead_author: Xu
+  authors: Wenqing Xu et al.
+  affiliation: Christina Woo Lab, Harvard
+  categories:
+  - novel-e3s
+  links:
+  - label: Paper
+    href: https://www.nature.com/articles/s41589-025-02106-9
+  why: Provides fundamental insight into the biology underlying native CRBN degrons and neosubstrate recognition.
+  advance: Identification of PCMT1 as an enzyme responsible for generating cyclic imide degrons on endogenous CRBN substrates.
+  tags:
+  - CRBN
+  - Cyclic Imide
+  - Degrons
+- date: '2026-05-15'
+  date_precision: day
+  title: Collateral Degradation of Protein Complex Members
+  journal: ACS Chemical Biology
+  lead_author: Glennie
+  authors: Lorraine Glennie & Nicole Curnutt et al.
+  affiliation: University of Dundee & Harvard
+  categories:
+  - structural
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/10.1021/acschembio.6c00098
+  why: Shows that degradation outcomes can extend beyond the intended target and depend strongly on protein-complex context.
+  advance: Characterization of collateral degradation events affecting proteins associated with the primary target.
+  tags:
+  - Collateral Degradation
+  - Protein Complexes
+  - Mechanism
+- date: '2026-05-12'
+  date_precision: day
+  title: Dual-Ligase Molecular Glue Degradation of SMARCA2/4
+  journal: Nature Chemical Biology
+  lead_author: Spiteri
+  authors: Valentina Spiteri et al.
+  affiliation: CeTPD Dundee & AITHYRA
+  categories:
+  - novel-e3s
+  links:
+  - label: Paper
+    href: https://www.nature.com/articles/s41589-026-02224-y
+  why: Challenges the paradigm of one glue-one ligase by demonstrating recruitment of multiple degradation effectors.
+  advance: Monovalent molecular glues recruit both FBXO22 and DCAF16 to degrade SMARCA2/4.
+  tags:
+  - FBXO22
+  - DCAF16
+  - Molecular Glue
+- date: '2026-05-06'
+  date_precision: day
+  title: Selective EP300 Degradation in Hematologic Malignancies
+  journal: Nature Communications
+  lead_author: Asem
+  authors: Marwa Asem, Andrea Shergalis, Judith Ronau et al.
+  affiliation: AbbVie
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://www.nature.com/articles/s41467-026-72635-x
+  why: Demonstrates the therapeutic potential of selective EP300 degradation across multiple blood cancers.
+  advance: CRBN-based EP300 degraders showed strong efficacy while maintaining selectivity.
+  tags:
+  - EP300
+  - CRBN
+  - Hematologic Malignancies
+- date: '2026-05-05'
+  date_precision: day
+  title: Non-Degrading Molecular Glues Strengthen Mutant CRAF–14-3-3 Interactions
+  journal: Proceedings of the National Academy of Sciences
+  lead_author: Virta
+  authors: Johanna Virta et al.
+  affiliation: Michelle Arkin Lab, UCSF
+  categories:
+  - stabilizers
+  links:
+  - label: Paper
+    href: https://doi.org/10.1073/pnas.2602101123
+  why: Demonstrates that molecular glues can create therapeutic benefit by stabilizing protein interactions without inducing degradation.
+  advance: Development of non-degrading molecular glues that strengthen a weak interaction between mutant CRAF and 14-3-3.
+  tags:
+  - Molecular Glue
+  - CRAF
+  - 14-3-3
+  - Stabilization
+- date: '2026-04-23'
+  date_precision: day
+  title: TEAD-FBXO22 Molecular Glue Degradation
+  journal: bioRxiv preprint
+  lead_author: Carrara
+  authors: Marta Carrara et al.
+  affiliation: Amphista
+  categories:
+  - novel-e3s
+  links:
+  - label: Preprint
+    href: https://www.biorxiv.org/content/10.64898/2026.04.21.719895v1
+  why: Further establishes FBXO22 as a robust and versatile ligase for targeted protein degradation.
+  advance: Discovery of a TEAD-FBXO22 molecular glue degrader that drives efficient target degradation.
+  tags:
+  - FBXO22
+  - TEAD
+  - Molecular Glue
+- date: '2026-04-22'
+  date_precision: day
+  title: FBXO31 Enters the Targeted Protein Degradation Toolbox
+  journal: Journal of the American Chemical Society
+  lead_author: Zhang
+  authors: Chenlu Zhang et al.
+  affiliation: Northwestern University
+  categories:
+  - novel-e3s
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/10.1021/jacs.6c02580
+  why: Expands the repertoire of ligases available for targeted protein degradation.
+  advance: Modified degron-based recruiters enabled degradation of multiple targets through FBXO31 recruitment.
+  tags:
+  - FBXO31
+  - Novel E3
+  - Degron Recruiter
+- date: '2026-04-14'
+  date_precision: day
+  title: Clinical KRASG12D Degradation with Setidegrasib
+  journal: Nature Medicine
+  lead_author: Sakata-Sakurai
+  authors: Chinatsu Sakata-Sakurai et al.
+  affiliation: Astellas
+  categories:
+  - clinical
+  links:
+  - label: Report
+    href: https://www.nature.com/articles/d41591-026-00020-8
+  - label: NEJM
+    href: https://www.nejm.org/doi/full/10.1056/NEJMoa2600752
+  why: One of the most important clinical updates in targeted protein degradation and a major step toward tackling mutant KRAS-driven cancers.
+  advance: Clinical and translational characterization of the KRAS G12D degrader Setidegrasib demonstrates promising activity in patients.
+  tags:
+  - KRAS
+  - Clinical Development
+  - Oncology
+- date: '2026-04-09'
+  date_precision: day
+  title: Molecular Glue Modulation Beyond Protein Degradation
+  journal: Nature Chemical Biology
+  lead_author: Pieńkowska
+  authors: Dominika Pieńkowska
+  affiliation: Nature Chemical Biology News & Views
+  categories:
+  - stabilizers
+  links:
+  - label: Perspective
+    href: https://www.nature.com/articles/s41589-026-02187-0
+  why: Highlights the growing field of molecular glues that alter protein function through stabilization rather than degradation.
+  advance: Perspective article examining how molecular glues can modulate protein-protein interactions without triggering target degradation.
+  tags:
+  - Molecular Glue
+  - Protein Modulation
+  - Perspective
+- date: '2026-04-09'
+  date_precision: day
+  title: Chameleonicity, Efflux, and Oral Bioavailability of Degraders
+  journal: ACS Medicinal Chemistry Letters
+  lead_author: Le Manach
+  authors: Claire Le Manach, Susanne Winiwarter et al.
+  affiliation: AstraZeneca
+  categories:
+  - clinical
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/10.1021/acsmedchemlett.6c00043
+  why: Better understanding of oral bioavailability is essential for expanding the reach of degrader therapeutics.
+  advance: Investigates how chameleonicity and efflux influence oral exposure and provides guidance for degrader optimization.
+  tags:
+  - Oral Bioavailability
+  - DMPK
+  - Property Optimization
+- date: '2026-04-09'
+  date_precision: day
+  title: 'CNS-Penetrant Degraders: Current Progress and Opportunities'
+  journal: ACS Medicinal Chemistry Letters
+  lead_author: Francisco
+  authors: Serena Francisco et al.
+  affiliation: University of Turin
+  categories:
+  - clinical
+  links:
+  - label: Review
+    href: https://pubs.acs.org/doi/10.1021/acsmedchemlett.5c00768
+  why: CNS delivery remains a major challenge for degrader therapeutics and a critical area for future innovation.
+  advance: Comprehensive review of degraders that have demonstrated activity in the central nervous system.
+  tags:
+  - CNS
+  - Brain Penetration
+  - Review
+- date: '2026-03-27'
+  date_precision: day
+  title: 'SORTACs: Lysosome Targeting Chimeras for Extracellular Proteins'
+  journal: Cell Chemical Biology
+  lead_author: Gustafsen
+  authors: Camilla Gustafsen et al.
+  affiliation: Draupnir Bio
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://www.cell.com/cell-chemical-biology/abstract/S2451-9456(26)00072-3
+  why: Expands degradation approaches to extracellular targets traditionally inaccessible to intracellular degraders.
+  advance: SORTACs leverage sortilin-mediated lysosomal trafficking for extracellular target depletion.
+  tags:
+  - SORTAC
+  - Lysosome
+  - Extracellular Targets
+- date: '2026-03-20'
+  date_precision: day
+  title: The Human E3-ome Atlas
+  journal: Cell
+  lead_author: Feltham
+  authors: Rebecca Feltham et al.
+  affiliation: WEHI
+  categories:
+  - novel-e3s
+  links:
+  - label: Paper
+    href: https://www.sciencedirect.com/science/article/pii/S0092867426001169
+  why: Provides one of the most comprehensive resources available for E3 ligase biology and degrader discovery.
+  advance: Systematic curation and annotation of the human E3 ligase landscape.
+  tags:
+  - E3 Atlas
+  - Ligase Biology
+  - Resource
+- date: '2026-03-18'
+  date_precision: day
+  title: Regulating β-Catenin Through CSNK1-Mediated Induced Proximity
+  journal: bioRxiv preprint
+  lead_author: Wolf
+  authors: Lucie Wolf, Juline Poirson et al.
+  affiliation: University of Toronto
+  categories:
+  - induced-proximity
+  links:
+  - label: Preprint
+    href: https://www.biorxiv.org/content/10.64898/2026.03.16.712096v1
+  why: Demonstrates that kinases can act as functional effectors in proximity-based systems, expanding induced proximity beyond E3 ligases.
+  advance: Recruitment of CSNK1 proteins enables regulation of β-catenin levels through induced proximity.
+  tags:
+  - β-Catenin
+  - CSNK1
+  - Kinase Recruitment
+- date: '2026-03-15'
+  date_precision: month
+  title: IDO1 Degradation Through KLHDC3 Recruitment
+  journal: Nature Chemistry
+  lead_author: Hennes
+  authors: Elisabeth Hennes, Belen Lucas, Natalie Scholes et al.
+  affiliation: CeMM & MPI
+  categories:
+  - novel-e3s
+  links:
+  - label: Paper
+    href: https://www.nature.com/articles/s41557-025-02021-5
+  why: Demonstrates a new route to targeted degradation that exploits a native protein interaction rather than traditional bifunctional degrader design.
+  advance: A pseudo-natural product both inhibits IDO1 and promotes interaction with KLHDC3, driving degradation.
+  tags:
+  - KLHDC3
+  - IDO1
+  - Novel Ligase Biology
+- date: '2026-03-12'
+  date_precision: day
+  title: 'VHL-Based NAMPT Degraders: Lessons Learned'
+  journal: Journal of Medicinal Chemistry
+  lead_author: Pirali
+  authors: Tracey Pirali & Ambra Grolla et al.
+  affiliation: University of Piemonte
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/jmcmar/article/69/5/5259/5087727/Development-of-PROTACs-Targeting-the-Moonlighting
+  why: Provides medicinal chemistry insights for improving VHL degrader performance.
+  advance: Removal of a triazole motif significantly improved properties of NAMPT degraders.
+  tags:
+  - NAMPT
+  - VHL
+  - Medicinal Chemistry
+- date: '2026-03-12'
+  date_precision: day
+  title: Allosteric Regulation of CRBN Through a Novel Binding Site
+  journal: Nature
+  lead_author: Dipon
+  authors: Vanessa Dipon et al.
+  affiliation: Christina Woo Lab, Harvard
+  categories:
+  - structural
+  - novel-e3s
+  links:
+  - label: Paper
+    href: https://www.nature.com/articles/s41586-025-09994-w
+  why: Reveals a new mechanism for modulating CRBN activity and substrate specificity.
+  advance: Identification of an allosteric CRBN binder that alters CRBN conformation and degradation behavior.
+  tags:
+  - CRBN
+  - Allosteric Regulation
+  - Ligase Biology
+  - Allosteric Site
+  - Structural Biology
+- date: '2026-02-26'
+  date_precision: day
+  title: BCL6 Bifunctional Degrader for Hematologic Malignancies
+  journal: Journal of Medicinal Chemistry
+  lead_author: Mortensen
+  authors: Deborah Mortensen et al.
+  affiliation: Bristol Myers Squibb
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/10.1021/acs.jmedchem.5c03123
+  why: Demonstrates selective degradation of BCL6 while avoiding unwanted CRBN neosubstrate degradation.
+  advance: Development of a potent BCL6 bifunctional degrader with strong efficacy in hematologic cancer models.
+  tags:
+  - BCL6
+  - Hematology
+  - CRBN
+- date: '2026-02-13'
+  date_precision: day
+  title: Formulation Strategies for Bifunctional Compounds
+  journal: ACS Pharmacology & Translational Science
+  lead_author: Brugger-Muli
+  authors: Christine S. Brugger-Muli et al.
+  affiliation: NCI
+  categories:
+  - clinical
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/aptsfn/article/9/2/370/5086979/SCaN-A-Screening-and-Characterization-Platform-for
+  why: Solubility and formulation remain major barriers for many degrader programs.
+  advance: Development of screening and characterization approaches to identify formulations suitable for bifunctional compounds.
+  tags:
+  - Formulation
+  - Solubility
+  - Drug Development
+- date: '2026-02-12'
+  date_precision: day
+  title: Cyclin K Degradation Through CDK12 Molecular Glue Chemistry
+  journal: Journal of Medicinal Chemistry
+  lead_author: Iermolaieva
+  authors: Anna Iermolaieva et al.
+  affiliation: Moffitt Cancer Center
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/10.1021/acs.jmedchem.5c02086
+  why: Enhances understanding of DDB1-dependent molecular glue mechanisms.
+  advance: SAR studies identified determinants of Cyclin K degradation by CDK12-directed molecular glues.
+  tags:
+  - Cyclin K
+  - DDB1
+  - Molecular Glue
+- date: '2026-02-12'
+  date_precision: day
+  title: 'Click, Screen, Degrade: Accelerating Degrader Discovery'
+  journal: Journal of Medicinal Chemistry
+  lead_author: Hiesinger
+  authors: Kerstin Hiesinger et al.
+  affiliation: Goethe University
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/10.1021/acs.jmedchem.5c02543
+  why: Faster discovery workflows are essential for exploring larger degrader chemical spaces.
+  advance: Combines click chemistry and D2B approaches to rapidly triage candidate degraders.
+  tags:
+  - D2B
+  - High-Throughput Chemistry
+  - Screening
+- date: '2026-02-11'
+  date_precision: day
+  title: Native CRAF–14-3-3 Interaction Stabilization Through Molecular Glue Design
+  journal: Journal of the American Chemical Society
+  lead_author: Konstantinidou
+  authors: Markella Konstantinidou et al.
+  affiliation: Michelle Arkin Lab, UCSF
+  categories:
+  - stabilizers
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/10.1021/jacs.5c12622
+  why: Shows how molecular glues can reinforce native protein interactions as an alternative to degradation.
+  advance: Rationally designed molecular glues stabilized the endogenous interaction between CRAF and 14-3-3 proteins.
+  tags:
+  - Molecular Glue
+  - CRAF
+  - Protein Stabilization
+- date: '2026-02-05'
+  date_precision: day
+  title: 'PINCHs: Polymerization-Induced Chimeras'
+  journal: Nature Chemical Biology
+  lead_author: Livnah
+  authors: Ella Livnah et al.
+  affiliation: Weizmann Institute
+  categories:
+  - induced-proximity
+  links:
+  - label: Paper
+    href: https://www.nature.com/articles/s41589-026-02141-0
+  why: Introduces a new modality for target inactivation through induced oligomerization rather than degradation.
+  advance: PINCHs force proteins such as BCL6 and Keap1 into inactive higher-order assemblies.
+  tags:
+  - PINCH
+  - Protein Polymerization
+  - New Modality
+- date: '2026-01-29'
+  date_precision: day
+  title: Identification of FBXO31 for Targeted Protein Degradation
+  journal: bioRxiv preprint
+  lead_author: Zhang
+  authors: Chenlu Zhang et al.
+  affiliation: Northwestern University
+  categories:
+  - novel-e3s
+  links:
+  - label: Preprint
+    href: https://www.biorxiv.org/content/10.64898/2026.01.28.702440v1
+  why: Demonstrates a creative strategy for expanding degrader biology through native degron engineering.
+  advance: Rational modification of a native degron sequence generated a recruiter capable of engaging FBXO31.
+  tags:
+  - FBXO31
+  - Degron Engineering
+  - E3 Discovery
+- date: '2026-01-28'
+  date_precision: day
+  title: Lessons from Allosteric Starting Points for PROTAC Discovery
+  journal: Journal of the American Chemical Society
+  lead_author: Frost
+  authors: Aileen Frost & Suzanne O'Connor et al.
+  affiliation: CeTPD Dundee
+  categories:
+  - stabilizers
+  links:
+  - label: Review
+    href: https://pubs.acs.org/doi/10.1021/jacs.5c14840
+  why: Highlights the opportunity to leverage allosteric binders as alternatives to traditional orthosteric starting points.
+  advance: Review of degrader design strategies originating from allosteric ligands and their unique advantages.
+  tags:
+  - Allosteric Ligands
+  - PROTAC Design
+  - Review
+- date: '2026-01-19'
+  date_precision: day
+  title: TEAD Degradation Through IAP Family Ligases
+  journal: Communications Chemistry
+  lead_author: Gupta
+  authors: Nishma Gupta, Nicole Trainor, Nicola Chessum et al.
+  affiliation: WEHI & BI
+  categories:
+  - novel-e3s
+  - degraders
+  links:
+  - label: Paper
+    href: https://www.nature.com/articles/s42004-025-01871-x
+  why: Demonstrates that alternative ligases beyond CRBN and VHL can support efficient targeted degradation.
+  advance: TEAD degraders utilizing members of the IAP family achieved selective target degradation.
+  tags:
+  - TEAD
+  - IAP
+  - Alternative E3
+  - IAP Ligases
+- date: '2026-01-06'
+  date_precision: day
+  title: Mapping the CRBN Glue-able Interactome
+  journal: bioRxiv preprint
+  lead_author: Kazi
+  authors: Rubina Kazi et al.
+  affiliation: Goethe University Frankfurt
+  categories:
+  - structural
+  links:
+  - label: Preprint
+    href: https://www.biorxiv.org/content/10.64898/2026.01.05.697692v2
+  why: Reveals the breadth and context dependence of CRBN-mediated protein interactions across cell types.
+  advance: Affinity pulldowns and mass spectrometry were used to define the CRBN glue-able interactome.
+  tags:
+  - CRBN
+  - Interactome
+  - Molecular Glues
+- date: '2025-12-25'
+  date_precision: day
+  title: GPCR Degradation Through CRBN Recruitment
+  journal: Journal of Medicinal Chemistry
+  lead_author: Zacarias
+  authors: Natalia Ortiz Zacarias et al.
+  affiliation: Leiden University
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://pubs.acs.org/doi/full/10.1021/acs.jmedchem.5c02920
+  why: Demonstrates degradation of one of the most challenging target classes in drug discovery.
+  advance: A CRBN-based degrader induced lysosomal degradation of a GPCR.
+  tags:
+  - GPCR
+  - CRBN
+  - Lysosomal Degradation
+- date: '2025-12-22'
+  date_precision: day
+  title: Open and Closed Conformations of CRBN
+  journal: bioRxiv preprint
+  lead_author: O'Connor
+  authors: Suzanne O'Connor, Zoe Rutter et al.
+  affiliation: CeTPD Dundee & Biogen
+  categories:
+  - structural
+  links:
+  - label: Preprint
+    href: https://www.biorxiv.org/content/10.64898/2025.12.19.695617v1
+  why: Provides a framework for understanding how ligand binding influences CRBN conformational states and degradation activity.
+  advance: Combines biophysics, mutagenesis, and SAR to characterize open and closed forms of CRBN.
+  tags:
+  - CRBN
+  - Conformational Dynamics
+  - SAR
+- date: '2025-12-22'
+  date_precision: day
+  title: Molecular Glue Modulation from Serendipity Toward Rational Design
+  journal: Essays in Biochemistry
+  lead_author: Kozicka
+  authors: Zuzanna Kozicka
+  affiliation: EPFL
+  categories:
+  - stabilizers
+  links:
+  - label: Review
+    href: https://portlandpress.com/essaysbiochem/article/69/04/379/237042/Clues-for-glues-from-serendipity-to-nature-s
+  why: Provides a framework for moving molecular glue discovery from empirical observations toward intentional design.
+  advance: Review of mechanisms and emerging strategies for rational molecular glue discovery across stabilizing and degrading applications.
+  tags:
+  - Molecular Glue
+  - Rational Design
+  - Review
+- date: '2025-12-14'
+  date_precision: day
+  title: BCL6 Covalent Ligands Recruit BRD9 for Functional Reprogramming
+  journal: bioRxiv preprint
+  lead_author: Duong
+  authors: Zoe Duong et al.
+  affiliation: UC Berkeley
+  categories:
+  - induced-proximity
+  links:
+  - label: Preprint
+    href: https://www.biorxiv.org/content/10.64898/2025.12.12.694031v1
+  why: Illustrates how covalent chemistry can unexpectedly create new proximity-driven biology and transcriptional outcomes.
+  advance: Covalent BCL6 ligands recruit BRD9 and generate TCIP-like modulation of chromatin-associated targets.
+  tags:
+  - BCL6
+  - BRD9
+  - TCIP-like
+  - Covalent Chemistry
+- date: '2025-12-12'
+  date_precision: day
+  title: 'PROTAC Development: Lessons from the Past Decade'
+  journal: Nature Reviews Chemistry
+  lead_author: Lee
+  authors: Esther Lee et al.
+  affiliation: AstraZeneca
+  categories:
+  - clinical
+  links:
+  - label: Perspective
+    href: https://www.nature.com/articles/s41570-025-00784-6
+  why: Provides a practical overview of how the field has successfully translated degraders into the clinic.
+  advance: Reviews major milestones, successes, and remaining challenges in PROTAC drug discovery and development.
+  tags:
+  - Clinical Translation
+  - PROTACs
+  - Review
+- date: '2025-12-11'
+  date_precision: day
+  title: VHL-Mediated Degradation of IRE1 Reveals a 2:2:2 Ternary Complex
+  journal: Nature Communications
+  lead_author: Du
+  authors: Jin Du, Elisia Villemure et al.
+  affiliation: Genentech
+  categories:
+  - structural
+  links:
+  - label: Paper
+    href: https://www.nature.com/articles/s41467-025-66382-8
+  why: Demonstrates that transmembrane ER proteins can be efficiently degraded and reveals unique higher-order ternary complex architecture.
+  advance: Structural studies show a dimerization-driven 2:2:2 ternary complex underlying IRE1 degradation.
+  tags:
+  - IRE1
+  - VHL
+  - Structural Biology
+  - Transmembrane Proteins
+- date: '2025-12-10'
+  date_precision: day
+  title: Unexpected Toxicity in a Heterobifunctional Degrader
+  journal: Frontiers in Pharmacology
+  lead_author: Loberg
+  authors: Lise Loberg et al.
+  affiliation: AbbVie
+  categories:
+  - clinical
+  links:
+  - label: Paper
+    href: https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2025.1664889/full
+  why: Safety is one of the most important factors determining whether degraders successfully reach patients.
+  advance: Mechanistic investigation of unexpected toxicity associated with a heterobifunctional degrader provides valuable insights for future degrader design and risk assessment.
+  tags:
+  - Safety
+  - Toxicology
+  - Translation
+- date: '2025-12-08'
+  date_precision: day
+  title: OGT-Mediated Targeted O-GlcNAcylation
+  journal: Cell Chemical Biology
+  lead_author: Alison
+  authors: Alison M. et al.
+  affiliation: Christina Woo Lab, Harvard
+  categories:
+  - induced-proximity
+  links:
+  - label: Paper
+    href: https://www.sciencedirect.com/science/article/pii/S2451945625003538?dgcid=coauthor
+  why: Expands induced proximity into glycosylation biology and targeted post-translational modification control.
+  advance: OGT recruitment is used to selectively modify protein targets through O-GlcNAcylation.
+  tags:
+  - OGT
+  - PTM Engineering
+  - O-GlcNAc
+- date: '2025-12-05'
+  date_precision: day
+  title: nanoPROTACs Enable Nanoparticle-Mediated Degrader Delivery
+  journal: Science Advances
+  lead_author: Vogt
+  authors: Kristen Vogt et al.
+  affiliation: MSKCC
+  categories:
+  - degraders
+  links:
+  - label: Paper
+    href: https://www.science.org/doi/10.1126/sciadv.adu2292
+  why: Demonstrates how nanoparticle delivery can enhance degrader delivery and drug loading.
+  advance: nanoPROTACs were used to increase delivery and exposure of targeted protein degraders.
+  tags:
+  - nanoPROTAC
+  - Delivery
+  - Nanoparticles
+- date: '2025-12-04'
+  date_precision: day
+  title: Native MS for Studying PROTAC and CRL Ligase Assemblies
+  journal: bioRxiv preprint
+  lead_author: Poulsen
+  authors: Sally-Ann Poulsen et al.
+  affiliation: Griffith University
+  categories:
+  - structural
+  links:
+  - label: Preprint
+    href: https://www.biorxiv.org/content/10.64898/2025.12.04.692288v1
+  why: Expands the biophysical toolkit available for understanding degrader mechanism and ternary complex formation.
+  advance: Demonstrates use of native MS to characterize PROTAC-induced and CRL-associated protein complexes.
+  tags:
+  - Native MS
+  - CRL Complexes
+  - Biophysics
+- date: '2025-11-03'
+  date_precision: day
+  title: MAGEA11-Recruiting Degraders
+  journal: bioRxiv preprint
+  lead_author: Jacobsen
+  authors: Isabella Jacobsen et al.
+  affiliation: University of Minnesota
+  categories:
+  - novel-e3s
+  links:
+  - label: Preprint
+    href: https://www.biorxiv.org/content/10.1101/2025.11.03.686228v1
+  why: Highlights the potential value of tissue-restricted ligases for achieving selective target degradation.
+  advance: Development of degraders utilizing MAGEA11, an E3 ligase with restricted expression across cell types.
+  tags:
+  - MAGEA11
+  - Novel E3
+  - Selectivity
+- date: '2024-07-18'
+  date_precision: day
+  title: Covalent COUPLrs and Mapping Covalent Interactions
+  journal: bioRxiv preprint
+  lead_author: Yang
+  authors: Diane Yang et al.
+  affiliation: Massachusetts General Hospital
+  categories:
+  - induced-proximity
+  links:
+  - label: Preprint
+    href: https://www.biorxiv.org/content/10.1101/2024.07.16.603666v1
+  why: Demonstrates how covalent induced proximity systems can both create and systematically identify new protein interactions.
+  advance: Combines dual covalent warheads with deconvolution methods to characterize proximity-induced protein interactions.
+  tags:
+  - COUPLr
+  - Covalent Chemistry
+  - Interactome Mapping

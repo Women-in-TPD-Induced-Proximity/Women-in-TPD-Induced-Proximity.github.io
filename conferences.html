@@ -31,115 +31,38 @@ description: "Symposia and multi-day scientific gatherings for the induced proxi
           </span>
         </div>
 
-        <!-- Authored soonest-first, which is what the default sort reproduces.
-             data-sort-date is the first day of the meeting; the EMBO entry has
-             no date yet, and an empty key always sorts last (see sort.js). -->
+        <!-- Meetings live in _data/conferences.yml, authored soonest-first,
+             which is what the default sort reproduces. The date block is derived
+             from start/end; a meeting with no announced date carries an explicit
+             `display` and an empty sort key, which always sorts last (sort.js). -->
         <div class="conf-list">
+{%- for c in site.data.conferences %}
+{%- assign cend = c.end | default: c.start %}
+{%- assign m1 = c.start | date: "%b" %}{% assign m2 = cend | date: "%b" %}
+{%- assign d1 = c.start | date: "%-d" %}{% assign d2 = cend | date: "%-d" %}
+{%- assign y1 = c.start | date: "%Y" %}{% assign y2 = cend | date: "%Y" %}
 
-          <div class="conf-card" data-sort-date="2026-07-21" data-sort-name="AACR Drug Discovery and Development (D3)">
+          <div class="conf-card" data-sort-date="{{ c.start }}" data-sort-name="{{ c.name | escape }}">
             <div>
-              <p class="conf-title">AACR Drug Discovery and Development (D3)</p>
-              <p class="conf-meta">Sheraton Boston Hotel, Boston, MA</p>
+              <p class="conf-title">{{ c.name | escape }}</p>
+              <p class="conf-meta">{{ c.venue | escape }}</p>
               <div class="conf-actions">
-                <a href="https://www.aacr.org/meeting/aacr-d3-2026/program/" class="button primary" target="_blank" rel="noopener">Conference website →</a>
+                <a href="{{ c.url }}" class="button primary" target="_blank" rel="noopener">Conference website →</a>
               </div>
             </div>
             <div class="conf-date">
-              <div class="conf-month">Jul</div>
-              <div class="conf-day">21–24</div>
-              <div class="conf-year">2026</div>
+              {%- if c.start %}
+              <div class="conf-month">{% if m1 == m2 %}{{ m1 }}{% else %}{{ m1 }}–{{ m2 }}{% endif %}</div>
+              <div class="conf-day">{% if c.start == cend %}{{ d1 }}{% else %}{{ d1 }}–{{ d2 }}{% endif %}</div>
+              <div class="conf-year">{% if y1 == y2 %}{{ y1 }}{% else %}{{ y1 }}–{{ y2 }}{% endif %}</div>
+              {%- else %}
+              <div class="conf-month">{{ c.display.month | escape }}</div>
+              <div class="conf-day">{{ c.display.day | escape }}</div>
+              <div class="conf-year">{{ c.display.year | escape }}</div>
+              {%- endif %}
             </div>
           </div>
-
-          <div class="conf-card" data-sort-date="2026-09-28" data-sort-name="Discovery on Target">
-            <div>
-              <p class="conf-title">Discovery on Target</p>
-              <p class="conf-meta">Boston, MA</p>
-              <div class="conf-actions">
-                <a href="https://www.discoveryontarget.com/" class="button primary" target="_blank" rel="noopener">Conference website →</a>
-              </div>
-            </div>
-            <div class="conf-date">
-              <div class="conf-month">Sep–Oct</div>
-              <div class="conf-day">28–1</div>
-              <div class="conf-year">2026</div>
-            </div>
-          </div>
-
-          <div class="conf-card" data-sort-date="2026-10-21" data-sort-name="RSC-BMCS/SCI Targeted Protein Degradation">
-            <div>
-              <p class="conf-title">RSC-BMCS/SCI Targeted Protein Degradation</p>
-              <p class="conf-meta">The Fielder Centre, Hatfield, UK</p>
-              <div class="conf-actions">
-                <a href="https://www.rscbmcs.org/events/protdeg26/" class="button primary" target="_blank" rel="noopener">Conference website →</a>
-              </div>
-            </div>
-            <div class="conf-date">
-              <div class="conf-month">Oct</div>
-              <div class="conf-day">21–22</div>
-              <div class="conf-year">2026</div>
-            </div>
-          </div>
-
-          <div class="conf-card" data-sort-date="2026-10-26" data-sort-name="TPD &amp; Induced Proximity Summit">
-            <div>
-              <p class="conf-title">TPD &amp; Induced Proximity Summit</p>
-              <p class="conf-meta">Boston, MA</p>
-              <div class="conf-actions">
-                <a href="https://proteindegradation.com/" class="button primary" target="_blank" rel="noopener">Conference website →</a>
-              </div>
-            </div>
-            <div class="conf-date">
-              <div class="conf-month">Oct</div>
-              <div class="conf-day">26–29</div>
-              <div class="conf-year">2026</div>
-            </div>
-          </div>
-
-          <div class="conf-card" data-sort-date="2026-11-10" data-sort-name="SMART Symposium on Targeted Protein Degradation">
-            <div>
-              <p class="conf-title">SMART Symposium on Targeted Protein Degradation</p>
-              <p class="conf-meta">Cloud Park International Conference Center, Shenzhen, China</p>
-              <div class="conf-actions">
-                <a href="https://symposia.smart.org.cn/sym/event/FutureEvents/20250909001.html" class="button primary" target="_blank" rel="noopener">Conference website →</a>
-              </div>
-            </div>
-            <div class="conf-date">
-              <div class="conf-month">Nov</div>
-              <div class="conf-day">10–13</div>
-              <div class="conf-year">2026</div>
-            </div>
-          </div>
-
-          <div class="conf-card" data-sort-date="2027-02-08" data-sort-name="Keystone: Induced Proximity and Targeted Protein Degradation">
-            <div>
-              <p class="conf-title">Keystone: Induced Proximity and Targeted Protein Degradation</p>
-              <p class="conf-meta">Banff, Canada</p>
-              <div class="conf-actions">
-                <a href="https://www.keystonesymposia.org/conferences/conference-listing/meeting/K32027" class="button primary" target="_blank" rel="noopener">Conference website →</a>
-              </div>
-            </div>
-            <div class="conf-date">
-              <div class="conf-month">Feb</div>
-              <div class="conf-day">8–11</div>
-              <div class="conf-year">2027</div>
-            </div>
-          </div>
-
-          <div class="conf-card" data-sort-date="" data-sort-name="EMBO: Ubiquitin and Ubiquitin-like Proteins in Health and Disease">
-            <div>
-              <p class="conf-title">EMBO: Ubiquitin and Ubiquitin-like Proteins in Health and Disease</p>
-              <p class="conf-meta">Puglia, Italy</p>
-              <div class="conf-actions">
-                <a href="https://www.embo.org/events/" class="button primary" target="_blank" rel="noopener">Conference website →</a>
-              </div>
-            </div>
-            <div class="conf-date">
-              <div class="conf-month">2026</div>
-              <div class="conf-day">TBA</div>
-              <div class="conf-year">&nbsp;</div>
-            </div>
-          </div>
+{%- endfor %}
 
         </div>
       </div>

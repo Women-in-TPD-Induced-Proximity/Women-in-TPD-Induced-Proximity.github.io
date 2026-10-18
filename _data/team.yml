@@ -1,0 +1,85 @@
+# Core team, rendered by core-team.html.
+#
+# sort_name  "Surname, First" — the A-Z sort key, so ordering is by family name.
+# photo      filename only; resolved under /assets/images/team/.
+#            The <img alt> is the name, so it is not stored separately.
+# framing    Optional. Appends `.ct-photo--<framing>` to the <img> class, for
+#            portraits that need a different crop anchor (e.g. `center`).
+# Authored order is what a no-JS visitor sees.
+- name: Gwenn Hansen
+  sort_name: Hansen, Gwenn
+  org: Nurix
+  photo: gwenn-hansen.png
+  linkedin: https://www.linkedin.com/in/gwenn-hansen-1370984/
+- name: Angela Cacace
+  sort_name: Cacace, Angela
+  org: Arvinas
+  photo: angela-cacace.png
+  linkedin: https://www.linkedin.com/in/angela-cacace-155b5a/
+- name: Kirti Sharma
+  sort_name: Sharma, Kirti
+  org: Kymera
+  photo: kirti-sharma.png
+  linkedin: https://www.linkedin.com/in/kirti-sharma-science/
+- name: Kate Jackson
+  sort_name: Jackson, Kate
+  org: C4 Therapeutics
+  photo: kate-jackson.png
+  linkedin: https://www.linkedin.com/in/katrina-jackson-6077b715/
+- name: Charu Chaudhry
+  sort_name: Chaudhry, Charu
+  org: J&J Innovative Medicine
+  photo: charu-chaudhry.png
+  linkedin: https://www.linkedin.com/in/charu-chaudhry-a9250b1b/
+- name: Danette Daniels
+  sort_name: Daniels, Danette
+  org: Foghorn Therapeutics
+  photo: danette-daniels.jpg
+  linkedin: https://www.linkedin.com/in/danette-daniels-45648924/
+- name: Cristina Mayor-Ruiz
+  sort_name: Mayor-Ruiz, Cristina
+  org: IRB Barcelona
+  photo: cristina-mayor-ruiz.png
+  linkedin: https://www.linkedin.com/in/cristina-mayor-ruiz-7663391a4/
+- name: Fleur Ferguson
+  sort_name: Ferguson, Fleur
+  org: UC San Diego
+  photo: fleur-ferguson.png
+  linkedin: https://www.linkedin.com/in/fleur-m-ferguson-phd-54921a46/
+  framing: center
+- name: Chiara Maniaci
+  sort_name: Maniaci, Chiara
+  org: University of Dundee
+  photo: chiara-maniaci.png
+  linkedin: https://www.linkedin.com/in/chiara-maniaci/
+- name: Katherine Donovan
+  sort_name: Donovan, Katherine
+  org: DFCI / Harvard Medical School
+  photo: katherine-donovan.png
+  linkedin: https://www.linkedin.com/in/katherine-donovan-a324338a/
+- name: Breanna Zerfas
+  sort_name: Zerfas, Breanna
+  org: Dana-Farber Cancer Institute
+  photo: breanna-zerfas.png
+  linkedin: https://www.linkedin.com/in/breanna-zerfas/
+- name: Mary Matyskiela
+  sort_name: Matyskiela, Mary
+  org: Neomorph
+  photo: mary-matyskiela.png
+  linkedin: https://www.linkedin.com/in/mary-matyskiela-ph-d-9b81492/
+- name: Suzanne O'Connor
+  sort_name: O'Connor, Suzanne
+  org: CeTPD, University of Dundee
+  photo: suzanne-oconnor.jpg
+  linkedin: https://www.linkedin.com/in/suzanne-o-connor/
+- name: Natalia Karolak
+  sort_name: Karolak, Natalia
+  org: CeTPD, University of Dundee
+  photo: natalia-karolak.jpg
+  linkedin: https://www.linkedin.com/in/natalia-karolak-a908a7135/
+  framing: center
+- name: Kathleen Seyb
+  sort_name: Seyb, Kathleen
+  org: Triana Biomedicines
+  photo: kathleen-seyb.jpg
+  linkedin: https://www.linkedin.com/in/kathleen-seyb-506aa111/

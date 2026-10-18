@@ -1,0 +1,55 @@
+# Community photo gallery, rendered by photo-gallery.html.
+#
+# Ordered MOST-RECENT-FIRST — add new photos at the TOP of this file, not the
+# bottom. Only the year is known per photo, so the stable sort keeps same-year
+# photos in the order written here.
+#
+# photo     filename only; resolved under /assets/images/gallery/.
+#           Several photos from one event share a base name with a -2/-3 suffix.
+# alt       Optional override. By default the <img alt> is built as
+#           "<event>, <location>, <year>"; set `alt` only when that reads wrong.
+- event: AACR
+  location: San Diego
+  year: 2026
+  photo: aacr-sandiego-2026.jpg
+- event: AACR
+  location: Orlando, FL
+  year: 2025
+  photo: aacr-orlando-2025-2.jpg
+- event: AACR
+  location: Orlando, FL
+  year: 2025
+  photo: aacr-orlando-2025.jpg
+- event: Induced Proximity Keystone Conference
+  location: Santa Fe, New Mexico
+  year: 2025
+  photo: keystone-2025.jpg
+- event: Chemistry Conference
+  location: France
+  year: 2025
+  photo: france-2025.jpg
+  alt: Chemistry Conference in France, 2025
+- event: Discovery on Target
+  location: J&J Innovation Center, Boston
+  year: 2025
+  photo: dot-jj-2025.jpg
+- event: 3rd Annual Women in TPD & Induced Proximity
+  location: Boston (Kymera)
+  year: 2025
+  photo: annual-2025.jpg
+  alt: 3rd Annual Women in TPD & Induced Proximity, Boston, 2025
+- event: TPD Conference at CeTPD
+  location: Dundee, Scotland
+  year: 2024
+  photo: dundee-2024.jpg
+  alt: TPD conference at CeTPD, Dundee, Scotland, 2024
+- event: 2nd Annual Women in TPD & Induced Proximity
+  location: Boston (Foghorn)
+  year: 2024
+  photo: annual-2024.jpg
+  alt: 2nd Annual Women in TPD & Induced Proximity, Boston, 2024
+- event: 1st Annual Women in TPD & Induced Proximity
+  location: Boston (Foghorn)
+  year: 2023
+  photo: annual-2023.jpg
+  alt: 1st Annual Women in TPD & Induced Proximity, Boston, 2023

@@ -1,0 +1,48 @@
+# Upcoming conferences, rendered by conferences.html. Authored soonest-first,
+# which is what the default sort reproduces.
+#
+# start/end  YYYY-MM-DD. `start` doubles as the sort key, so it must stay a
+#            sortable string. The month/day/year shown in the date block is
+#            DERIVED from these — a single-day meeting needs only `start`, and
+#            a range spanning two months renders as e.g. "Sep-Oct" / "28-1".
+# display    Only for a meeting with no announced dates: leave `start` empty
+#            and give the three date-block strings literally. An empty sort key
+#            always sorts last (see sort.js), which is why TBA stays at the end.
+- name: AACR Drug Discovery and Development (D3)
+  venue: Sheraton Boston Hotel, Boston, MA
+  url: https://www.aacr.org/meeting/aacr-d3-2026/program/
+  start: '2026-07-21'
+  end: '2026-07-24'
+- name: Discovery on Target
+  venue: Boston, MA
+  url: https://www.discoveryontarget.com/
+  start: '2026-09-28'
+  end: '2026-10-01'
+- name: RSC-BMCS/SCI Targeted Protein Degradation
+  venue: The Fielder Centre, Hatfield, UK
+  url: https://www.rscbmcs.org/events/protdeg26/
+  start: '2026-10-21'
+  end: '2026-10-22'
+- name: TPD & Induced Proximity Summit
+  venue: Boston, MA
+  url: https://proteindegradation.com/
+  start: '2026-10-26'
+  end: '2026-10-29'
+- name: SMART Symposium on Targeted Protein Degradation
+  venue: Cloud Park International Conference Center, Shenzhen, China
+  url: https://symposia.smart.org.cn/sym/event/FutureEvents/20250909001.html
+  start: '2026-11-10'
+  end: '2026-11-13'
+- name: 'Keystone: Induced Proximity and Targeted Protein Degradation'
+  venue: Banff, Canada
+  url: https://www.keystonesymposia.org/conferences/conference-listing/meeting/K32027
+  start: '2027-02-08'
+  end: '2027-02-11'
+- name: 'EMBO: Ubiquitin and Ubiquitin-like Proteins in Health and Disease'
+  venue: Puglia, Italy
+  url: https://www.embo.org/events/
+  start: null
+  display:
+    month: '2026'
+    day: TBA
+    year: ''

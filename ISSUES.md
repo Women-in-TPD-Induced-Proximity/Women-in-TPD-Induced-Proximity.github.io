@@ -3,7 +3,7 @@
 Things found but **not** fixed, with enough detail to pick up cold. Fixed items are recorded in
 `CLAUDE.md` / `docs/SELF-HOSTING.md` instead, not here.
 
-Last reviewed: 2026-07-27 (during the shared header + footer work).
+Last reviewed: 2026-09-18 (during the `_data/` content extraction).
 
 ---
 
@@ -69,16 +69,17 @@ screen reader announces "Open menu, expanded".
 
 ---
 
-## 4. `events.html` needs JS to show any events
+## ~~4. `events.html` needs JS to show any events~~ — FIXED
 
-**Where:** `assets/js/render-events.js`, `assets/data/events.json`.
+Resolved when the collections moved to `_data/`. `assets/data/events.json` is now
+`_data/events.yml` and the cards are rendered by a Liquid loop at build time, so the page works
+with JavaScript off; only the search/type filter needs JS. `assets/js/render-events.js` was
+deleted (it was also emitting anchors with no opening `<a>` tag — see CLAUDE.md's JavaScript
+section). **The site now has no known no-JS gaps.**
 
-The page chrome is server-rendered but the event entries are fetched client-side, so with JS off
-(or if the fetch fails) the page renders an empty shell. This is the last no-JS gap on the site
-and is already noted in `CLAUDE.md`.
-
-**Fix sketch:** move `assets/data/events.json` to `_data/events.yml` and render with a Liquid
-loop at build time. No plugins needed, so it stays GitHub-Pages-safe.
+The remaining caveat is content, not code: `_data/events.yml` still holds the three placeholder
+events ("Local venue (update me)", no registration URLs, dates in Apr–Jun 2026 that have passed).
+Needs a content owner's pass.
 
 ---
 

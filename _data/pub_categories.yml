@@ -1,0 +1,16 @@
+# Publication categories. Drives BOTH the filter buttons and each card's chip
+# on publications.html, so a slug/label only ever exists here.
+# `slug` is used in publications.yml `categories:` and as the CSS hook
+# (`.pub-chip[data-chip="<slug>"]`), so renaming one means updating styles.css.
+- slug: degraders
+  label: Degraders
+- slug: induced-proximity
+  label: Induced Proximity
+- slug: stabilizers
+  label: Stabilizers
+- slug: novel-e3s
+  label: Novel E3s
+- slug: structural
+  label: Structural Biology
+- slug: clinical
+  label: Clinical & Translational

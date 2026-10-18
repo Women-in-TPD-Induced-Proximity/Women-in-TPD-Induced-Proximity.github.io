@@ -1,0 +1,601 @@
+# The DicTACtionary, rendered by dictac.html. Two sections, each sorted
+# independently by sort.js so the grouping survives an A-Z sort.
+#
+# Per term (all optional except `name`):
+#   name        Plain text. Doubles as the A-Z sort key and the search text,
+#               so it must stay plain — put markup in the fields below.
+#   highlight   A substring of `name` wrapped in <span class="dic-tac">, which
+#               is what gives PRO*TAC* its accent. Must occur exactly once.
+#               Curatorial, not automatic: several names contain "TAC" without
+#               being highlighted, and ATTEC highlights "TEC".
+#   abbr        Renders a muted "(TPD)" after the name.
+#   name_html   Escape hatch: raw inline HTML for the name, used when it needs
+#               markup the two fields above cannot express (e.g. subscripts).
+#   expansion   The small grey line under the name. Inline HTML allowed.
+#   definition  The prose paragraph used by the concepts section. Inline HTML
+#               allowed. A term has an expansion or a definition, not both.
+#   refs        Zero or more URLs. Labelled "Reference" when there is one and
+#               "Reference 1/2/3..." when there are several.
+- title: The TAC family & degraders
+  blurb: Modalities that harness induced proximity.
+  terms:
+  - name: PROTAC
+    highlight: TAC
+    expansion: PROteolysis TArgeting Chimera
+    refs:
+    - https://www.pnas.org/doi/full/10.1073/pnas.141230798
+  - name: Molecular Glue
+    expansion: (IAA/Auxin:TIR1)
+    refs:
+    - https://www.nature.com/articles/nature05731
+  - name: Degronomid
+    expansion: Bifunctional that recruits CRBN
+    refs:
+    - https://medicalxpress.com/news/2015-05-chemical-technology-boosts-potency-cancer.html
+  - name: IMiD
+    expansion: Immunomodulatory imide drug – Celgene
+    refs:
+    - https://www.tandfonline.com/doi/abs/10.1517/14712598.4.12.1963
+  - name: IMiD® Molecular Glue
+    expansion: Cereblon molecular glue degrader
+    refs:
+    - https://www.science.org/doi/10.1126/science.1244851
+    - https://www.science.org/doi/10.1126/science.1244917
+    - https://www.nature.com/articles/nsmb.2874
+    - https://www.nature.com/articles/nature13527
+  - name: CIP
+    expansion: Chemical Inducers of Proximity
+    refs:
+    - https://www.science.org/doi/10.1126/science.7694365
+  - name: CELMoD
+    expansion: Cereblon E3 ligase modulatory drugs – Celgene/BMS
+    refs:
+    - https://pubs.acs.org/doi/10.1021/acs.jmedchem.6b01921
+    - https://www.nature.com/articles/s41589-019-0362-y
+  - name: CIDE
+    expansion: Chemical Inducers of Degradation
+    refs:
+    - https://www.nature.com/articles/s41589-022-01218-w
+  - name: AbTAC
+    highlight: TAC
+    expansion: Antibody-based PROTAC
+    refs:
+    - https://pubs.acs.org/doi/10.1021/jacs.0c10008
+  - name: AceTAC
+    highlight: TAC
+    expansion: Acetylation Targeting Chimera
+    refs:
+    - https://pubs.acs.org/doi/10.1021/jacs.3c04640
+  - name: ACE-TAG
+    expansion: Acetylation Tag
+    refs:
+    - https://pubs.acs.org/doi/10.1021/jacs.1c07850
+  - name: AgnoTAC
+    highlight: TAC
+    expansion: Agnostic Targeting Chimeras
+    refs:
+    - https://pubs.acs.org/doi/10.1021/acscentsci.5c01594
+  - name: AID
+    expansion: Auxin-inducible degron
+    refs:
+    - https://www.nature.com/articles/nmeth.1401
+  - name: AP-PROTAC
+    expansion: Arylazopyrazole Photoswitchable PROTAC
+    refs:
+    - https://pubs.rsc.org/en/content/articlelanding/2022/cc/d2cc03092f
+  - name: ATAC
+    highlight: TAC
+    expansion: ASGPR-Targeting Chimera
+    refs:
+    - https://avilar-tx.com/wp-content/uploads/2022/11/Avilar-Keystone-TPD-Poster-Final-7-Nov-2022.pdf
+  - name: ATTEC
+    highlight: TEC
+    expansion: Autophagosome-Tethering Compound
+    refs:
+    - https://www.nature.com/articles/s41586-019-1722-1
+  - name: AUTAC
+    highlight: TAC
+    expansion: Autophagy-Targeting Chimera
+    refs:
+    - https://www.cell.com/molecular-cell/fulltext/S1097-2765(19)30694-X
+  - name: Auto-RapTAC
+    highlight: TAC
+    expansion: Automated Rapid Synthesis and Evaluation of PROTAC
+    refs:
+    - https://pubs.acs.org/doi/10.1021/acs.jmedchem.4c02438
+  - name: AUTOTAC
+    highlight: TAC
+    expansion: AUTOphagy-TArgeting Chimera
+    refs:
+    - https://www.nature.com/articles/s41467-022-28520-4
+  - name: BacTAC
+    highlight: TAC
+    expansion: Bacteria Targeting Chimera
+    refs:
+    - https://www.cell.com/cell/fulltext/S0092-8674(22)00593-1
+  - name: BioTAC
+    highlight: TAC
+    expansion: Biotin Targeting Chimera
+    refs:
+    - https://www.nature.com/articles/s41467-023-43507-5
+  - name: Biodegrader
+    expansion: Protein-based degrader
+    refs:
+    - https://pubs.acs.org/doi/full/10.1021/acscentsci.0c01337
+  - name: BromoTAG
+    expansion: Bump and hole bromodomain degradation Tag
+    refs:
+    - https://doi.org/10.1021/acs.jmedchem.1c01532
+  - name: ByeTAC
+    highlight: TAC
+    expansion: Bypassing E3 Targeting Chimera
+    refs:
+    - https://www.biorxiv.org/content/10.1101/2024.01.20.576376v1.full
+  - name: CataLYTAC
+    highlight: TAC
+    expansion: Catalytic Lysosome Targeting Chimera
+    refs:
+    - https://www.science.org/doi/10.1126/science.adx5094
+  - name: CLIPTAC
+    highlight: TAC
+    expansion: Intracellular Click-Formed PROTAC
+    refs:
+    - https://pubs.acs.org/doi/10.1021/acscentsci.6b00280
+  - name: CORTAC
+    highlight: TAC
+    expansion: Covalently-Released Targeting Chimera
+  - name: CHAMP
+    expansion: Chaperone-mediated protein degradation
+    refs:
+    - https://aacrjournals.org/cancerres/article/81/13_Supplement/971/669759/Abstract-971-Chaperone-mediated-protein
+  - name: CYpHER
+    expansion: Catalytic pH-Dependent Endolysosomal Delivery with Recycling
+    refs:
+    - https://www.nature.com/articles/s41467-024-52975-2
+  - name: CyTAC™
+    highlight: TAC
+    expansion: Cytotoxicity Targeting Chimera
+  - name: DAC
+    expansion: Degrader-Antibody Conjugate
+    refs:
+    - https://pubs.acs.org/doi/full/10.1021/acs.jmedchem.0c01845
+  - name: DALTAC
+    highlight: TAC
+    expansion: Domain-ALTeration Chimeras
+    refs:
+    - https://www.biorxiv.org/content/10.64898/2026.04.24.720638v1
+  - name: DD-CIP
+    expansion: DNA Damage Chemical Inducers of Proximity
+    refs:
+    - https://www.biorxiv.org/content/10.1101/2025.11.03.686423v1
+  - name: DENTAC
+    highlight: TAC
+    expansion: Dendronized DNA chimera
+    refs:
+    - https://pubs.acs.org/doi/10.1021/acschembio.3c00645
+  - name: Degradomer
+    expansion: Proteolysis-targeting chimera bifunctional molecule
+    refs:
+    - https://pubs.acs.org/doi/10.1021/acschembio.2c00037
+  - name: DEPTAC
+    highlight: TAC
+    expansion: De-Phosphorylation TArgeting Chimera
+    refs:
+    - https://pubmed.ncbi.nlm.nih.gov/34262014/
+  - name: dTAG
+    expansion: FKBP12F36V Degradation Tag
+    refs:
+    - https://pubmed.ncbi.nlm.nih.gov/29581585/
+  - name: DUBTAC
+    highlight: TAC
+    expansion: Deubiquitinase Targeting Chimera
+    refs:
+    - https://www.nature.com/articles/s41589-022-00971-2
+  - name: ERADEC
+    expansion: Endoplasmic Reticulum-Associated Degradation Chimera
+    refs:
+    - https://www.cell.com/cell/abstract/S0092-8674(26)00105-4
+  - name: ENCTAC
+    highlight: TAC
+    expansion: Enzyme-Derived Clicking PROTAC
+    refs:
+    - https://pubmed.ncbi.nlm.nih.gov/36516252/
+  - name: FcRTAC
+    highlight: TAC
+    expansion: FcRn-Targeting Chimera
+    refs:
+    - https://www.nature.com/articles/s41467-025-67207-4
+  - name: FerroTAC
+    highlight: TAC
+    expansion: Ferrocene targeting chimera
+    refs:
+    - https://pubs.acs.org/doi/full/10.1021/jacs.4c18354
+  - name: FRTACs
+    highlight: TAC
+    expansion: Folate Receptor-Targeting Chimeras
+    refs:
+    - https://www.nature.com/articles/s41467-024-52685-9
+  - name: FolTAC
+    highlight: TAC
+    expansion: Folate Receptor α Targeting Chimera
+    refs:
+    - https://pmc.ncbi.nlm.nih.gov/articles/PMC12491540/
+  - name: GlueTAC
+    highlight: TAC
+    expansion: Nanobody-based PROTAC
+    refs:
+    - https://pubs.acs.org/doi/10.1021/jacs.1c08521
+  - name: GRIP
+    expansion: GRoup-transfer chimeras for Inducing Proximity
+    refs:
+    - https://www.biorxiv.org/content/10.64898/2026.02.20.706349v1
+  - name: HaloPROTAC
+    expansion: HaloTag PROTAC
+    refs:
+    - https://pubs.acs.org/doi/full/10.1021/acschembio.5b00442
+  - name: HEMTAC
+    highlight: TAC
+    expansion: Heat Shock Protein 90 (HSP90)-mediated targeting chimeras
+    refs:
+    - https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c01648
+  - name: HerTAC
+    highlight: TAC
+    expansion: (HER2)-targeted lysosome-tethering chimeras
+    refs:
+    - https://onlinelibrary.wiley.com/doi/10.1002/anie.202511467
+  - name: Homo-PROTAC
+    expansion: Homodimerization PROTAC
+    refs:
+    - https://www.nature.com/articles/s41467-017-00954-1
+  - name: HyT
+    expansion: Hydrophobic Tag degrader
+    refs:
+    - https://pubmed.ncbi.nlm.nih.gov/21725302/
+  - name: IBG
+    expansion: Intramolecular Bivalent Glue
+    refs:
+    - https://www.nature.com/articles/s41586-024-07089-6
+  - name: Interdictor
+    expansion: Context-dependent translation inhibitor glue
+    refs:
+    - https://www.nature.com/articles/s41467-026-69891-2
+  - name: ITAC
+    highlight: TAC
+    expansion: Integrin Targeting Chimera
+    refs:
+    - https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cmdc.202300643
+  - name: KineTAC
+    highlight: TAC
+    expansion: Cytokine receptor-targeting chimeras
+    refs:
+    - https://www.nature.com/articles/s41587-022-01456-2
+  - name: LIPTAC
+    highlight: TAC
+    expansion: LDLR-targeting chimeras
+    refs:
+    - https://pubs.acs.org/doi/10.1021/jacs.5c15047
+  - name: LOCKTAC
+    highlight: TAC
+    expansion: Drugs which modulate k<sub>off</sub>
+    refs:
+    - https://www.science.org/doi/10.1126/science.adx3595
+  - name: LYMTAC
+    highlight: TAC
+    expansion: LYsosome Membrane TArgeting Chimeras
+    refs:
+    - https://www.nature.com/articles/s41467-025-63128-4
+  - name: LYTAC
+    highlight: TAC
+    expansion: Lysosome-Targeting Chimeras
+    refs:
+    - https://www.nature.com/articles/s41586-020-2545-9
+  - name: MedTAC
+    highlight: TAC
+    expansion: mRNA-encoded lysosomal targeting chimera
+    refs:
+    - https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202501222
+  - name: MGI
+    expansion: Molecular Glue Inhibitor
+  - name: MoDE
+    expansion: Molecular Degraders of Extracellular proteins
+    refs:
+    - https://www.nature.com/articles/s41589-021-00851-1
+  - name: Molecular Glue Degrader
+    expansion: IAA:Auxin:TIR1 degrader
+    refs:
+    - https://www.nature.com/articles/nature05731
+  - name: MrTAC
+    highlight: TAC
+    expansion: Methylarginine targeting chimera
+    refs:
+    - https://www.nature.com/articles/s41589-024-01741-y
+  - name: Multi-TAC
+    highlight: TAC
+    expansion: Multivalent Targeting Chimeras
+    refs:
+    - https://www.cell.com/cell/fulltext/S0092-8674(24)01198-X
+  - name: Nano-PROTAC
+    expansion: Semiconducting polymer backbone PROTAC
+    refs:
+    - https://pubmed.ncbi.nlm.nih.gov/34927316/
+  - name: OGTAC
+    highlight: TAC
+    expansion: Organelle-Targeting Chimeras
+    refs:
+    - https://www.nature.com/articles/s41392-022-01243-0
+  - name: OGT-TAC
+    highlight: TAC
+    expansion: O-GlcNAcylation-Targeting Chimeras
+    refs:
+    - https://pubs.acs.org/doi/10.1021/jacs.3c14380
+  - name: OMG
+    expansion: Orthosteric Molecular Glue
+    refs:
+    - https://www.nature.com/articles/s41586-026-10129-y
+  - name: O'PROTAC
+    expansion: Oligonucleotide Targeting Chimera
+    refs:
+    - https://www.biorxiv.org/content/10.1101/2021.03.08.434493v1
+  - name: OligoTRAFTACs
+    highlight: TAC
+    expansion: Oligo Transcription Factor Targeting Chimera
+    refs:
+    - https://pubs.rsc.org/en/content/articlelanding/2022/cb/d2cb00138a
+  - name: PC-PROTAC
+    expansion: Photo-caged PROTAC
+    refs:
+    - https://pubmed.ncbi.nlm.nih.gov/31566962/
+  - name: PCIP
+    expansion: PARP-based Chemical Inducer of Proximity
+    refs:
+    - https://www.biorxiv.org/content/10.1101/2025.07.26.666954v1
+  - name: PepTAC
+    highlight: TAC
+    expansion: Peptide-based proteolysis TArgeting Chimeras
+    refs:
+    - https://www.biorxiv.org/content/10.1101/2024.03.17.584721v1
+  - name: PHIC
+    expansion: Phosphorylation-Inducing Chimeric Small Molecule
+    refs:
+    - https://pubs.acs.org/doi/10.1021/jacs.0c05537
+  - name: PhoRC
+    expansion: phosphatase recruiting chimeras
+    refs:
+    - https://pubs.acs.org/doi/10.1021/acs.jmedchem.9b01167
+  - name: PhosphoPROTAC
+    expansion: Phospho-dependent proteolysis targeting chimeras
+    refs:
+    - https://pubmed.ncbi.nlm.nih.gov/23674677/
+  - name: PhosTAC
+    highlight: TAC
+    expansion: Phosphorylation Targeting Chimera
+    refs:
+    - https://pubs.acs.org/doi/full/10.1021/acschembio.1c00693
+  - name: PHOTAC
+    highlight: TAC
+    expansion: Photochemically Targeting Chimera
+    refs:
+    - https://www.science.org/doi/10.1126/sciadv.aay5064
+  - name: PINCH
+    expansion: Polymerization-inducing chimeras
+    refs:
+    - https://www.nature.com/articles/s41589-026-02141-0
+  - name: POLY-PROTAC
+    expansion: Polymeric PROTAC
+    refs:
+    - https://www.nature.com/articles/s41467-022-32050-4
+  - name: Pre-PROTAC
+    expansion: ROS-responsive Pre-PROTAC
+    refs:
+    - https://pubs.rsc.org/en/content/articlelanding/2022/cc/d2cc03367d
+  - name: PROTAB
+    expansion: Proteolysis Targeting Antibody
+    refs:
+    - https://www.nature.com/articles/s41586-022-05235-6
+  - name: PS-Degron
+    expansion: photosensitizers and protein ligands
+    refs:
+    - https://pubs.acs.org/doi/10.1021/acs.jmedchem.1c02037
+  - name: RELOTAC
+    highlight: TAC
+    expansion: RElocalization Targeting Chimera
+  - name: REULR
+    expansion: Receptor Elimination by E3 Ubiquitin Ligase Recruitment
+    refs:
+    - https://pubs.acs.org/doi/10.1021/acssynbio.2c00587
+  - name: RNATAC
+    highlight: TAC
+    expansion: Aptamer based RNA PROTAC
+    refs:
+    - https://www.sciencedirect.com/science/article/abs/pii/S0968089623001475
+  - name: RIBOTAC
+    highlight: TAC
+    expansion: Ribonuclease Targeting Chimera
+    refs:
+    - https://www.cell.com/cell-chemical-biology/fulltext/S2451-9456(19)30246-6
+  - name: RIPTAC
+    highlight: TAC
+    expansion: Regulated Induced Proximity Targeting Chimera
+    refs:
+    - https://www.sciencedirect.com/science/article/pii/S2451945624003076
+  - name: ROTAC
+    highlight: TAC
+    expansion: R-spondin Chimera
+    refs:
+    - https://www.cell.com/cell-chemical-biology/pdf/S2451-9456(23)00153-8
+  - name: RT-PROTAC
+    expansion: Radiotherapy-Triggered PROTACs
+    refs:
+    - https://pubs.acs.org/doi/10.1021/jacs.2c10177
+  - name: SDIPTAC
+    highlight: TAC
+    expansion: Self-dimerization Induced Proximity Targeting Chimera
+    refs:
+    - https://pubs.acs.org/doi/10.1021/acs.jmedchem.6c00126
+  - name: SELDEG
+    expansion: Selective degradation of antigen-specific antibodies
+    refs:
+    - https://www.nature.com/articles/ncomms15314
+  - name: SelecTAC
+    highlight: TAC
+    expansion: Cell-Selective Targeting Chimeras
+    refs:
+    - https://pubs.acs.org/doi/10.1021/jacs.5c09630
+  - name: SHEDTAC
+    highlight: TAC
+    expansion: Sheddase-Targeting Chimera
+    refs:
+    - https://www.biorxiv.org/content/10.64898/2026.02.06.703938v1
+  - name: SignalTAC
+    highlight: TAC
+    expansion: Signal-Mediated Lysosome-Targeting Chimera
+    refs:
+    - https://pubs.rsc.org/en/content/articlelanding/2024/sc/d4sc05093b
+  - name: SNIPER
+    expansion: Specific and Non-Genetic IAP-Dependent Protein Eraser
+    refs:
+    - https://www.sciencedirect.com/science/article/abs/pii/S0223523421000969
+  - name: SORTAC
+    highlight: TAC
+    expansion: Sortilin-Based Lysosome Targeting Chimera
+    refs:
+    - https://www.cell.com/cell-chemical-biology/abstract/S2451-9456(26)00072-3
+  - name: SP-PROTAC
+    expansion: Stapled peptide-based proteolysis-targeting chimeras
+    refs:
+    - https://pubmed.ncbi.nlm.nih.gov/36185610/
+  - name: Split-PROTACs
+    expansion: Oxime-Linked Split PROTAC
+    refs:
+    - https://pubmed.ncbi.nlm.nih.gov/35802347/
+  - name: SpliceTAC
+    highlight: TAC
+    expansion: Spliceosomal Targeting Chimera
+    refs:
+    - https://onlinelibrary.wiley.com/doi/10.1002/anie.202516809
+  - name: Supra-LYTAC
+    highlight: TAC
+    expansion: Supramolecular Lysosome-Targeting Chimera
+    refs:
+    - https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202503134
+  - name: SureTAC
+    highlight: TAC
+    expansion: Surface Removal Targeting Chimera
+  - name: SWEETS
+    expansion: Surrozen Wnt Signal Enhancer Engineered for Tissue Specificity
+    refs:
+    - https://elifesciences.org/articles/93908
+  - name: TAPTAC
+    highlight: TAC
+    expansion: Triple-Action Proteolysis Targeting Chimera
+    refs:
+    - https://www.cell.com/cell-reports-medicine/fulltext/S2666-3791(25)00540-3
+  - name: TCIP
+    expansion: Transcriptional Chemical Inducer of Proximity
+    refs:
+    - https://www.nature.com/articles/s41586-023-06348-2
+  - name: TF-DUBTAC
+    highlight: TAC
+    expansion: Transcription Factor Stabilizer
+    refs:
+    - https://pubmed.ncbi.nlm.nih.gov/35786952/
+  - name: TF-PROTAC
+    highlight: TAC
+    expansion: Transcription Factor PROTAC
+    refs:
+    - https://pubs.acs.org/doi/full/10.1021/jacs.1c03852
+  - name: TRACER
+    expansion: Transcriptional Repression via Active Chemical Epigenetic Reprogramming
+    refs:
+    - https://pubs.acs.org/doi/10.1021/acscentsci.5c02277
+  - name: TRAFTAC
+    highlight: TAC
+    expansion: Transcription Factor Targeting Chimera
+    refs:
+    - https://www.cell.com/cell-chemical-biology/fulltext/S2451-9456(21)00150-1
+  - name: TRAM
+    expansion: Targeted relocalization-activating molecules
+    refs:
+    - https://www.nature.com/articles/s41586-024-07950-8
+  - name: TransTAC
+    highlight: TAC
+    expansion: Transferrin Receptor Targeting Chimera
+    refs:
+    - https://www.nature.com/articles/s41586-024-07947-3
+  - name: TRAP
+    expansion: TRanscriptional Activator of p53
+    refs:
+    - https://www.nature.com/articles/s41467-026-72165-6
+  - name: Tricomplex Inhibitor
+    expansion: CYPA:drug:KRAS molecular glue inhibitor
+    refs:
+    - https://www.science.org/doi/10.1126/science.adg9652
+  - name: TRIM-Away
+    expansion: Antibody-mediated degradation using TRIM21
+    refs:
+    - https://www.cell.com/cell/fulltext/S0092-8674(17)31255-2
+  - name: TRIMIDE
+    expansion: TRIM21 Glues
+    refs:
+    - https://www.cell.com/cell-chemical-biology/fulltext/S2451-9456(26)00151-0
+  - name: TRIMTAC
+    highlight: TAC
+    expansion: TRIM21 Targeting Chimera
+    refs:
+    - https://www.nature.com/articles/s41467-025-61818-7
+  - name: TRIP
+    expansion: Transcriptional/Remodeling chemical Inducers of Proximity
+    refs:
+    - https://www.biorxiv.org/content/10.64898/2026.03.30.715217v1
+  - name: Trivalent PROTAC
+    expansion: Triple ligand proteolysis targeting chimera
+    refs:
+    - https://www.nature.com/articles/s41589-021-00878-4
+  - name: TrogoTAC
+    highlight: TAC
+    expansion: Trogocytosis targeting chimeras
+    refs:
+    - https://chemrxiv.org/doi/full/10.26434/chemrxiv-2024-k7kn2-v2
+  - name: Velcrin
+    expansion: PDE3A:SLFN12 Molecular glue
+    refs:
+    - https://www.nature.com/articles/s41467-021-24495-w
+  - name: VIPERTAC
+    highlight: TAC
+    expansion: Viral E3 Pan-essential removing targeting chimera
+    refs:
+    - https://www.cell.com/cell-chemical-biology/abstract/S2451-9456(25)00034-0
+- title: Induced-proximity concepts
+  blurb: The vocabulary behind the modalities.
+  terms:
+  - name: Induced proximity
+    definition: 'The unifying idea: using a chemical or biologic to force two biomolecules together to drive a programmed outcome — degradation, stabilization, modification, or relocalization.'
+  - name: Targeted Protein Degradation
+    abbr: TPD
+    definition: A therapeutic strategy that <em>removes</em> a protein rather than merely inhibiting its activity, expanding the "druggable" proteome to scaffolding and undruggable targets.
+  - name: Targeted Protein Stabilization
+    abbr: TPS
+    definition: The converse of TPD — deliberately increasing a protein's level or half-life, for example with a DUBTAC.
+  - name: Ternary complex
+    definition: The three-body assembly (target · degrader · effector, e.g. target–PROTAC–E3) that must form for a bifunctional molecule to act.
+  - name: Cooperativity (α)
+    definition: A measure of how much the ternary complex is stabilized (positive cooperativity) or destabilized (negative) relative to the two underlying binary interactions.
+  - name: Hook effect
+    definition: Loss of ternary-complex formation at high degrader concentration, as binary complexes outcompete the productive ternary one — producing a characteristic bell-shaped dose–response.
+  - name: E3 ubiquitin ligase
+    definition: The enzyme that transfers ubiquitin onto a substrate. Degraders co-opt E3s such as CRBN, VHL, MDM2, and the IAPs to mark new targets.
+  - name: CRBN & VHL
+    definition: Cereblon and von Hippel–Lindau — the two most widely used E3 recruiters in degrader design, each with well-characterized small-molecule ligands.
+  - name: Neo-substrate
+    definition: A protein that is not a natural client of an E3 ligase but is recruited and degraded thanks to a molecular glue or PROTAC.
+  - name: Event-driven pharmacology
+    definition: Activity that depends on a transient event (such as ubiquitin transfer) rather than sustained target occupancy — the basis for catalytic, sub-stoichiometric action.
+  - name: Catalytic / sub-stoichiometric
+    definition: A single degrader molecule can drive many rounds of target degradation, in contrast to occupancy-driven inhibitors that act one-to-one.
+  - name: Linkerology
+    definition: The art of tuning the chemical tether that joins the two warheads of a bifunctional degrader; linker length and composition strongly shape ternary complex formation and potency.
+  - name: Degron
+    definition: A sequence or chemical mark that directs a protein toward the degradation machinery.
+  - name: DC50 / Dmax
+    name_html: DC<sub>50</sub> / D<sub>max</sub>
+    definition: Core potency metrics for degraders — the concentration giving 50% degradation, and the maximum extent of degradation achieved.

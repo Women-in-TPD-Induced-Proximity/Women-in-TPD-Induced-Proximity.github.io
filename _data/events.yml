@@ -1,0 +1,32 @@
+# Upcoming events, rendered at BUILD TIME by events.html (Liquid loop).
+# Replaces the old assets/data/events.json + render-events.js fetch, so the
+# page now works with JavaScript off; only the search/type filter needs JS.
+#
+# date          YYYY-MM-DD. Authored soonest-first; also the display source.
+# type          Free text. The Type dropdown is built from the values actually
+#               used here, so a new type needs no markup change.
+# registration  Optional. Omit it and the card offers "Host / Sponsor" instead,
+#               pointing at get-involved.html.
+# featured      Optional flag, currently unused by any page.
+- title: Community Happy Hour + Lightning Talks
+  type: Meetup
+  date: '2026-04-21'
+  time: 5:30–8:00 PM
+  venue: Local venue (update me)
+  city: Cambridge, MA
+  details: Low-pressure networking plus short 5-minute science/Women in Induced Proximity stories.
+  featured: true
+- title: 'Panel: From Hit to Lead — What Actually Changes Decisions?'
+  type: Panel
+  date: '2026-05-15'
+  time: 6:00–8:30 PM
+  venue: Innovation space
+  city: Boston, MA
+  details: A candid discussion on data packages, reproducibility, and cross-functional tradeoffs.
+- title: 'Virtual Journal Club: Degrader Design Trends'
+  type: Virtual
+  date: '2026-06-04'
+  time: 12:00–1:00 PM
+  venue: Online
+  city: Virtual
+  details: 'Bring one paper and one slide: what’s new, what’s real, what’s hype.'

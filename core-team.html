@@ -41,128 +41,19 @@ active: "core-team"
         </div>
       </div>
 
-      <!-- data-sort-name is "Surname, First" so A–Z orders by family name. -->
+      <!-- Members live in _data/team.yml. data-sort-name is "Surname, First"
+           so A–Z orders by family name. -->
       <div class="ct-grid">
+{%- for m in site.data.team %}
 
-        <a class="ct-card" data-sort-name="Hansen, Gwenn" data-sort-org="Nurix" href="https://www.linkedin.com/in/gwenn-hansen-1370984/" target="_blank" rel="noopener">
+        <a class="ct-card" data-sort-name="{{ m.sort_name | escape }}" data-sort-org="{{ m.org | escape }}" href="{{ m.linkedin }}" target="_blank" rel="noopener">
           <div class="ct-photo-wrap">
-            <img src="/assets/images/team/gwenn-hansen.png" alt="Gwenn Hansen" class="ct-photo" />
+            <img src="/assets/images/team/{{ m.photo }}" alt="{{ m.name | escape }}" class="ct-photo{% if m.framing %} ct-photo--{{ m.framing }}{% endif %}" />
           </div>
-          <p class="ct-name">Gwenn Hansen</p>
-          <p class="ct-org">Nurix</p>
+          <p class="ct-name">{{ m.name | escape }}</p>
+          <p class="ct-org">{{ m.org | escape }}</p>
         </a>
-
-        <a class="ct-card" data-sort-name="Cacace, Angela" data-sort-org="Arvinas" href="https://www.linkedin.com/in/angela-cacace-155b5a/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/angela-cacace.png" alt="Angela Cacace" class="ct-photo" />
-          </div>
-          <p class="ct-name">Angela Cacace</p>
-          <p class="ct-org">Arvinas</p>
-        </a>
-
-        <a class="ct-card" data-sort-name="Sharma, Kirti" data-sort-org="Kymera" href="https://www.linkedin.com/in/kirti-sharma-science/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/kirti-sharma.png" alt="Kirti Sharma" class="ct-photo" />
-          </div>
-          <p class="ct-name">Kirti Sharma</p>
-          <p class="ct-org">Kymera</p>
-        </a>
-
-        <a class="ct-card" data-sort-name="Jackson, Kate" data-sort-org="C4 Therapeutics" href="https://www.linkedin.com/in/katrina-jackson-6077b715/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/kate-jackson.png" alt="Kate Jackson" class="ct-photo" />
-          </div>
-          <p class="ct-name">Kate Jackson</p>
-          <p class="ct-org">C4 Therapeutics</p>
-        </a>
-
-        <a class="ct-card" data-sort-name="Chaudhry, Charu" data-sort-org="J&amp;J Innovative Medicine" href="https://www.linkedin.com/in/charu-chaudhry-a9250b1b/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/charu-chaudhry.png" alt="Charu Chaudhry" class="ct-photo" />
-          </div>
-          <p class="ct-name">Charu Chaudhry</p>
-          <p class="ct-org">J&amp;J Innovative Medicine</p>
-        </a>
-
-        <a class="ct-card" data-sort-name="Daniels, Danette" data-sort-org="Foghorn Therapeutics" href="https://www.linkedin.com/in/danette-daniels-45648924/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/danette-daniels.jpg" alt="Danette Daniels" class="ct-photo" />
-          </div>
-          <p class="ct-name">Danette Daniels</p>
-          <p class="ct-org">Foghorn Therapeutics</p>
-        </a>
-
-        <a class="ct-card" data-sort-name="Mayor-Ruiz, Cristina" data-sort-org="IRB Barcelona" href="https://www.linkedin.com/in/cristina-mayor-ruiz-7663391a4/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/cristina-mayor-ruiz.png" alt="Cristina Mayor-Ruiz" class="ct-photo" />
-          </div>
-          <p class="ct-name">Cristina Mayor-Ruiz</p>
-          <p class="ct-org">IRB Barcelona</p>
-        </a>
-
-        <a class="ct-card" data-sort-name="Ferguson, Fleur" data-sort-org="UC San Diego" href="https://www.linkedin.com/in/fleur-m-ferguson-phd-54921a46/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/fleur-ferguson.png" alt="Fleur Ferguson" class="ct-photo ct-photo--center" />
-          </div>
-          <p class="ct-name">Fleur Ferguson</p>
-          <p class="ct-org">UC San Diego</p>
-        </a>
-
-        <a class="ct-card" data-sort-name="Maniaci, Chiara" data-sort-org="University of Dundee" href="https://www.linkedin.com/in/chiara-maniaci/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/chiara-maniaci.png" alt="Chiara Maniaci" class="ct-photo" />
-          </div>
-          <p class="ct-name">Chiara Maniaci</p>
-          <p class="ct-org">University of Dundee</p>
-        </a>
-
-        <a class="ct-card" data-sort-name="Donovan, Katherine" data-sort-org="DFCI / Harvard Medical School" href="https://www.linkedin.com/in/katherine-donovan-a324338a/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/katherine-donovan.png" alt="Katherine Donovan" class="ct-photo" />
-          </div>
-          <p class="ct-name">Katherine Donovan</p>
-          <p class="ct-org">DFCI / Harvard Medical School</p>
-        </a>
-
-        <a class="ct-card" data-sort-name="Zerfas, Breanna" data-sort-org="Dana-Farber Cancer Institute" href="https://www.linkedin.com/in/breanna-zerfas/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/breanna-zerfas.png" alt="Breanna Zerfas" class="ct-photo" />
-          </div>
-          <p class="ct-name">Breanna Zerfas</p>
-          <p class="ct-org">Dana-Farber Cancer Institute</p>
-        </a>
-
-        <a class="ct-card" data-sort-name="Matyskiela, Mary" data-sort-org="Neomorph" href="https://www.linkedin.com/in/mary-matyskiela-ph-d-9b81492/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/mary-matyskiela.png" alt="Mary Matyskiela" class="ct-photo" />
-          </div>
-          <p class="ct-name">Mary Matyskiela</p>
-          <p class="ct-org">Neomorph</p>
-        </a>
-
-        <a class="ct-card" data-sort-name="O&#x27;Connor, Suzanne" data-sort-org="CeTPD, University of Dundee" href="https://www.linkedin.com/in/suzanne-o-connor/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/suzanne-oconnor.jpg" alt="Suzanne O'Connor" class="ct-photo" />
-          </div>
-          <p class="ct-name">Suzanne O'Connor</p>
-          <p class="ct-org">CeTPD, University of Dundee</p>
-        </a>
-
-        <a class="ct-card" data-sort-name="Karolak, Natalia" data-sort-org="CeTPD, University of Dundee" href="https://www.linkedin.com/in/natalia-karolak-a908a7135/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/natalia-karolak.jpg" alt="Natalia Karolak" class="ct-photo ct-photo--center" />
-          </div>
-          <p class="ct-name">Natalia Karolak</p>
-          <p class="ct-org">CeTPD, University of Dundee</p>
-        </a>
-
-        <a class="ct-card" data-sort-name="Seyb, Kathleen" data-sort-org="Triana Biomedicines" href="https://www.linkedin.com/in/kathleen-seyb-506aa111/" target="_blank" rel="noopener">
-          <div class="ct-photo-wrap">
-            <img src="/assets/images/team/kathleen-seyb.jpg" alt="Kathleen Seyb" class="ct-photo" />
-          </div>
-          <p class="ct-name">Kathleen Seyb</p>
-          <p class="ct-org">Triana Biomedicines</p>
-        </a>
+{%- endfor %}
 
       </div>
     </div>

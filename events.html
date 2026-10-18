@@ -7,7 +7,7 @@ description: "Upcoming meetups, symposia, and community gatherings."
     <section class="page-hero">
       <div class="container">
         <h1>Events</h1>
-        <p class="lead muted">Meetups, panels, and community gatherings. Add new events in <code>assets/data/events.json</code>.</p>
+        <p class="lead muted">Meetups, panels, and community gatherings.</p>
       </div>
     </section>
 
@@ -16,25 +16,82 @@ description: "Upcoming meetups, symposia, and community gatherings."
         <div class="toolbar">
           <div class="field">
             <label for="search" class="muted">Search</label>
-            <input id="search" type="search" placeholder="Search title, venue, city…" />
+            <input id="search" type="search" placeholder="Search title, venue, city&hellip;" autocomplete="off" />
           </div>
           <div class="field">
             <label for="type" class="muted">Type</label>
             <select id="type">
               <option value="">All</option>
-              <option value="Meetup">Meetup</option>
-              <option value="Panel">Panel</option>
-              <option value="Workshop">Workshop</option>
-              <option value="Symposium">Symposium</option>
-              <option value="Virtual">Virtual</option>
+              {%- assign types = site.data.events | map: "type" | uniq | sort %}
+              {%- for t in types %}
+              <option value="{{ t | escape }}">{{ t | escape }}</option>
+              {%- endfor %}
             </select>
           </div>
         </div>
 
-        <div class="events-grid" data-events-target="all"></div>
+        <!-- Events live in _data/events.yml and are rendered here at build time,
+             so the list is present with JavaScript off. Only the filtering below
+             needs JS, and it only toggles `hidden` on already-rendered cards. -->
+        <div class="events-grid" data-events-target="all">
+          {%- for e in site.data.events %}
+
+          <article class="card event" data-event
+                   data-type="{{ e.type | escape }}"
+                   data-haystack="{{ e.title | append: ' ' | append: e.venue | append: ' ' | append: e.city | append: ' ' | append: e.details | downcase | escape }}">
+            <div class="event-top">
+              <span class="pill">{{ e.type | escape }}</span>
+              <h3>{{ e.title | escape }}</h3>
+              <p class="muted">{{ e.date | date: "%b %-d, %Y" }} &bull; {{ e.time | escape }}</p>
+            </div>
+            <p>{{ e.details | escape }}</p>
+            <p class="tiny muted"><strong>{{ e.venue | escape }}</strong> &bull; {{ e.city | escape }}</p>
+            <div class="event-actions">
+              {%- if e.registration %}
+              <a class="button primary" href="{{ e.registration }}" target="_blank" rel="noopener">Register</a>
+              {%- else %}
+              <a class="button secondary" href="/get-involved.html">Host / Sponsor</a>
+              {%- endif %}
+            </div>
+          </article>
+          {%- endfor %}
+        </div>
+
+        <p class="muted" id="events-empty" hidden>No matching events.</p>
+        {%- if site.data.events == empty %}
+        <p class="muted">No events scheduled right now &mdash; check back soon.</p>
+        {%- endif %}
+
         <p class="tiny muted">This page is fully static; filtering happens in the browser.</p>
       </div>
     </section>
   </main>
 
-<script src="assets/js/render-events.js"></script>
+<script>
+  // Filters the build-time-rendered cards by toggling `hidden`, the same shape
+  // as the dictac glossary search — so it composes with sort.js if that is ever
+  // added here, and degrades to the full list when JS is off.
+  (function () {
+    var search = document.getElementById('search');
+    var type   = document.getElementById('type');
+    var empty  = document.getElementById('events-empty');
+    var cards  = Array.prototype.slice.call(document.querySelectorAll('[data-event]'));
+
+    function apply() {
+      var q = search.value.trim().toLowerCase();
+      var t = type.value;
+      var shown = 0;
+      cards.forEach(function (card) {
+        var match = (!t || card.getAttribute('data-type') === t) &&
+                    (!q || card.getAttribute('data-haystack').indexOf(q) !== -1);
+        card.hidden = !match;
+        if (match) shown++;
+      });
+      empty.hidden = shown !== 0 || cards.length === 0;
+    }
+
+    search.addEventListener('input', apply);
+    type.addEventListener('change', apply);
+    apply();
+  })();
+</script>
