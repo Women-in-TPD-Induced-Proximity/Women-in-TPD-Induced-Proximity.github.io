@@ -98,3 +98,117 @@
 @media (max-width: 640px) {
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   Join band — the "Join the Women in Induced Proximity Community"
+   strip directly above the footer, on every page. Markup is the
+   first element of _includes/footer.html.
+
+   A hand-built recreation of the Kubio call-to-action section the
+   homepage used to carry inline, so the homepage looks exactly as it
+   did and every subpage now matches it. Values (padding, container
+   widths, gutters, breakpoints at 768 / 1024 / 1200 px) mirror the
+   Kubio grid it replaced; the colours are the homepage's
+   --kubio-color-1 / -6 / -5 / -2 (/-2-variant-2 on hover), inlined
+   because those vars only exist on the homepage.
+
+   Everything that would otherwise be inherited or set by a page's
+   globals (Kubio's on the homepage, styles.css's h2 / a rules on
+   subpages) is pinned here, and the component rules are 2-class
+   selectors so they out-specify both.
+   ============================================================ */
+
+.site-join {
+  display: block;
+  margin: 0;
+  padding: 90px 0;
+  background: linear-gradient(90deg, #004d80 0%, #00121f 100%);
+  color: #fffefa;
+  font-family: Urbanist, Helvetica, Arial, sans-serif, serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  scroll-margin-top: 70px;
+}
+.site-join .site-join-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+.site-join .site-join-text,
+.site-join .site-join-action {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 15px;
+}
+.site-join .site-join-text { flex: 1 1 0; text-align: left; }
+.site-join .site-join-action { flex: 0 0 auto; width: 26.34%; justify-content: center; text-align: center; }
+
+.site-join .site-join-title {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  font-family: Urbanist, Helvetica, Arial, sans-serif, serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.143;
+  letter-spacing: normal;
+  text-transform: none;
+  color: #fffefa;
+}
+
+.site-join .site-join-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 15px 30px;
+  border: 2px solid #ffc800;
+  border-radius: 5px;
+  background-color: #ffc800;
+  color: #fff;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif, serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition-property: background, padding, margin, border, transform, filter, box-shadow, opacity, color, fill, font, border-radius, max-height, max-width;
+  transition-duration: .5s;
+}
+.site-join .site-join-button:hover {
+  background-color: #ffda55;
+  border-color: #ffda55;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Kubio's boxed container widths. */
+@media (min-width: 576px)  { .site-join .site-join-inner { max-width: 540px; } }
+@media (min-width: 768px)  { .site-join .site-join-inner { max-width: 720px; } }
+@media (min-width: 1024px) { .site-join .site-join-inner { max-width: 960px; } }
+@media (min-width: 1200px) { .site-join .site-join-inner { max-width: 1232px; } }
+
+/* Tablet: tighter section padding and 10px gutters. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .site-join { padding: 60px 0; }
+  .site-join .site-join-text,
+  .site-join .site-join-action { padding: 10px; }
+}
+
+/* Phone: heading and button stack, both centred. */
+@media (max-width: 767px) {
+  .site-join { padding: 30px 0; }
+  .site-join .site-join-text,
+  .site-join .site-join-action { width: 100%; flex: 0 0 auto; padding: 20px 10px; }
+  .site-join .site-join-text { text-align: center; }
+}

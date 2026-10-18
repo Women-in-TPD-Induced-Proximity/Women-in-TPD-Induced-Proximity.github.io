@@ -69,6 +69,20 @@ therefore render differently on the two systems. `site-footer.css` pins `font-si
 the element directly. If you add markup to the chrome, **diff the computed styles on both**, not
 just screenshots — see the verify loop below.
 
+**The Join band is part of the footer chrome.** The "Join the Women in Induced Proximity
+Community" strip (`<section class="site-join" id="join">`) is the first element of
+`_includes/footer.html`, so it sits directly above the footer on **every** page. It used to be a
+Kubio section inline in `index.html`, and four subpages (mission, conferences, meetups,
+photo-gallery) each had their own differently-worded `.cta` "Join the community" section in its
+place. Those are gone; the band is now the one join call-to-action. Its CSS lives in
+`site-footer.css` and is a hand-built recreation of the Kubio original (same gradient, 42px Urbanist
+heading, gold button, and Kubio's 768 / 1024 / 1200 px container widths and gutters), verified
+pixel-identical on the homepage and computed-style-identical across all subpages. Don't add a
+per-page join/sign-up section above the footer; edit the band in place. The `#join` anchor (nav
+"Join" pill, footer link) is the band's own `id`. The `style-local-59…65` / `style-QVB2Jbhu7iX`
+rules still in `index.html`'s inline Kubio CSS are now dead but harmless, so leave them per the
+no-cleanup rule.
+
 The two systems still look different **between** the chrome (different brand lockup, fonts, and
 palette in the hero/body), so there's still a visual seam in the page middle. This is
 **known and accepted** — don't "fix" it without being asked.
@@ -386,7 +400,8 @@ Three stylesheets, always loaded in this order — `tokens.css` → `site-header
 - **`assets/css/site-header.css`** — the shared top nav (see "The chrome … is shared by both
   systems"). Also the home of the `.brand`/`.brand-mark`/`.brand-text` lockup, which the footer
   reuses via `.footer-brand` overrides.
-- **`assets/css/site-footer.css`** — the shared footer. Redeclares the handful of `styles.css`
+- **`assets/css/site-footer.css`** — the shared footer, plus the `.site-join` Join band above
+  it. Redeclares the handful of `styles.css`
   utilities its markup uses (`.container`, `.tiny`) scoped to `.site-footer`, so it works
   standalone on the homepage.
 - **`assets/css/styles.css`** — everything else, hand-built pages only. **Never load this on
@@ -396,7 +411,7 @@ Tokens: `--navy #004d80`, `--navy-dk`, `--teal`, `--gold #f5b800`, surfaces, tex
 Fonts: **Urbanist** (headings) + **Open Sans** (body).
 
 - Components: `.page-hero`, `.section` / `.section.alt`, `.section-head`, `.cards-3`, `.card`,
-  `.button.primary|secondary`, `.badge`, `.pill`, `.notice`, `.cta`, footer grid, mobile nav.
+  `.button.primary|secondary`, `.badge`, `.pill`, `.notice`, footer grid, mobile nav.
 - The "Join" nav pill is keyed off an explicit **`.nav-cta`** class, not `[href="…#join"]`.
   The old attribute selectors silently stopped matching when the href gained a leading slash, so
   the pill rendered as a plain link sitewide — don't reintroduce href-based styling.
