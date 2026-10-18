@@ -6,7 +6,13 @@ Static site, built with **Jekyll**, served by **GitHub Pages** at
 
 ## Editing content
 
-**All the lists on the site live in `_data/*.yml`.** You do not need to touch HTML to add a
+**The easy way: the admin portal** at `https://admin.womenintpdandip.org` (once deployed; see
+[`admin/README.md`](admin/README.md)). Sign in with Google or an emailed code, then add or edit
+publications, glossary terms, team members, photos, scholarship winners, conferences and events
+through forms. Owners and editors publish directly; contributors' changes wait for an editor's
+approval. The site rebuilds about a minute after each save.
+
+**Or edit the files directly.** All the lists on the site live in `_data/*.yml`. You do not need to touch HTML to add a
 publication, a team member, a photo, a conference, a glossary term, or an event.
 
 | To change… | Edit |
@@ -43,6 +49,7 @@ Needs Ruby (this repo is developed against 3.2.2 via rbenv). If `jekyll` isn't o
 ## Repo map
 
 ```
+admin/          the admin portal (Cloudflare Worker), not part of the Jekyll build
 _data/          all page content (see above)
 _layouts/       default.html — the page skeleton for every hand-built page
 _includes/      header.html / footer.html — the shared chrome, defined once

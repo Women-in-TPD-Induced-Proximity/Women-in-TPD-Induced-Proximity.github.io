@@ -1,0 +1,14 @@
+# Copy to .dev.vars for `npm run dev`. Never commit .dev.vars.
+#
+# Pretend to be signed in as this email (only honoured on localhost). It must
+# be in your LOCAL users table — see "Local development" in README.md.
+DEV_AUTH_EMAIL=you@example.org
+
+# Option A: try it safely against the in-memory fake GitHub
+# (run `node dev/mock-github.js` in another terminal).
+GITHUB_API=http://127.0.0.1:8788
+GITHUB_TOKEN=dev
+
+# Option B: a real fine-grained token. Point it at a throwaway branch, not main:
+# GITHUB_TOKEN=github_pat_...
+# GITHUB_BRANCH=admin-test

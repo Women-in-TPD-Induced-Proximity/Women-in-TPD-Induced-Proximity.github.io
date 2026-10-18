@@ -1,0 +1,19 @@
+{
+  "name": "witpd-admin",
+  "private": true,
+  "type": "module",
+  "description": "Admin portal for the WiTPD site: Cloudflare Worker + Access + D1, writing _data/*.yml via the GitHub API.",
+  "scripts": {
+    "dev": "wrangler dev --local-upstream localhost:8787",
+    "deploy": "wrangler deploy",
+    "test": "node --test \"test/*.test.js\"",
+    "db:migrate:local": "wrangler d1 migrations apply witpd-admin --local",
+    "db:migrate": "wrangler d1 migrations apply witpd-admin --remote"
+  },
+  "dependencies": {
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.151.1"
+  }
+}

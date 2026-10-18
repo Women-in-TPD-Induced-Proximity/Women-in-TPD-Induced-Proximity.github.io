@@ -8,3 +8,8 @@ _site/
 .sass-cache/
 /vendor/          # Bundler's local gem dir (root only) — NOT assets/vendor/ (self-hosted CSS/fonts)
 .bundle/
+
+# Admin portal (Cloudflare Worker)
+admin/node_modules/
+admin/.wrangler/
+admin/.dev.vars
