@@ -1,4 +1,9 @@
 # WiTPD admin portal. Setup walkthrough: admin/README.md.
+#
+# Cloudflare redeploys from this file whenever admin/ changes on main, and each
+# deploy resets plain variables to what's written here. So set the values below
+# HERE (edit on github.com), not as plain variables in the dashboard. Only
+# secrets (GITHUB_APP_PRIVATE_KEY) belong in the dashboard.
 name = "witpd-admin"
 main = "src/index.js"
 compatibility_date = "2025-09-01"
@@ -18,7 +23,7 @@ directory = "./public"
 [[d1_databases]]
 binding = "DB"
 database_name = "witpd-admin"
-database_id = "REPLACE_WITH_ID_FROM_wrangler_d1_create"
+database_id = "REPLACE_WITH_ID_FROM_THE_D1_DASHBOARD"
 migrations_dir = "migrations"
 
 [vars]
@@ -30,9 +35,8 @@ SITE_URL = "https://womenintpdandip.org"
 ACCESS_TEAM_DOMAIN = ""
 # From Zero Trust → Access → Applications → (this app) → "Application Audience (AUD) Tag".
 ACCESS_AUD = ""
-# GitHub App (preferred). The private key is a secret:
-#   npx wrangler secret put GITHUB_APP_PRIVATE_KEY < your-app.private-key.pem
-# Or leave these blank and set a fine-grained token instead:
-#   npx wrangler secret put GITHUB_TOKEN
+# GitHub App IDs. Its private key is a secret, set in the dashboard:
+#   Worker -> Settings -> Variables and secrets -> GITHUB_APP_PRIVATE_KEY
+# Or leave these blank and add a fine-grained token as a secret named GITHUB_TOKEN.
 GITHUB_APP_ID = ""
 GITHUB_APP_INSTALLATION_ID = ""

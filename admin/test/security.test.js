@@ -75,6 +75,9 @@ test('GitHub App JWT is signed correctly from a PKCS#1 key', async () => {
   const [h, p, s] = jwt.split('.');
   assert.ok(nodeVerify('sha256', Buffer.from(`${h}.${p}`), publicKey, Buffer.from(s, 'base64url')));
   assert.deepEqual(JSON.parse(Buffer.from(p, 'base64url')), { iat: 1_700_000_000 - 60, exp: 1_700_000_000 + 540, iss: '12345' });
+  // Pasted into the dashboard's secret box, the line breaks may not survive.
+  const flattened = await appJwt('12345', pkcs1.replace(/\n/g, ' '), 1_700_000_000);
+  assert.equal(flattened, jwt);
 });
 
 test('transact: commits text + binary in one commit, retries when the branch moved', async () => {

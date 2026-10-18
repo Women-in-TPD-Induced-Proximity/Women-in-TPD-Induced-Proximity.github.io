@@ -53,38 +53,34 @@ Not editable here, on purpose: `_data/pub_categories.yml` (each category also ne
 Photos are never deleted, even when an item is removed or its photo replaced. The homepage
 references some gallery and scholarship images directly, and the old file costs nothing.
 
-## One-time setup
+## One-time setup (all in the browser)
+
+Nothing runs on anyone's computer, during setup or after. The portal runs on Cloudflare, and
+Cloudflare redeploys it from this repo whenever `admin/` changes on `main`.
 
 You need: a Cloudflare account (free), the domain's DNS on Cloudflare (Phase 1 of
-`docs/ARCHITECTURE-PLAN.md`), Node 20+, and admin rights on the GitHub org.
+`docs/ARCHITECTURE-PLAN.md`), admin rights on the GitHub org, and the portal merged into `main`.
 
-### 1. Install and log in
+**Where settings live.** Plain settings (IDs, the Access audience tag) go in `wrangler.toml` in
+this repo. Edit it on github.com; the commit triggers a redeploy. Don't set them as plain
+variables in the Cloudflare dashboard: each deploy resets those to the values in `wrangler.toml`.
+Only the **secret** (the GitHub App key) is set in the dashboard, and secrets survive deploys.
 
-```bash
-cd admin
-npm install
-npx wrangler login
-```
+### 1. Database (Cloudflare D1)
 
-### 2. Database
+1. Cloudflare dashboard → **Storage & databases → D1 → Create database**. Name it `witpd-admin`.
+2. Open it → **Console**. Paste the whole of `migrations/0001_init.sql` and run it.
+3. In the same console, add yourself as the first owner. Use the email you'll sign in with, in
+   lowercase:
+   ```sql
+   INSERT INTO users (email, name, role) VALUES ('you@example.org', 'Your Name', 'owner');
+   ```
+4. Copy the database's **ID** into `database_id` in `wrangler.toml`.
 
-```bash
-npx wrangler d1 create witpd-admin
-# paste the printed database_id into wrangler.toml
-npm run db:migrate
-```
+Everyone after that is added from the portal's **People** page. The name, not the email, appears
+in the public commit history ("Via the admin portal, by Jane Doe").
 
-Add yourself as the first owner. Use the email you'll sign in with, in lowercase:
-
-```bash
-npx wrangler d1 execute witpd-admin --remote \
-  --command "INSERT INTO users (email, name, role) VALUES ('you@example.org', 'Your Name', 'owner')"
-```
-
-Everyone after that is added from the **People** page. The name, not the email, appears in the
-public commit history ("Via the admin portal, by Jane Doe").
-
-### 3. GitHub access: a GitHub App (recommended)
+### 2. GitHub access: a GitHub App
 
 An App's tokens are minted hourly and the App itself never expires, and it isn't tied to any
 one person's account.
@@ -98,34 +94,38 @@ one person's account.
 3. **Install App** → this org → *Only select repositories* →
    `Women-in-TPD-Induced-Proximity.github.io`. The URL you land on ends in
    `/installations/<number>`; that number is the **installation ID**.
-4. Put the IDs in `wrangler.toml` (`GITHUB_APP_ID`, `GITHUB_APP_INSTALLATION_ID`) and store the
-   key as a secret. The `.pem` works as GitHub gives it, with no conversion:
-   ```bash
-   npx wrangler secret put GITHUB_APP_PRIVATE_KEY < ~/Downloads/witpd-admin.*.private-key.pem
-   ```
-
-*Simpler alternative:* a fine-grained personal access token limited to this repository, with
-**Contents: read and write**, stored with `npx wrangler secret put GITHUB_TOKEN`. It expires
-(after a year at most) and acts as whoever created it, so treat it as a stopgap.
+4. Put both numbers in `wrangler.toml` (`GITHUB_APP_ID`, `GITHUB_APP_INSTALLATION_ID`).
 
 If `main` has branch protection that requires pull requests, add the App to the bypass list,
 or every save will be refused.
 
-### 4. Deploy
+### 3. Deploy from the repo (Workers Builds)
 
-```bash
-npm run deploy
-```
+1. Cloudflare dashboard → **Workers & Pages → Create → Import a repository**. Connect GitHub
+   when asked, and give Cloudflare's app access to this repository.
+2. Settings:
+   - **Project name:** `witpd-admin` (must match `name` in `wrangler.toml`)
+   - **Production branch:** `main`
+   - **Root directory:** `admin`
+   - **Build command:** leave empty. **Deploy command:** `npx wrangler deploy` (the default).
+3. Deploy. This also creates `admin.womenintpdandip.org` (the `routes` entry in
+   `wrangler.toml`). Until Access is set up, every request gets "Sign-in required", which is
+   correct: the portal fails closed.
+4. Worker → **Settings → Build → Build watch paths**: include `admin/*`. Otherwise every content
+   save would trigger a pointless rebuild, since saves also commit to `main`.
+5. Worker → **Settings → Variables and secrets → Add** → type **Secret**, name
+   `GITHUB_APP_PRIVATE_KEY`. Paste the entire contents of the `.pem` file, including the
+   `-----BEGIN…` and `-----END…` lines. Line breaks don't need to survive the paste.
 
-This serves the Worker at `admin.womenintpdandip.org` (the `routes` entry in `wrangler.toml`).
-It will answer every request with "Sign-in required" until Access is set up, which is correct:
-it fails closed.
+*Stopgap alternative to the App:* a fine-grained personal access token limited to this
+repository, with **Contents: read and write**, saved as a secret named `GITHUB_TOKEN`. It
+expires (after a year at most) and acts as whoever created it.
 
-### 5. Cloudflare Access (the login)
+### 4. Cloudflare Access (the login)
 
 In the Cloudflare dashboard → **Zero Trust**:
 
-1. First visit only: pick a team name. Your **team domain** is
+1. First visit only: pick a team name and the Free plan. Your **team domain** is
    `<team>.cloudflareaccess.com`.
 2. **Settings → Authentication → Login methods**: *One-time PIN* is there by default (a code
    by email, which works for any address). Optionally add *Google*.
@@ -136,13 +136,18 @@ In the Cloudflare dashboard → **Zero Trust**:
      decides who gets in. Someone who isn't on it sees "You're signed in, but not on the
      list". (Prefer a tighter Access policy? Fine, but then you maintain two lists.)
 4. Open the application and copy its **Application Audience (AUD) Tag**.
-5. Fill in `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD` in `wrangler.toml` and `npm run deploy` again.
+5. Fill in `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD` in `wrangler.toml` and commit. Cloudflare
+   redeploys within a minute or two.
 
 Visit `https://admin.womenintpdandip.org`, sign in, and you should see the content dashboard.
 
-**Before the domain is on Cloudflare:** comment out `routes`, deploy, and enable Access on the
+**Before the domain is on Cloudflare:** comment out `routes` and enable Access on the
 `*.workers.dev` URL instead (Worker → Settings → Domains & Routes → workers.dev → enable
 Cloudflare Access). Then use that application's AUD tag.
+
+**From a terminal instead** (optional, for developers): `npm install`, `npx wrangler login`,
+`npx wrangler d1 create witpd-admin`, `npm run db:migrate`, `npm run deploy`, and
+`npx wrangler secret put GITHUB_APP_PRIVATE_KEY < key.pem`. It ends up in the same place.
 
 ## Day to day
 
