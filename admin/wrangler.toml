@@ -1,0 +1,42 @@
+# WiTPD admin portal. Setup walkthrough: admin/README.md.
+#
+# Cloudflare redeploys from this file whenever admin/ changes on main, and each
+# deploy resets plain variables to what's written here. So set the values below
+# HERE (edit on github.com), not as plain variables in the dashboard. Only
+# secrets (GITHUB_APP_PRIVATE_KEY) belong in the dashboard.
+name = "witpd-admin"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+# Serve the portal at admin.<domain>. Needs the domain's DNS on Cloudflare
+# (Phase 1 of docs/ARCHITECTURE-PLAN.md). Until then, comment this out and
+# use the workers.dev URL with Access enabled on it.
+routes = [
+  { pattern = "admin.womenintpdandip.org", custom_domain = true },
+]
+
+# CSS + JS for the portal itself. Served at /static/*; Cloudflare Access
+# protects them along with everything else on the hostname.
+[assets]
+directory = "./public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "witpd-admin"
+database_id = "6be07faf-492e-44bd-9f3c-1c09ce2fa1c9"
+migrations_dir = "migrations"
+
+[vars]
+GITHUB_OWNER = "Women-in-TPD-Induced-Proximity"
+GITHUB_REPO = "Women-in-TPD-Induced-Proximity.github.io"
+GITHUB_BRANCH = "main"
+SITE_URL = "https://womenintpdandip.org"
+# From Zero Trust → Settings → Custom pages: "<team>.cloudflareaccess.com".
+ACCESS_TEAM_DOMAIN = "adipu.cloudflareaccess.com"
+# From Zero Trust → Access → Applications → (this app) → "Application Audience (AUD) Tag".
+ACCESS_AUD = "5aac9e508c345a40a8bca345641277c952fbce269f24801644b1abcf38e9dad0"
+# GitHub App IDs. Its private key is a secret, set in the dashboard:
+#   Worker -> Settings -> Variables and secrets -> GITHUB_APP_PRIVATE_KEY
+# Or leave these blank and add a fine-grained token as a secret named GITHUB_TOKEN.
+GITHUB_APP_ID = ""
+GITHUB_APP_INSTALLATION_ID = ""

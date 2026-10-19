@@ -1,6 +1,8 @@
 # Architecture plan: admin accounts + editable content
 
-**Status:** Phase 0 complete (2026-09-18). Phases 1–3 not started.
+**Status:** Phase 0 complete (2026-09-18). Phases 2–3 built (2026-10-18) in **`admin/`**, not yet
+deployed: setup steps are in **`admin/README.md`**. Phase 1: the `CNAME` (`womenintpdandip.org`) is
+in the repo; moving DNS to Cloudflare is still to do.
 
 ## The goal
 
@@ -104,6 +106,10 @@ hostname Cloudflare controls.
 
 *Effort: an afternoon, mostly waiting for DNS.*
 
+*Progress:* the `CNAME` file is in (`womenintpdandip.org`). What's left is pointing the domain's
+nameservers at Cloudflare, so Access can protect `admin.womenintpdandip.org`. Until then the portal
+can run on its `workers.dev` URL with Access enabled there (see `admin/README.md`).
+
 ### Phase 2 — login and roles
 
 Deploy a Worker at `admin.<domain>` and put Cloudflare Access in front of it, with Google and
@@ -121,6 +127,12 @@ they may do once inside*. Roles live in the database rather than in a repo file 
 with edit access to content can't promote themselves by editing a YAML file.
 
 *Effort: a day.*
+
+*Built.* `admin/src/auth.js` verifies the Access JWT itself (signature against the team's
+published keys, audience, issuer, expiry) instead of trusting that Access is in front, so a
+misrouted request fails closed. Owners manage the `users` table from the portal's People page.
+The recommended Access policy is "Everyone" with email one-time codes: Access proves the email,
+D1 decides, and there is only one list of people to maintain.
 
 ### Phase 3 — the admin UI
 
@@ -143,12 +155,33 @@ ever asked to type a sort key.
 *Effort: the bulk of the work — a few days, and the part worth building incrementally. Start with
 publications and photos, which are the two that actually change often.*
 
+*Built, for every collection* (publications, glossary terms, team, gallery, scholarship years /
+winners / photos, conferences, events). Two decisions changed from the sketch above:
+
+- **Contributor submissions wait in a D1 queue, not as pull requests.** A PR branches from the
+  file as it was. Two contributors adding papers near the top of `publications.yml` would
+  conflict, and an editor would have to resolve YAML merge conflicts on GitHub, which is the
+  thing the portal exists to avoid. The queue stores the *operation* ("insert this paper") and
+  applies it to the current file when approved. So queued items never conflict, ordering is
+  recomputed at approval time, and the approval happens in the portal. Photos wait in D1 too
+  (shrunk in the browser to stay under D1's ~2 MB row limit), so R2 isn't needed.
+- **Writes use the Git Data API** (blob → tree → commit → move ref without force) rather than the
+  contents API, so a photo and the YAML line that references it land in one commit. If the branch
+  moved under a save, the change is recomputed on the new head and retried.
+
+The YAML is edited through the `yaml` library's Document model with options that make
+parse → print byte-identical for every current data file. So comments, quoting and layout
+survive, and a one-field edit is a one-line diff. Forms are generated from `admin/src/collections.js`,
+which mirrors each file's header comment, and the derived fields stay derived (sort keys,
+conference date blocks, image `alt`). The one exception is `team.yml`'s `sort_name`, which the
+portal fills in from the name when left blank.
+
 ## Open questions
 
-- Which domain, and is its DNS somewhere we can repoint?
+- ~~Which domain?~~ `womenintpdandip.org`. Is its DNS somewhere we can repoint to Cloudflare?
 - Who is `owner`, and what's the starting list of editors and contributors?
-- Does the ~1 minute between "Save" and "live" need explaining in the UI, or is it a non-issue?
-  (It's inherent to rebuilding a static site; the UI should show "publishing…" rather than
-  pretend it's instant.)
+- ~~Does the ~1 minute between "Save" and "live" need explaining?~~ The confirmation says the site
+  rebuilds in about a minute and links to the page and the commit.
 - Should contributor submissions notify anyone by email, or is a pending-queue in the admin UI
-  enough? This is the only thing that would bring Mailgun back in.
+  enough? This is the only thing that would bring Mailgun back in. (As built: a pending count in
+  the portal's top bar, no email.)

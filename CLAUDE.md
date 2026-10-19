@@ -12,9 +12,11 @@ built with **Jekyll**.
 - This is a **user/org Pages site → served at the domain root**
   (`https://women-in-tpd-induced-proximity.github.io/`), so there is **no `baseurl`**.
   Root-absolute paths like `/assets/...` are correct.
-- There is a **planned migration** to add admin logins and a web editing UI — Cloudflare Access +
-  a Worker writing back to `_data/*.yml`, with the public site staying on Jekyll/Pages. See
-  **`docs/ARCHITECTURE-PLAN.md`**. Nothing in it changes how the site builds today.
+- There is an **admin portal** in **`admin/`**: a Cloudflare Worker behind Cloudflare Access that
+  lets approved people edit the `_data/*.yml` collections through forms, committing via the GitHub
+  API. The public site stays on Jekyll/Pages and **its build is unchanged**; `admin/` is excluded
+  in `_config.yml`. See "Admin portal" below, `admin/README.md`, and `docs/ARCHITECTURE-PLAN.md`.
+  The canonical domain is `womenintpdandip.org` (`CNAME`).
 
 ## Two design systems (important)
 
@@ -170,6 +172,27 @@ a page.
    referenced from the fragment.
 5. If it should be discoverable, add it to the **Explore** list in `_includes/footer.html`.
 6. Keep the **top nav minimal** (Mission · Core Team · Join) — don't bloat it.
+
+## Admin portal (`admin/`)
+
+A Node/Wrangler project, separate from the Jekyll site. It has its own `package.json`, tests and
+README, and is never part of the Pages build.
+
+- **Commits from the portal land on `main`** as "Add publication: …" / "Update term: …", with a
+  "Via the admin portal, by <name>" trailer. They are ordinary commits, so pull before you push.
+- **`admin/src/collections.js` mirrors the `_data/*.yml` header comments.** If you change a
+  collection's schema (add, rename or remove a field, or change its order rule), update that file
+  too and run `cd admin && npm test`. The tests push **every existing item** through the
+  render → submit → parse cycle and fail if any would be altered or rejected. They also check that
+  every data file round-trips byte-for-byte through the YAML engine.
+- **Keep the data files in the style the engine round-trips**: block lists that are **not**
+  indented under their key (`categories:\n  - clinical`), single-quoted strings where quoting is
+  needed, no line wrapping. That's the existing PyYAML-like style. The test above fails if a hand
+  edit drifts from it.
+- The portal enforces the same invariants as this file: rows sorted by their default sort key
+  (`order` in collections.js), URLs restricted to http(s) (several templates print `href` values
+  **unescaped**), and glossary HTML limited to `<em> <i> <strong> <b> <sub> <sup>`.
+- It never deletes image files. The homepage references some gallery/scholarship images directly.
 
 ## Build + verify loop
 
