@@ -32,9 +32,9 @@ GITHUB_REPO = "Women-in-TPD-Induced-Proximity.github.io"
 GITHUB_BRANCH = "main"
 SITE_URL = "https://womenintpdandip.org"
 # From Zero Trust → Settings → Custom pages: "<team>.cloudflareaccess.com".
-ACCESS_TEAM_DOMAIN = ""
+ACCESS_TEAM_DOMAIN = "adipu.cloudflareaccess.com"
 # From Zero Trust → Access → Applications → (this app) → "Application Audience (AUD) Tag".
-ACCESS_AUD = ""
+ACCESS_AUD = "5aac9e508c345a40a8bca345641277c952fbce269f24801644b1abcf38e9dad0"
 # GitHub App IDs. Its private key is a secret, set in the dashboard:
 #   Worker -> Settings -> Variables and secrets -> GITHUB_APP_PRIVATE_KEY
 # Or leave these blank and add a fine-grained token as a secret named GITHUB_TOKEN.
