@@ -22,12 +22,15 @@
   categories:
   - degraders
   links:
-  - label: Allosteric covalent inhibition of cereblon through cryptic cysteine targeting
+  - label: Preprint
     href: https://www.biorxiv.org/content/10.64898/2026.10.10.758245v1
   why: Identifies a cryptic allosteric pocket that can switch CRBN activity independent of the canonical IMiD/CELMoD binding site.
   advance: Covalent targeting of Cys287 traps CRBN in an open, inactive state and blocks IMiD/CELMoD-induced neosubstrate degradation.
   tags:
-  - CRBN • Allostery • Covalent Ligands • Chemoproteomics
+  - '"CRBN'
+  - Allostery
+  - Covalent Ligands
+  - Chemoproteomics"
 - date: '2026-08-15'
   date_precision: month
   title: Safety Considerations for CRBN-Based Degraders
