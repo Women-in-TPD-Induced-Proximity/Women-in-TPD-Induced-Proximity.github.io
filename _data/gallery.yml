@@ -8,6 +8,10 @@
 #           Several photos from one event share a base name with a -2/-3 suffix.
 # alt       Optional override. By default the <img alt> is built as
 #           "<event>, <location>, <year>"; set `alt` only when that reads wrong.
+- event: 4th Annual Women in TPD & Induced Proximity Celebration
+  location: Watertown, MA
+  year: 2026
+  photo: 4th-annual-women-in-tpd-induced-proximity-celebration-2026.jpg
 - event: AACR
   location: San Diego
   year: 2026
